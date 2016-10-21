@@ -1,0 +1,44 @@
+.box{
+	width: 300px;
+	height: 300px;
+	border: 1px solid #ccc;
+	.cute{
+		height: 300px;
+		width: 100px;
+		background: red;
+	}
+}
+//进行混入的通用样式
+.waiBoder{
+	width: 200px;
+	height: 200px;
+	background: yellow;
+	border-radius: 20px;
+}
+// 变量定义
+@color1: #ccc;
+@wid1:200px;
+.cute2{
+	width: 300px;
+	height: 300px;
+	background: @color1;
+}
+.content{
+	.waiBoder;
+	color: purple;
+}
+.content2{
+	.waiBoder;
+	color: blue;
+}
+.content3{
+	height: 200px;
+	width:@wid1*2;
+	background: orange;
+}
+.content4{
+	height: 200px;
+	width:@wid1*2;
+	background: color("#ccffff");
+}
+// 函数的例子

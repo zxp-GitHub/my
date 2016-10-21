@@ -1,0 +1,51 @@
+.box{
+	width: 400px;
+	height: 400px;
+	background: yellow;
+	.cute{
+		width: percentage(0.5);
+		height: 150px;
+		background: blue;
+	}
+}
+.container{
+	width: 100%;
+	height: 500px;
+	border: #ccc;
+	.contents{
+		width: 300px;
+		height: 300px;
+		border: 1px solid red;
+	}
+}
+// less变量的定义： @变量名：value;
+// less变量的引用：@变量名；
+@color1: blue;
+.box2{
+	width: 300px;
+	height: 300px;
+	background: @color1;
+}
+// .container .contents
+// 混入例子：
+.border1{
+	border:1px solid #ccffff;
+	height: 400px;
+	width: 400px;
+	border-radius: 50%;
+}
+.box3{
+	.border1;
+	background: yellow;
+}
+.box4{
+	.border1;
+	background: green;
+}
+@wid1:100px;
+
+.box5{
+	width:@wid1*2;
+	height: 200px;
+	background: pink;
+}

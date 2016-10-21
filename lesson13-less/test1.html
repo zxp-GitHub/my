@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>less案例</title>
+	
+	<link rel="stylesheet/less" type="text/css" href="test.less" />
+</head>
+<body>
+	<div class="box">
+		<div class="cute">
+			这是一个子盒子
+			<!-- 
+				1. less,sass 是什么?
+				   CSS预编译处理器，采用编写编程语言的思路来编写CSS
+			    2. less特点：
+			       1. 嵌套 2. 变量； 3.函数，4. 方法 5. 混入。。。。
+			    3. less使用的需求：
+			       1. node.js
+			       2. less安装；
+
+			          1. 先进入需要编译文件夹下面
+			          命令： lessc 目标less文件 > 输出的css文件名
+			    3. less的使用(不推荐直接取引用)：
+			          1) 引入方式：link方法，并且在，rel加stylesheet/less(多一个less)
+			          2) 引入less只有部分样式；-只有符合css规则的会生效,lless新增的
+			             几个特点都无效
+			       a. less 允许用户进行嵌套（按照HTML一样）
+			       eg box嵌套cute .box .cute{}
+   
+				   b. 变量  定义：@变量名：value;
+				            使用  @变量 避免大面积记忆一些特殊值；
+				            使用场景：一般情况下把一些同行样式值设成变量；
+
+				   c. Mixnis
+				   Mixins（混入）
+					Mixins（混入）功能对用开发者来说并不陌生，很多动态语言都支持 Mixins（混入）特性，它是多重继承的一种实现，在 LESS 中，混入是指在一个 CLASS 中引入另外一个已经定义的 CLASS，就像在当前 CLASS 中增加一个属性一样。
+					我们先简单看一下 Mixins 在 LESS 中的使用：
+					d: 计算与函数：
+					  eg @wid :200px;  
+					  width: @wid1*2;  (width:400px)
+					e: 函数
+					函数
+						杂项函数
+						字符串函数
+						列表函数
+						数学函数
+						类型函数
+						颜色定义函数
+						颜色通道函数
+						颜色操作函数
+						颜色混合函数
+						函数
+						Less 所内置的函数。
+
+						杂项函数
+						color
+
+
+			    3. 一般上线都需要进行把less编译成css
+
+                4. less使用： 安装 npm install -g less;
+   
+                5. less编译
+                   lessc 方法编译
+
+                6. 不需要编译直接使用情况
+
+                7
+
+
+
+
+
+
+
+			 -->
+
+		
+			
+		</div>
+		<div class="content">
+			这个内容区域
+		</div>
+		<div class="content2">
+			第二个实验区域
+		</div>
+		<div class="content3">
+			第三个实验区域
+		</div>
+		<div class="content4">
+			第四个关于函数的实验
+		</div>
+	</div>
+</body>
+<script src="less.js"></script>
+</html>
