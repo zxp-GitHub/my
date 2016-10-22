@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script><!--这个插件相当于移动端的jQuery-->
+		<script src="js/touch.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/log.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		.log_top{
+			text-align: center;
+		}
+		.log_top p{
+			color: #FFFFFF;
+			font: 25px/2.4 "微软雅黑";
+		}
+		.log_main input:nth-child(1),.log_main input:nth-child(2){
+			border-radius: 4px;
+			display: block;
+			padding-left: 3%;
+			width: 87%;
+			height: 9%;
+			border: none;
+			background-color:white;
+			margin-top: 2%;
+		}
+		.log_main input:nth-child(1){
+			margin-top: 8%;
+		}
+		.log_main input:nth-child(2){
+			margin-bottom: 10%;
+		}
+		
+		.showpass,.autogo{
+			margin: 4% 3%;
+			border: 1px solid black;
+			width: 5%;
+			height: 3%;
+			display: inline-block;
+			margin-left: 9%;
+		}
+		.log_p{
+			width: 60%;
+			vertical-align: top;
+			margin-top: 4%;
+			display: inline-block;
+		}
+		.auto_span{
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 4%;
+			
+		}
+		.mid{
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+			}
+		.forgetpass{
+			/*display: inline-block;*/
+			margin-left: 13%;
+			color:palevioletred;
+		}
+		.log_log{
+		    width: 10%;
+			margin: 3% auto;
+			display: block;
+			padding: 4% 40%;
+			border-radius: 3px;
+			background-color: brown;
+		}
+		.log_register{
+			 width: 10%;
+			margin: 3% auto;
+			display: block;
+			padding: 4% 40%;
+			border-radius: 3px;
+			background-color: black;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="second-top log_top">
+				<p>开心摇摇用户登录</p>
+			</div><!--top-->
+			<div class="second-main log_main">
+				<input type="text" name="" id="name" class="mid" value="" placeholder="请输入账户"/>
+				<input type="password" name="" id="pass" class="mid" value="" placeholder="请输入密码"/>
+				
+				<div class="showpass"></div><p class="log_p"> <span>显示密码</span><a class="forgetpass">忘记密码？</a></p>
+				<br />
+				<div class="autogo"></div><span class="auto_span">记住密码自动登录</span>
+				
+				<a href="###" class="log_log ">登录</a>
+				<a href="register.html" class="log_register">注册</a>
+			</div><!--main-->
+
+		</div><!--box-->
+	</body>
+</html>

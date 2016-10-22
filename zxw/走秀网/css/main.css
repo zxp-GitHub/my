@@ -1,0 +1,256 @@
+*{
+				margin: 0;
+				padding: 0;
+			}
+			li{list-style: none;}
+			a{text-decoration: none;
+			color: white;
+			}
+			
+			html,body,.container,.box{
+				width: 100%;
+				height: 100%;
+				/*overflow: hidden;*/
+			}
+			
+			.cart{
+				height: 9.1%;
+				background-color: brown;
+				text-align: center;
+				position: relative;
+			}
+			.newPro{
+				font: 20px/1 "微软雅黑";
+				color: white;
+				display: inline-block;
+				margin-top: 4.5%;/*猜：因为。cart  是9.1%    所以4.5%是居中。*/
+				
+			}
+			.car{/*怎么防止元素之间互相伤害呢？   绝对定位      and。。。？*/
+				display: inline-block;
+				width: 21%;
+				height:65%;
+				border-radius: 13px;
+				border: 2px   groove #be5253;
+				 /*box-shadow:inset 0 0 10px #000;*/  
+				background: url(../img/car2.png) no-repeat center center;
+				background-size: 100% 100%;
+				margin-top: 2.5%;
+				vertical-align: top;
+				position: absolute;
+				right: 10px;
+			}
+			
+			.list{
+				height: 6.5%;
+				background-color: #9a9fa5;
+			}
+				.list-ul{
+					margin-left: 5%;
+					height:0;
+				}
+			.list-ul li{
+				float: left;
+				padding-top: 15px;
+				height:100%;
+				width: 10%;
+			}
+			.jiantou{
+				display: none;
+				margin-top: -7px;
+				margin-left: 1px;
+				font-size:0px;
+				width: 0;
+				height: 0;
+				border: 7px solid transparent;
+				border-bottom:7px solid  #FFFFFF;
+				
+				
+			}
+			/*.list-ul li img{
+				width: 100%;
+				height:100%;
+				}*/
+			
+			.main{
+				height: 72.5%;
+				overflow: scroll;
+				width: 100%;
+			}
+			.innerMain{
+				width: 100%;
+				height:2000px;
+				background-color: #f3f4f6;
+			}
+			
+			.main_ul{
+				padding-top: 3%;
+				width: 100%;
+				height: auto;
+				background-color: #f3f4f6 ;
+				overflow: hidden;
+				}
+			.yiLi{
+				float: left;
+				width: 44%;
+				height: 260px;
+				margin:17% 3% ;
+				padding: 15% 0;
+				overflow: hidden;
+			}
+			.yiLi img{
+				width: 100%;
+				
+			}
+			.footer{/*放在滚条的前面就行*/
+				height: 11.2%;
+				background-color: #484850;
+			}
+			.footer-ul{
+				width: 100%;
+				height: 100%;
+			}
+			.footer-li{
+				border-top: 4px solid #484850;
+				text-align: center;
+				float: left;
+				width: 20%;
+				height: 100%;
+			}
+.footer-li img{
+	/*margin: 5% 7% 0px 5%;*/
+	/*float: left;*/
+	margin-top: 5%;
+	width:50%;
+	height: 50%;
+	
+}
+.footer-li p{
+	font: 18px/1 "微软雅黑";
+	color: #FFFFFF;
+}
+
+
+.second-box{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	
+}
+/*second*/
+.second-top{
+	position: relative;
+	height: 9.35%;
+	width: 100%;
+	background-color: #a90506;
+	
+}
+
+.second_top_img{
+	float: left;
+	margin-top: 3%;
+	margin-left: 2%;
+	height: 60%;
+}
+.second_top_span{
+	position: absolute;
+	right: 36%;
+	display: inline-block;
+	color: white;
+	font: 23px/2.4  "微软雅黑";
+	margin:0 auto;
+}
+.second_top_a{
+	color: white;
+	float: right;
+	font: 17px/2 "微软雅黑";
+	margin:3% 4% 0px 4%;
+	padding: 0px 5px;
+	/*border: 2px solid #000;*/
+	box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+	border-radius: 10%;
+}
+.second-main{
+	overflow: hidden;/*margin-top   overflow/padding-top   都可以*/
+	height: 90.65%;
+	background-color: #f3eff0;
+}
+.second-innerMain{
+	overflow: hidden;
+	margin: 5%;
+	height: 67.8%;
+	background-color: #a90506;
+}
+.present{
+	display: block;
+	width: 50%;
+	height: 40%;
+	margin: 30% auto;
+	background-color: #640000;
+	color: white;
+	font: 30px/140px "微软雅黑";
+	text-align: center;
+}
+.present p{
+ 	
+}
+.second-footer{
+	
+	height: 25.3%;
+	color: #620002;
+	font: 20px/2 "微软雅黑";
+	background-color: #ff4948;
+	border: 2px solid #a90506;
+}
+.second_footer_ul{
+	margin: 3%;
+}
+.second_footer_ul li span{
+	float: right;
+}
+.second_footer_ul li p{
+	font-style:normal;
+	width:30%;
+	white-space:nowrap; 
+	text-overflow:ellipsis;
+	 overflow:hidden;
+}
+
+
+/*register*/
+.register_main p{
+	background-color: white;
+	width: 80%;
+	height: 4%;
+	margin: 20px auto;
+	padding: 2% 2%;
+	font: 15px/1.7 "微软雅黑";
+}
+.register_main input{
+	height: 100%;
+	border:none;
+	/*color: #ccc;*/
+}
+.register_main{
+	/*text-align: center;*/
+}
+#val{
+	display: block;/*必须加这句话才会居中*/
+	width: 80%;
+	height: 10%;
+	left: 0px;
+	right: 0px;
+	margin: 0 auto;
+	background-color: #f3eff0;
+}
+.registerOK{
+	text-align: center;
+	color: white;
+	display: block;
+	padding: 3% 3%;
+	width: 85%;
+	margin: 40% auto;
+	font: 18px/1 "微软雅黑";
+	background-color:red;
+	border-radius: 4px;/*圆角用百分比，圆角不规则，要用px*/
+}
