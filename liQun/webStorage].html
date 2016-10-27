@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="获取" />
+		<script type="text/javascript">
+		var obj1 = new Object();
+		obj1.price = 111;
+		obj1.proname = "蔬菜";
+		var obj2 = new Object();
+		obj2.price = 222;
+		obj2.proname = "水果";
+		
+		//添加的时候  str.push(obj);
+		var str =[obj1,obj2];
+		
+			console.log(str);
+		var mesObj = JSON.stringify(str);
+		console.log(mesObj);
+			var btn = $("#btn").on("click",function(){
+				localStorage.setItem("mes",mesObj)
+				var mes = localStorage.getItem("mes");
+				var valMEs = JSON.parse(mes);
+				
+				
+				console.log(valMEs[0].proname)
+				console.log(valMEs[0].price)
+				
+			})
+			
+		</script>
+	</body>
+</html>

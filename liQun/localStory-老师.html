@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input{
+				/*display: block;
+				margin-bottom: 15px;*/
+				text-indent: 5px;
+				width: 300px;
+				height: 30px;
+			}
+			span{
+				color: red;
+				padding-left: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset id="">
+			<legend>客户管理</legend>
+			<input type="text" name="userName" id="userName" value="" placeholder="输入您的姓名"/><span>*</span><br><br>
+			<input type="text" name="tel" id="tel" value="" placeholder="输入您的手机号" /><span>*</span><br><br>
+			<input type="text" name="qq" id="qq" value="" placeholder="输入您的QQ号码" /><span>*</span><br><br>
+			<input type="button" name="saveBtn" id="saveBtn" value="保&nbsp;&nbsp;&nbsp;&nbsp;存" /><br><br>
+			<hr />
+			<p>根据姓名进行检索用户信息：</p>
+			<input type="text" name="searchName" id="searchName" value="" placeholder="输入您需要搜索的用户" /><span>*</span><br><br>
+			<input type="button" name="searchBtn" id="searchBtn" value="搜索" /><br><br>
+			<hr />
+			<div id="result">
+				
+			</div>
+		</fieldset>
+	</body>
+	<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//1.点击按钮，存储数据
+		
+		$("#saveBtn").click(function(){
+			var logo = window.localStorage.getItem("car");
+			var userName = $("#userName").val();
+			var tel = $("#tel").val();
+			var qq = $("#qq").val();
+			if(userName == "" || tel == "" || qq == ""){
+				alert("信息填写不完整");
+			}else{
+				//对象 Object
+				//创建一个对象
+				var user = new Object();
+				//添加属性
+				user.userName = userName;
+				user.tel = tel;
+				user.qq = qq;
+				var m
+				m =m+"&"+ user.userName+","+user.tel+","+user.qq;
+				
+//				user = user+'&'+user.userName+','+user.tel+','+user.qq;
+				console.log(m)//这是一个对象，但是localStorage存的是字符串
+				//对象转换为字符串
+				var userInfo = JSON.stringify(user);
+//				userInfo = userInfo+user;
+//				console.log(userInfo)//字符串
+				//将名字作为key，上面字符串作为value存储
+				localStorage.setItem("car",userInfo);
+			}
+		});
+		//sqlite actionscript
+		
+		$("#searchBtn").click(function(){
+			
+				
+				/*alert("ok")*/
+				//localStorage.getItem(searchName)这个可以判断当前的key值是否存在并且有值
+				
+//					alert("ok");
+					var data = localStorage.getItem("car");
+//					alert(data)
+					//字符串转换对象
+//					var userData = JSON.parse(user);
+//					console.log(userData)
+					
+//					$("#result").html('姓名：'+userData.userName+'<br>'+
+//				'手机：'+userData.tel+'<br>'+
+//				'Q  Q:'+userData.qq)
+					
+			
+			
+		})
+		
+		
+		
+	</script>
+</html>
