@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			ul {
+				width: 500px;
+				margin: 10px auto;
+				border: 1px solid #ccc;
+			}
+			
+			#option {
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+			}
+			
+			#option li {
+				float: left;
+				width: 25%;
+				border-right: 1px solid #ccc;
+				cursor: pointer;
+				margin-left: -1px;
+			}
+			
+			#option .active {
+				background-color: #999;
+				color: #fff;
+			}
+			
+			#list {
+				margin-top: 20px;
+				height: 300px;
+			}
+			#list li img{
+				width: 500px;
+				height: 300px;
+				float: left;
+			}
+			
+			#list li {
+				display: none;
+				/*padding: 20px;*/
+			}
+			
+			#list .active {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="option">
+			<li class="active">魔镜魔镜？</li>
+			<li>魔镜魔镜？</li>
+			<li>魔镜魔镜？</li>
+			<li>魔镜魔镜？</li>
+		</ul>
+			<ul id="list">
+			<li class="active"><img src="img/1.jpg"/></li>
+			<li><img src="img/2.jpg"/></li>
+			<li><img src="img/a.jpg"/></li>
+			<li><img src="img/5.jpg"/></li>
+	
+		</ul>
+	</body>
+	<script src="base.js"></script>
+	<script type="text/javascript">
+		var oWrapOpt = $("option");
+		var oWrapList = $("list");
+		var aList = oWrapList.getElementsByTagName("li");
+		var aOption = oWrapOpt.getElementsByTagName("li");
+		var len = aOption.length;
+		
+		for (var i = 0; i < len; i++) {
+			aOption[i].index = i;
+		}
+
+		for (var i = 0; i < len; i++) {
+			aOption[i].onclick = function() {
+				//把所有的active清空
+				for (var j = 0; j < len; j++) {
+					aOption[j].className = "";
+				}
+				this.className = "active";
+				//把所有的容器清空
+				for (var j = 0; j < len; j++) {
+					aList[j].style.display = "none";
+				}
+				aList[this.index].style.display = "block";
+			}
+
+		}
+
+		
+	</script>
+</html>

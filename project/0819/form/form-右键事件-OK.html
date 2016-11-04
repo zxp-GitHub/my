@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			input{display: block;margin: 20px;color: #666;}
+			#list {
+				border: 1px solid #ccc;
+				/*width: 150px;*/
+				/*margin: 80px;display: none;*/
+				position: absolute;
+			}
+			
+			#list li {
+				width: 100px;
+				height: 20px;
+				list-style: none;
+				border-bottom: 1px solid #ccc;
+				text-align: center;
+				padding: 10px;
+			}
+			
+			li:hover {
+				background-color: palegreen;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="form1">
+		<input type="text" name="" id="text" value="" />
+		<input type="email" name="" id="e-mail" value="" /> <!--placeholder="emal"必须打字才会消失-->
+		<input type="password" name="" id="password" value="" />
+		<input type="reset" name="" id="reset-btn" value="重置" />
+		<input type="submit" name="" id="" value="提交" />
+		<ul id="list">
+			<li id="s">我是刷新君❤</li>
+			<li>我是粘贴君</li>
+			<li>我是保存君</li>
+			<li>删除</li>
+			<li>我是小弟</li>
+		</ul>
+		</form>
+		
+	</body>
+	<script type="text/javascript">
+	
+	window.onload=function () {
+		var os=document.getElementById("s");
+	var oForm = document.getElementById("form1");
+    var oText = document.getElementById("text");
+    var oEMail = document.getElementById("e-mail");
+    var oResetBtn = document.getElementById("reset-btn");
+    var oPass=document.getElementById("password");
+//  var oResetBtn = document.getElementById("reset-btn");
+//oText.value="";
+//oEMail.value="";
+
+   // 1. /*重置事件*/对reset的操作
+   oResetBtn.onclick=function () {
+   	var YReset=confirm("亲，要赶走内容君吗？o(>﹏<)o 千万别");
+   	if (!YReset) {
+   		return false;//没按确定键就不清除，按了确定返回true
+   	}
+   };
+  // 2./*提交事件*/
+       oForm.onsubmit=function () {
+       	if(oText.value.length<6){//oText.value.length
+       	console.log("字太少")	;
+       	return false;//字不清空
+       	}else{
+       		console.log("可以了亲~");
+       	}
+       };
+       
+	
+	
+	
+	
+	
+	    var oList = document.getElementById("list");
+		oList.style.display = "none";
+		    document.oncontextmenu = function(event) {
+			var event = event || window.event; //写在里面 
+			oList.style.display = "block";
+			oList.style.left = event.clientX + "px";
+			oList.style.top = event.clientY + "px";
+			return false; //用 document.oncontextmenu 方法加最后return false;一句话就实现右键隐藏了
+		    }
+			    document.onclick = function() {
+				oList.style.display = "none"
+			    };
+			    
+			    
+			    
+			    
+			    
+			    os.onclick=function () {//此方法要写在window.onload方法里面
+			    	oText.value="";
+			    	oEMail.value="";
+			    	oPass.value="";
+			    }
+			    }
+	</script>
+</html>
+<!--
+	功能实现：
+	1. /*重置事件*/对reset的操作
+	2./*提交事件*/
+	1)//检测输入的内容对不对,用户名长度不够
+	3 placeholder="emal"，用value来实现？  (为什么谷歌一刷新出来就会自己填入字母，而火狐不会)
+	4.右键事件
+-->

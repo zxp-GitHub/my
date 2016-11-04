@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	
+<script type="text/javascript"> 
+var mouseX, mouseY; 
+var objX, objY; 
+var isDowm = false; //是否按下鼠标 
+function mouseDown(obj, e) { 
+obj.style.cursor = "move"; 
+objX = a.style.left; 
+objY = a.style.top; 
+mouseX = e.clientX; 
+mouseY = e.clientY; 
+isDowm = true; 
+} 
+function mouseMove(e) { 
+var div = document.getElementById("a"); 
+var x = e.clientX; 
+var y = e.clientY; 
+if (isDowm) { 
+div.style.left = parseInt(objX) + parseInt(x) - parseInt(mouseX) + "px"; 
+div.style.top = parseInt(objY) + parseInt(y) - parseInt(mouseY) + "px"; 
+document.getElementById("span1").innerHTML = "x:" + div.style.top + " " + "y:" + div.style.left; 
+} 
+} 
+function mouseUp(e) { 
+if (isDowm) { 
+var x = e.clientX; 
+var y = e.clientY; 
+var div = document.getElementById("a"); 
+div.style.left = (parseInt(x) - parseInt(mouseX) + parseInt(objX)) + "px"; 
+div.style.top = (parseInt(y) - parseInt(mouseY) + parseInt(objY)) + "px"; 
+document.getElementById("span2").innerHTML = "x:" + div.style.top + " " + "y:" + div.style.left; 
+mouseX = x; 
+rewmouseY = y; 
+a.style.cursor = "default"; 
+isDowm = false; 
+} 
+} 
+</script> 
+</head> 
+<body> 
+<span id="span1"></span></br><span id="span2"></span></br> 
+<div id="a" style="background-color: Green; border: 1px solid red; height: 300px; 
+top: 100px; left: 100px; width: 300px; position: absolute;" onmousedown="mouseDown(this,event)"
+onmousemove="mouseMove(event)" onmouseup="mouseUp(event)"> 
+</div> 
+</body> 
+</html>

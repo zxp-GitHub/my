@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="form/form-右键事件-OK.html" id="link">for走起走起~</a>
+	</body>
+	<script type="text/javascript">
+		    document.getElementById("link").onclick=function (event) {
+			event=event||window.event;
+			event.preventDfault();//非IE
+			event.returnValue=false;//IE
+			console.log("今天周五咯~出去旅游干啥哟~");
+		}
+	</script>
+</html>
+<!--
+	preventDefault() 方法阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
+	event	              必需。规定阻止哪个事件的默认动作。这个 event 参数来自事件绑定函数。
+-->

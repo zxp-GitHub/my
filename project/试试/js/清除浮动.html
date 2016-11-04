@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+
+<title>HTML5</title>
+
+<!--内部样式表-->
+
+<style type="text/css">
+
+	.tag01{ border:2px red double;}
+
+	#box01{ border:3px blue solid; width:800px; height:200px; float:left;}
+
+	#box02{ border:3px yellow solid; width:800px; height:200px; float:left;}
+
+	.clear:after{ display:block; clear:both; content:"."; visibility:hidden; height:0;}
+
+	.clear{ zoom:"1";}
+
+	/*/<!--.clear{ clear:both;}-->*/
+
+	/*<!--.clear{ display:block; overflow:hidden;}-->*/
+
+</style>
+
+<!--浮动副作用，脱离标准文档流，导致父级元素无法被撑开-->
+
+<!--清除浮动副作用三种方法
+
+1：添加空盒子，缺点是多了这些空盒子<div class="clear"></div>
+
+	.clear{clear:both;}
+
+2：overflow:hidden方法，给父级元素添加class属性值为clear
+
+	.clear{display:block; overflow:hidden;}
+
+3：父级元素定义clear类，使用伪元素:after
+
+	.clear:after{display:block; clear:both; content:"."; visibility:hidden; height:0;}
+
+    .clear{zoom:"1";}
+
+(display:block; 使此元素显示为块级元素，前后带有换行符   content一般不添加内容，则就写一个点   visibility:hidden隐藏   zoom="1"浏览器专有属性)
+
+-->
+
+</head>
+
+<body>
+
+<div class="tag01 clear">
+
+	<div id="box01"></div>
+
+    <div id="box02"></div> 
+
+</div>
+
+</body>
+
+</html>
+

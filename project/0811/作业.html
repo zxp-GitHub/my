@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box_div" style="color: red;font-size: 13px;"  ><strong>测试DIV内容颜色的修改,今天天气好晴朗，出去slm,slm...！</strong></div>
+		<button type="button" onclick="btnClick()">点击变色</button>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		//1.写一个定时器,每个一秒修改一次div内文本颜色和文字大小.最开始这个文字是默认大小,大小开始增大,当增大了6次以后,文字大小开始缩小,缩小6次,文字再开始增大。
+//					var fontNum = 2; 
+//					If( i == 5 ){
+//						fontNum *= -1;
+//					}
+					
+			function btnClick(){
+			var box=document.getElementById("box_div");
+			var colorArray=["blue","yellow","green","pink","orange","black","blue","yellow","green","pink","orange","black"];
+			var sizeArry=["14px","16px","18px","19px","20px","22px","21px","19px","18px","16px","15px","14px"];
+			var i=0;
+			setInterval(function () {
+				var colorName=colorArray[i%12];
+				var sizeName=sizeArry[i%12];
+				box.style.color=colorName;
+				box.style.fontSize=sizeName;
+				i++;
+			},1000);						
+		}
+		
+		//    2 .引用类型  box  person 对象  指针 段地址
+		/*var person={
+				name:"jack",
+				age:18
+				
+			}
+			
+			alert(person.name);//引用类型  box  person 对象  指针 段地址
+			alert(person.age);
+			person.name="tom";
+			alert(person.name);
+		}*/
+
+	</script>
+</html>

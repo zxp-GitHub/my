@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>DOM</title>
+    <style>
+        #box01{ width: 66px; height: 80px; background: url(img/我的飞机.gif) no-repeat;/* position: absolute;*/ margin-top: 620px; margin-left: 295px;}
+        #box02{ width: 4px; height: 20px; background-color: brown; position: absolute; bottom: 180px;left: 333px;}
+    </style>
+</head>
+<body>
+<div id="box01"></div>
+</body>
+<script>
+    var he=document.getElementById('box01');
+    function show(event){
+        var event=event || window.event;
+        var zi=document.createElement('div');
+        zi.setAttribute("id","box02");
+        he.appendChild(zi);
+    
+       
+
+       
+       
+        var timer=setInterval(function () {
+        	var otop=zi.offsetTop;
+            if(otop<=200){  // 当小于200时隐藏子弹
+                zi.style.display='none';
+            }else {
+                zi.style.top=otop-10+'px';
+            }
+        },400)
+      };
+      
+      
+    var timer=setInterval(function() {
+        show(event);
+    },4000);
+</script>
+</html>
+<!--如果父级元素是绝对定位，则里面的绝对定位自动以此父级元素定位； 
+如果父级元素全都没有设置（static），则里面的绝对定位以 body 定位。 -->

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        li { list-style: none}
+        ul,#content { width: 500px; margin: 10px auto; border: 1px solid #ccc}
+        #option { height: 40px; line-height: 40px; text-align: center;}
+        #option li { float: left; width: 25%; margin-left: -1px;  border-right: 1px solid #ccc; cursor: pointer}
+        #option .active { background-color: #999; color: #fff}
+        #content { height: 300px; padding: 0 20px;}
+        #content img{
+				width: 500px;
+				height: 300px;
+				float: left;
+			}
+    </style>
+</head>
+<body>
+<ul id="option">
+    <li class="active">山东在哪？</li>
+    <li>山西在哪？</li>
+    <li>河南在哪？</li>
+    <li>河北在哪？</li>
+</ul>
+
+
+
+<div id="content">
+   <img src="img/1.jpg" id="img"/>
+
+</div>
+
+
+<script src="base.js"></script>
+<script>
+    var arr = ["img/1.jpg","img/2.jpg",
+        "img/3.jpg","img/5.jpg"];
+
+    var oWrapOpt = $("option");
+    var aOption = oWrapOpt.getElementsByTagName("li");
+    var oCont = $('content');
+    var len = aOption.length;
+    var img=$("img");
+//	img.setAttribute("src",url);
+    for(var i=0;i<len;i++){
+        /*给每一个选项都加一个index属性，等于他自己的下标*/
+        aOption[i].index = i; //把自己的下标保存在index属性里面
+
+        aOption[i].onclick=function () {
+            /*把所有的active样式干掉*/
+            for(var j=0;j<len;j++){
+                aOption[j].className = "";
+            }
+            /*给当前点击的选项添加active样式*/
+            this.className = "active";
+
+            /*切换content里面的内容*/
+            //this.index 就是当前点击的选项的 下标
+//          img.src.nodeName=arr[this.index];
+            img.src=arr[this.index];
+        }
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

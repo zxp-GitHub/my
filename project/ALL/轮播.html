@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>banner</title>
+</head>
+<style type="text/css">
+*{margin:0;padding:0;}
+ol,ul{
+	list-style:none;
+}
+.banner{
+	overflow:hidden;
+	margin:30px auto;
+	width:391px;
+	height:220px;
+	position:relative;
+}
+.banner ul{
+	width:3000px;
+	/*css3*/
+	transition:all 1s;
+	-webkit-transition:all 1s;
+	/*过度*/
+	position:absolute;
+	left:0;
+	top:0;
+}
+.banner ul li{
+	float:left;
+}
+.menu{
+	width:36px;
+	height:60px;
+	background:rgba(0,0,0,0.6);
+	position:absolute;
+	top:50%;
+	margin-top:-30px;
+	line-height:60px;
+	font-size:30px;
+	color:#fff;
+	cursor:pointer;
+	text-align:center;
+	font-family:'宋体';
+}
+.left{
+	left:0;
+}
+.right{
+	right:0;
+}
+</style>
+<body>
+
+
+<div class="banner">
+	<ul id="banner">
+		<li><a href="#"><img src="pic1.jpg" /></a></li>
+		<li><a href="#"><img src="2.png" /></a></li>
+		<li><a href="#"><img src="3.jpg" /></a></li>
+		<li><a href="#"><img src="1.png" /></a></li>
+		<li><a href="#"><img src="pic1.jpg" /></a></li>
+	</ul>
+	<div class="menu left" id="left"><</div>
+	<div class="menu right" id="right">></div>
+</div>
+
+<script>
+var banner=document.getElementById('banner');
+var oLi=banner.getElementsByTagName('li');
+var left=document.getElementById('left');
+var right=document.getElementById('right');
+var speed=-391;
+var jl=null;
+var index=0;
+//alert(banner);
+//alert(oLi.length);
+left.onclick=function(){
+	if(index==0){	
+		index=oLi.length-1;	
+	}else{
+		index--;	
+	}
+	jl=speed*index;	
+	banner.style.marginLeft=jl+'px';
+	
+	
+	
+}
+right.onclick=function(){
+	if(index<oLi.length-1){	
+		index++;	
+	}else{
+		index=0;	
+	}
+	jl=speed*index;	
+	banner.style.marginLeft=jl+'px';
+	
+	
+}
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

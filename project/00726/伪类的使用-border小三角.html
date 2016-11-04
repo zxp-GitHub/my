@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+		div{
+			width: 200px;
+			height: 400px;
+			background-color: yellow;
+		}
+		img{
+			margin: 40px 40px;
+		}   
+		    div:after{
+		    	content: "";
+                border: 5px solid black; 
+		    	font-size: 0;/*写了这一句才会是方的，因为可能会有空格*/
+		    	height: 0px;/*有的浏览器会有自定义高度*/
+		    	overflow: hidden;
+		    	border-bottom-color:white;
+		    	}
+			div:before{content: "撒狗粮了o(╯□╰)o";}
+			div:first-letter{color: red;}
+			div:first-line{font-size: 30px;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/night_03.png"/>我萌萌哒
+		</div><!--box-->
+	</body>
+</html>

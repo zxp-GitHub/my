@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var str1 = "aabcccertertkjsdfklsdfkjlklkasdasdasdasdasd";
+
+  /*  a:3
+    b:2
+    j:0
+    m:0*/
+    /*var num =1;
+    var obj  = {a:0,b:0};
+
+    obj['a'+"b"+num] = 10;
+    console.log(obj);*/
+
+    var obj= {};
+
+    for(var i=0;i<str1.length;i++){
+        //console.log(typeof str1[i])
+
+        if(obj[str1[i]] == undefined){
+            //如果 obj里面 对应的字符属性是undefined，证明这个字符是第一次出现
+            obj[str1[i]] =1 ;  // 让obj对应的字符属性 的值为1
+        }else {
+            //如果不是第一次出现，  让obj对应的字符属性+1
+            obj[str1[i]]++
+        }
+
+
+    }
+
+    console.log(obj);
+
+    for(var attr in obj){
+        console.log(attr);
+        console.log(obj[attr])
+    }
+
+</script>
+</body>
+</html>

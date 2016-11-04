@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{color: plum;}
+			li{list-style: none;}
+		</style>
+	</head>
+	<body>
+		<ul id="test"><li>第二小横队，漂移</li><li>飞起来</li></ul>
+	</body>
+	<script type="text/javascript">
+		var otest=document.getElementById("test");
+		var newnode=document.createElement("li");//creat不是get
+		newnode.innerHTML="sb";
+		otest.insertBefore(newnode,otest.lastChild);
+		//将 newChild 节点插入到 referenceNode 之前。
+		//选中全文，右键整理全文代码格式
+	</script>
+</html>

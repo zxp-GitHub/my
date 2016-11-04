@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/运动框架.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#box{
+				width: 441px;
+				height: 441px;
+				background: #eee;
+				position: absolute;
+				left: 50%;
+				margin-left: -200px;
+				border: 1px solid #aaa;
+			}
+			#she{width: 10px; height: 10px; background: #fff;position: absolute;top: 0;left: 0;}
+			#red{width: 10px; height: 10px; background: red;position: absolute;display: none;}
+			.btn{position: absolute;top: 460px;left: 50%;margin-left: -40px;}
+			.lineRow{
+				width: 400px;
+				height: 1px;
+				background: #fff;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span class="lineRow"></span>
+		</div>
+		<div class="btn">
+			<input type="button" id="start" value="开始" />	
+			<input type="button" name="stop" id="stop" value="暂停" />
+		</div>
+		
+		
+		<script type="text/javascript">
+			var timer;
+			var snakeArr = [];
+			var box = document.getElementById("box");
+			var start = document.getElementById("start");
+			var stop =document.getElementById("stop");
+			var direction;
+			
+			//生成网状背景
+			for(var i=1;i<40;i++){
+				var span = document.createElement("span");
+				span.style.width="442px";
+				span.style.height="1px";
+				span.style.position="absolute";
+				span.style.left = "0px";
+				span.style.top = i*11+"px";
+				span.style.background="#bbb";
+				span.className = "lineRow"
+				box.appendChild(span);
+			}
+			for(var i=1;i<40;i++){
+				var span = document.createElement("span");
+				span.style.width="1px";
+				span.style.height="442px";
+				span.style.position="absolute";
+				span.style.left = i*11+"px";
+				span.style.top ="0px" ;
+				span.style.background="#bbb";
+				span.className = "lineCol"
+				box.appendChild(span);
+			}
+			
+			
+			
+			
+			//随机生成食物
+			var div = document.createElement("div");
+			div.style.width="10px";
+			div.style.height="10px";
+			div.style.position="absolute";
+			div.style.left = Math.floor(Math.random()*40)*11+1+"px";
+			div.style.top = Math.floor(Math.random()*40)*11+1+"px";
+			div.style.background="red";
+			div.id="food";
+			box.appendChild(div);
+			
+			
+			//随机生成蛇头
+			var snake = document.createElement("div");
+			snake.style.width="10px";
+			snake.style.height="10px";
+			snake.style.position="absolute";
+			snake.style.left = Math.floor(Math.random()*40)*11+1+"px";
+			snake.style.top = Math.floor(Math.random()*40)*11+1+"px";
+			snake.style.background="#000";
+			snake.id="sssssss";
+			snake.direction = getRandom();
+			box.appendChild(snake);
+			
+			snakeArr.push(snake);
+			function getRandom(){
+				return Math.floor(Math.random()*4);//0左 1上 2右 3下
+			}
+			
+			document.onkeydown=function(event){
+				
+				var event = event||window.event;
+				var keys=event.keyCode;
+				if(keys == 13){	//下移
+					start.onclick();					
+				}
+					
+			}
+			//暂停
+			stop.onclick = function(){
+				clearInterval(snake.timer);
+			}
+			
+			//开始
+			start.onclick = function(){
+				//判断方向
+				var oLeft = snake.offsetLeft;
+				var oTop = snake.offsetTop;
+				startMove(snake,snake.direction);	
+				document.onkeydown=function(event){
+				
+					var event = event||window.event;
+					var keys=event.keyCode;
+					if(snake.direction== 3){
+						if(keys == 40){	//下移
+							snake.direction = 3;
+							startMove(snake,3);					
+						}
+						if(keys == 37){	//左移
+							snake.direction = 0;
+							startMove(snake,0);	
+						}
+						if(keys == 39){	//右移
+							snake.direction = 2;
+							startMove(snake,2);			
+						}	
+					}else if(snake.direction == 2){
+						if(keys == 39){	//右移
+							snake.direction = 2;
+							startMove(snake,2);			
+						}
+						if(keys == 40){	//下移
+							snake.direction = 3;
+							startMove(snake,3);					
+						}
+						if(keys == 38){	//上移
+							snake.direction = 1;
+							startMove(snake,1);		
+						}
+					}else if(snake.direction == 1){
+						if(keys == 38){	//上移
+							snake.direction = 1;
+							startMove(snake,1);		
+						}
+						if(keys == 37){	//左移
+							snake.direction = 0;
+							startMove(snake,0);	
+						}
+						if(keys == 39){	//右移
+							snake.direction = 2;
+							startMove(snake,2);			
+						}
+					}else{
+						if(keys == 40){	//下移
+							snake.direction = 3;
+							startMove(snake,3);					
+						}
+						if(keys == 38){	//上移
+							snake.direction = 1;
+							startMove(snake,1);		
+						}
+						if(keys == 37){	//左移
+							snake.direction = 0;
+							startMove(snake,0);	
+						}
+					}	
+				}
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			function getStyle(obj, attr) {
+				if (obj.currentStyle) {   //ie
+					return obj.currentStyle[attr];
+				} else {
+					return window.getComputedStyle(obj, false)[attr];  //非ie
+				}
+			}
+			function startMove(dom,direction){
+				clearInterval(dom.timer);			
+				dom.timer = setInterval(function(){					
+					var iCurX = parseInt(getStyle(dom,"left"));	
+					
+					var iCurY = parseInt(getStyle(dom,"top"));
+					//撞墙游戏结束
+					if((dom.offsetLeft ==430 && direction == 2) || (dom.offsetLeft == 1 && direction == 0) || (dom.offsetTop == 1 && direction == 1) || (dom.offsetTop == 430 && direction == 3)){		
+						alert("GAME OVER!!!  按F5重新开始游戏");
+						clearInterval(dom.timer);
+						start.disabled="disabled";
+						return;
+					}
+					
+					//碰撞检测
+					var food = document.getElementById("food");
+					var fLeft = food.offsetLeft;
+					var fRight = fLeft+11;
+					
+					var fTop = food.offsetTop;
+					var fBottom =  fTop+11;
+						
+					if(snake.direction==0){//左
+						
+						if(iCurX == fRight && iCurY == fTop){
+							var bodys = document.createElement("div");
+							bodys.style.width="10px";
+							bodys.style.height = "10px";
+							bodys.style.position = "absolute";
+							bodys.style.left = iCurX+11+"px";
+							bodys.style.top = iCurY + "px";
+							bodys.className = "food";
+							bodys.style.background="#000";
+							snakeArr.push(bodys);
+							box.appendChild(bodys);	
+							//alert(1)
+							food.style.left = Math.floor(Math.random()*40)*11+1+"px";
+							food.style.top = Math.floor(Math.random()*40)*11+1+"px";
+						}
+						
+						
+						for(var j=snakeArr.length-1;j>=1;j--){
+							snakeArr[j].style.left = snakeArr[j-1].offsetLeft+"px";
+							snakeArr[j].style.top = snakeArr[j-1].offsetTop+"px";                             
+						}
+						dom.style.left=iCurX-11+"px";
+					}else if(snake.direction == 1){//上
+						if(iCurY == fBottom && iCurX == fLeft){
+							var bodys = document.createElement("div");
+							bodys.style.width="10px";
+							bodys.style.height = "10px";
+							bodys.style.position = "absolute";
+							bodys.style.left = iCurX+"px";
+							bodys.style.top = iCurY +11+ "px";
+							bodys.className = "food";
+							bodys.style.background="#000";
+							snakeArr.push(bodys);
+							box.appendChild(bodys);	
+							//alert(1)
+							food.style.left = Math.floor(Math.random()*40)*11+1+"px";
+							food.style.top = Math.floor(Math.random()*40)*11+1+"px";
+						}							
+						for(var j=snakeArr.length-1;j>=1;j--){
+							snakeArr[j].style.left = snakeArr[j-1].offsetLeft+"px";
+							snakeArr[j].style.top = snakeArr[j-1].offsetTop+"px";                            
+						}
+						dom.style.top=iCurY-11+"px";
+					}else if(snake.direction == 3){//下
+						
+						if(iCurY == fTop && iCurX == fLeft){
+							var bodys = document.createElement("div");
+							bodys.style.width="10px";
+							bodys.style.height = "10px";
+							bodys.style.position = "absolute";
+							bodys.style.left = iCurX+"px";
+							bodys.style.top = iCurY -11+ "px";
+							bodys.className = "food";
+							bodys.style.background="#000";
+							snakeArr.push(bodys);
+							box.appendChild(bodys);	
+							//alert(1)
+							food.style.left = Math.floor(Math.random()*40)*11+1+"px";
+							food.style.top = Math.floor(Math.random()*40)*11+1+"px";
+						}	
+						
+						for(var j=snakeArr.length-1;j>=1;j--){
+							snakeArr[j].style.left = snakeArr[j-1].offsetLeft+"px";
+							snakeArr[j].style.top = snakeArr[j-1].offsetTop+"px";                            
+						}
+						
+						
+						dom.style.top=iCurY+11+"px";
+						
+					}else{//右
+						
+						if(iCurY == fTop && (iCurX+11)== fLeft){
+							var bodys = document.createElement("div");
+							bodys.style.width="10px";
+							bodys.style.height = "10px";
+							bodys.style.position = "absolute";
+							bodys.style.left = iCurX-11+"px";
+							bodys.style.top = iCurY + "px";
+							bodys.className = "food";
+							bodys.style.background="#000";
+							snakeArr.push(bodys);
+							box.appendChild(bodys);	
+							//alert(1)
+							food.style.left = Math.floor(Math.random()*40)*11+1+"px";
+							food.style.top = Math.floor(Math.random()*40)*11+1+"px";
+						}	
+							
+						for(var j=snakeArr.length-1;j>=1;j--){
+							snakeArr[j].style.left = snakeArr[j-1].offsetLeft+"px";
+							snakeArr[j].style.top = snakeArr[j-1].offsetTop+"px";                             
+						}
+						dom.style.left=iCurX+11+"px";
+					}
+					
+					
+					
+				
+										
+				},300);
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>事件</title>
+</head>
+<body>
+<input type="button" id="btn1" value="不要">
+<input type="button" id="btn2" value="点我">
+<div id="box01" style="color: #66FFFF; font-size: 32px; font-style:oblique;"><b>天空一声巨响，罗华峰闪亮登场</b></div>
+<input type="button" value="点击变色" onclick="btn();" />
+</body>
+<script>
+    //addEventListener添加事件，removeEventListener移除addEventListener添加的事件
+    //attachEvent();添加事件
+    //addEventListener(event,function,true/false);
+    //event事件不要用on前缀，例如点击为click，而不是onclick
+    //第三个参数表示事件是否在捕获或冒泡阶段执行，true表示在捕获阶段执行，false为默认值，表示在冒泡阶段执行
+    var dj1=document.getElementById('btn1');
+    dj1.addEventListener('dblclick',btn1Handler,false);  // dblclick 表示按钮双击
+    function btn1Handler(){
+        document.write('你好！');
+    }
+    var dj2=document.getElementById('btn2');
+    dj2.addEventListener('click',function(){
+        dj1.removeEventListener('dblclick',btn1Handler,false);//删除btn1的事件
+    },false);
+
+    //文字自动变色
+    function btn(){
+        var box=document.getElementById('box01');
+        var colorArr=['red','orange','yellow','green','grey','blue','pink','#g36678','#ee66542','#333','#e6e6b7','#f1f1f1','#f3f3f3','#g5g6g5'];
+        var sizeArr=['10px','14px','16px','20px','24px','28px','32px','36px','40px','18px','22px','66px','42px','40px'];
+        var xieArr=['normal','italic','oblique'];
+        var i=0;
+        setInterval(function(){
+            var color=colorArr[i%colorArr.length];
+            var size=sizeArr[i%sizeArr.length];
+            var xie=xieArr[i%xieArr.length];
+            box.style.color=color;  // style.color=color 改变它的颜色
+            box.style.fontSize=size;  // style.fontSize=size; 改变它的字体大小
+            box.style.fontStyle=xie;  // style.fontStyle=xie; 改变倾斜
+            i++;
+        },600);  // 间隔500毫秒自动更换
+    }
+</script>
+</html>

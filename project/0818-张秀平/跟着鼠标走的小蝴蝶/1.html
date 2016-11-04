@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;background-color: #000000}
+			#box{width: 200px;height: 200px;position: absolute;
+			background: url(img/girl.gif) no-repeat;cursor: move;background-size: 100% 100%;}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	
+	<script type="text/javascript">
+		var obox=document.getElementById("box");
+		
+		obox.onmousemove=function () {
+			box.style.top=event.clientY-100+"px";//box.clientTop-100;
+			box.style.left=event.clientX-100+"px";
+		}
+	</script>
+</html>
+<!--position: absolute;-->

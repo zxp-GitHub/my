@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="submitpage.html" method="post" onsubmit="return validate()">
+			姓名:<input type="text" id="fname" value=""  size="20"/><br />
+			年龄： <input type="text" id="age" value="" size="20"/><br />
+			电邮： <input type="text" id="email" value="" size="20"/><br />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+	<script type="text/javascript">
+		function validate(){
+			var at = document.getElementById("email").value.indexOf("@");
+			var age=document.getElementById("age").value;
+			var fname=document.getElementById("fname").value;
+			submitOK="true";
+			
+			if(fname.length==0||fname.length>0)
+			{
+				alert("姓名必须输入1~10个字符");
+				submitOK = "false";
+			}
+			else if(isNaN(age)||age<1||age>100){
+				alert("年龄必须是1~100之间的数字");
+				submitOK = "false";
+				
+			}
+			else if(at==-1){
+				alert("不是有效的电子邮件地址");
+				submitOK = "false";
+			}
+			if(submitOK=="false")
+			{
+				return false;
+			}
+		}
+		
+		
+		alert("的点点滴滴\n"+" 操作失败");
+	</script>
+</html>

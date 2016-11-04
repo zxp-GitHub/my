@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>cookie</title>
+    <style>
+        *{ margin: 0; padding: 0;}
+        li{ list-style-type: none; margin-bottom: 10px;}
+    </style>
+</head>
+<body>
+<a href="cookie01.html">点击跳转</a>
+<form name="" action="" method="" id="form1">
+    <ul>
+        <li>用户名：<input type="text" name="username" id="username" /></li>
+        <li>密&nbsp;码：<input type="password" name="password" id="password" /></li>
+        <li><input type="reset" id="res" /></li>
+        <li><input type="submit" id="sub" /></li>
+    </ul>
+</form>
+</body>
+<script>
+//    document.onclick=function () {
+//        document.cookie="a=5";  // 设置cookie
+//        document.cookie="b=10";
+//    };
+
+    // cookie在表单中的应用
+    var form1=document.getElementById('form1');
+    var userName=document.getElementById('username');
+    var passWord=document.getElementById('password');
+    var sub=document.getElementById('sub');
+    var res=document.getElementById('res');
+    form1.onsubmit=function () {    // 表单的提交事件
+        var user=userName.value;    // 获取value值
+        var pass=passWord.value;
+        if(user!="" && pass!=""){    // 如果表单控件内容不为空
+//            document.cookie='username='+user;    // 设置cookie
+//            document.cookie='password='+pass;
+            var oDate=new Date();
+            // 设置cookie过期时间
+            // 若为过去时间，浏览器就会自动删除cookie
+            oDate.setDate(oDate.getDate()+30);  // 获取当前时间后30天过期删除
+            document.cookie='username='+user+';path=/;expires='+oDate;    // path设置路径
+            document.cookie='password='+pass+';path=/;expires='+oDate;
+        }else{
+            // 若为空，验证未通过，阻止浏览器的自动提交
+            return false;    //阻止浏览器默认行为
+        }
+    };
+    /*userName.value=getCookie('username') || "";    // 设置value
+    function getCookie(name){  // 封装函数
+        var str=document.cookie;  // 获取cookie
+        //console.log(str);  // a=5; b=10
+        var arr1=str.split("; ");    // 以分号空格分割
+        for(var i=0;i<arr1.length;i++){
+            var arr2=arr1[i].split('=');
+            if(arr2[0]==name){
+                return arr2[1];
+            }
+        }
+    }*/
+</script>
+</html>

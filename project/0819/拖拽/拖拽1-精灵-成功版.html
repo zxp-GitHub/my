@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{background: url(img/girl.gif) no-repeat 0 0;height: 80px;width: 80px;
+			background-size: 100% 100% ;position: absolute;left: 0;top: 0;}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+	</body>
+	<script src="../js/base.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var oDiv=$("div1");
+		
+			var screenWidth= document.documentElement.clientWidth||document.body.clientWidth;
+        	var screenHight = document.documentElement.clientHeight||document.body.clientHeight;
+//      	left=screenWidth-80,
+left:screenWidth-400;
+top:screenHight-300;
+//			
+				
+		oDiv.onmousedown=function (event) {
+			event=event||window.event;//只要获取坐标就要写
+			console.log(event.offsetX);//offset鼠标距离图片div左上角的距离
+				console.log(event.offsetY);
+				var disX=event.offsetX;
+				var disY=event.offsetY;
+			console.log("down");
+			document.onmousemove=function (event) {
+				event=event||window.event;
+				//鼠标的坐标
+				var mX=event.clientX;
+				var mY=event.clientY;
+//				让div的left和top等于鼠标坐标
+				oDiv.style.left=mX-disX+"px";
+				oDiv.style.top=mY-disY+"px";
+//				oDiv.style.left=disX+"px";
+//				oDiv.style.top=disY+"px";
+			};
+			document.onmouseup=function () {//可写在点击事件oDiv.onmousedown里面（document）也可写在外面（oDiv）
+				document.onmousemove=null;
+				oDiv.onmouseup=null;//不写也没问题，以防万一
+			}
+		}
+//		document.onmouseup=function () {
+//				document.onmousemove=null;
+////				oDiv.onmousedown=null;
+//			}
+		
+		
+	</script>
+</html>
+<!--
+1.点击鼠标放开仍滑动
+2.滑动太快会不动
+3.滑动范围
+4.点击图片任意位置都可以滑动
+	
+	
+	
+-->

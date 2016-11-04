@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			/**/
+			/*#top{width: 100px;height: 50px;border: 1px solid #ccc;position: relative;}
+			#top div{border: 8px solid transparent;
+			width: 0;height: 0;border-top:8px solid #666;
+			position: absolute;left:80px;top: 20px;}*/
+			
+			#list {
+				border: 1px solid #ccc;
+				/*width: 150px;*/
+				/*margin: 80px;display: none;*/
+				position: absolute;
+			}
+			
+			#list li {
+				width: 100px;
+				height: 20px;
+				list-style: none;
+				border-bottom: 1px solid #ccc;
+				text-align: center;
+				padding: 10px;
+			}
+			
+			li:hover {
+				background-color: palegreen;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<div id="top">
+			<div></div>
+		</div>-->
+
+		<!--ul#list>li*5    tab-->
+		<ul id="list">
+			<li>我是刷新君❤</li>
+			<li>我是粘贴君</li>
+			<li>我是保存君</li>
+			<li>删除</li>
+			<li>我是小弟</li>
+		</ul>
+
+	</body>
+	<script type="text/javascript">
+		var oList = document.getElementById("list");
+
+		oList.style.display = "none";
+		document.oncontextmenu = function(event) {
+			var event = event || window.event; //写在里面 
+			oList.style.display = "block";
+			oList.style.left = event.clientX + "px";
+			oList.style.top = event.clientY + "px";
+			return false; //用 document.oncontextmenu 方法加最后return false;一句话就实现右键隐藏了
+		}
+
+		document.onclick = function() {
+			oList.style.display = "none"
+		};
+	</script>
+
+</html>
+<!--
+	1.列表先隐藏
+	2.获取点击位置，设点击事件
+	3列表的位置等于鼠标的位置
+	4.右键  原来的事件返回false 列表出现
+-->

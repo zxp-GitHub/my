@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<!--输入您要验证的日期：<input type="text" id="date" name="date" />
+    <br />
+    <br />
+    <span style="color: red;">(注意：这里的日起必须为：yyyy-mm-dd,yyyy/mm/dd这种格式，如果是2015-1-1则不能正常验证)</span>
+    <br />
+    <br />
+    <input type="button" id="btnValid" value="验证日期是否正确" onclick="IsDate();"/>-->
+	</body>
+	<script type="text/javascript">
+		/* function IsDate(){
+            alert("点击后，我将检测输入框内的日期是否正确");
+            var date = document.getElementById("date").value;
+            if (date == "") {
+                alert("请输入日期");
+            } else if (new Date(date).getDate() == date.substring(date.length - 2)) {
+                    alert("日期正确!");
+                } else {
+                    alert("日期错误!");
+                }*/
+              /*if (Date(date).getYear()% 4 == 0 && (Date(date).getYear() % 100 != 0 || Date(date).getYear() % 400 == 0)) {
+                	alert("是闰年");
+                } else{
+                	alert("不是闰年");
+
+                }*/
+               /*Date.prototype.isLeapYear = function() 
+{ 
+return (0==this.getYear()%4&&((this.getYear()%100!=0)||(this.getYear()%400==0))); 
+
+}
+            }
+		
+} */
+		/* function isLeapYear(year) {  return (year % 4 == 0) && (year % 100 != 0 || year % 400 == 0);  }*/
+		
+		
+		//猴子吃桃
+		/*function eat (m) {
+			if (m==1) {
+				return 1;
+			}
+			return  2*(1+eat(m-1));
+		}
+		document.write(eat(3));*/
+		
+		//递归实现找出0-100之间7的倍数，和包含7的数字
+		/*function shu(n) {
+			if (n==7) {
+				return 7;
+			}
+    	 if (n%7==0||Math.floor(n/10)==7||n%10==7) {
+           document.write(n+"&nbsp;");
+             }
+        return shu(n-1);
+    }
+		document.write(shu(100));*/
+               
+               
+               
+               
+               
+//             function addSum(n){
+//			if (n==1) {
+//				return 1;
+//			}
+//			return n*addSum(n-1);
+//			//第一次 10+addSum(9)
+//			//第二次 10+9+addSum(8)
+//			//第一次 10+9+8+addSum(7)
+//			//。。。。
+//			//10+9+8+7+6+5+4+3+2+1
+//			
+//		}
+//		
+//		document.write(addSum(10));
+
+//兔子繁殖问题，设有一对新生兔子，从第四个月开始他们每个月月初都生一对兔子
+		//新生的兔子从第四个月月初开始又每个月生一对兔子
+		//按此规律，并假定兔子没有死亡,n(n <= 20)个月月末共有多少对兔子？
+		/*function rabits (x) {
+			if (x<=3) {
+				return 1;
+			}
+					//3月兔          //一月兔
+			return rabits(x-1)+rabits(x-3);
+		}
+		
+		alert(rabits(4));*/
+		
+		
+		//dom  做+、-、*、/
+		
+
+	</script>
+</html>

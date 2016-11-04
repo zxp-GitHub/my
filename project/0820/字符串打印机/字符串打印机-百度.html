@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<head>
+			<title>Js实现逐字在网页上打印文字</title>
+			<script language="javascript">
+				<!--
+				text = "Js实现逐字在网页上打印文字";
+				i = 0;
+
+				function type() {
+					str = text.substr(0, i);
+					txt.innerHTML = str + "_";
+					i++;
+					if (i > text.length) {
+
+                        //   i = 0;
+                        return false;
+
+						//return 加入则text显示完后，停止。 
+
+					}
+					setTimeout("type()", 300);
+				}
+				//-->
+			</script>
+
+		</head>
+
+		<body onLoad="type()">
+			<embed src="aa.mp3" autostart="bool" loop="n" width="m" height="k"></embed>
+
+			<div id="txt"></div>
+			<br />
+
+		</body>
+
+</html>

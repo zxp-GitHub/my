@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<input type="te" name="" id="" value="" />-->
+	</body>
+	<script type="text/javascript">
+	var a=6	;
+	var b=0;
+	if (a%2==0) {
+	b=a/2;
+	} else{
+		b=a/2-1
+	}
+	
+	for (var i = 0; i < a/2; i++) {//   a/2四舍五入
+	for (var j = a/2; j>i; j--) {
+				document.write("&ensp;");
+			}
+	for (var k = 0; k <=i; k++) {
+				document.write("* ");
+			     }
+       document.write("<br	 />");
+}
+			
+for (var i = 0; i<=a-a/2; i++) {  //i=4   5
+	for (var j =0; j<=i+1; j++) {// j=4 5
+				document.write("&ensp;");
+			}
+	for (var k = a-a/2-1; k >i; k--) {//k=  
+				document.write("* ");
+			     }
+       document.write("<br />");
+}
+			
+//	var a=function f () {
+//		
+//	}		
+			
+	</script>
+</html>

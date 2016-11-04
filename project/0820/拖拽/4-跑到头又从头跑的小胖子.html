@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{margin: 0;padding: 0;}
+			div {
+				background: url(img/a.gif) no-repeat 0 0;
+				height: 80px;
+				width: 80px;
+				background-size: 100% 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+	<!--<script src="js/base.js" type="text/javascript" charset="utf-8"></script>-->
+	<script type="text/javascript">
+		//		var oDiv=$("div1");
+		var oDiv = document.getElementsByTagName("div");
+		var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+		var screenHight = document.documentElement.clientHeight || document.body.clientHeight;
+		//div 拖动，和跑动的 遍历
+		for (var i = 0; i < oDiv.length; i++) {
+			drag(oDiv[i]); //
+			autoRun(oDiv[i]);
+		}
+
+		function drag(obj) {//obj
+			obj.onmousedown = function(event) {//obj.onmousedown   oDiv[i]
+				event = event || window.event; //只要获取坐标就要写
+				console.log(event.offsetX);
+				console.log(event.offsetY);
+				var disX = event.offsetX;
+				var disY = event.offsetY;
+				console.log("down");
+				document.onmousemove = function(event) {
+					event = event || window.event;
+					//鼠标的坐标
+					var mX = event.clientX;
+					var mY = event.clientY;
+					//				让div的left和top等于鼠标坐标
+					obj.style.left = mX - disX + "px";
+					obj.style.top = mY - disY + "px";
+					clearInterval(obj.timer);
+				};
+				document.onmouseup = function() { //可写在点击事件oDiv.onmousedown里面（document）也可写在外面（oDiv）
+					document.onmousemove = null;
+					autoRun(obj);
+				}
+			}
+		}
+
+		function autoRun(obj) {
+			var speed = 1 + parseInt(Math.random()*5);
+			obj.timer = setInterval(function() {
+				var event = event || window.event;
+				var Li = parseInt( window.getComputedStyle /*getStyle(obj, "left"*/ (obj,null)["left"] ); //20px
+				var oleft=obj.offsetLeft;
+				obj.style.left = Li + speed + "px";
+				if (oleft>=screenWidth-85) {//为什么要减83而不是80，因为会出现滚动条与内外间距无关
+					//*{margin: 0;padding: 0;}写了这句话82不出现滚动条;不写82就会出现
+					obj.style.left = 0+ "px";
+				}
+			}, 10)
+		}
+	</script>
+
+</html>
+
+<!--
+	if (otop<=600) {
+			bubble.style.top=otop+10+"px";
+				} else{
+					bubble.style.display="none";
+				}
+				
+				
+var Li = parseInt( /*window.getComputedStyle*/ getStyle(obj, "left") /*(obj,null)["left"]*/ ); //20px
+		
+				
+drag(oDiv[i]);    oDiv[i]				
+				
+				
+				-->
+
+<!--
+1.点击鼠标放开仍滑动
+2.滑动太快会不动
+3.滑动范围
+4.点击图片任意位置都可以滑动
+5.到某个距离停止？
+6.到头后，重新跑？
+7.弹跳的自恋君~别崇拜哥，哥只是一个传说？
+8.如何调用时间函数？autoRun(obj);	只能调用方法function而不能调用对象timer，必须要封装起来     OK
+	
+-->
+
+<!--
+x:设置或者是得到鼠标相对于目标事件的父元素的外边界在x坐标上的位置。 
+clientX:相对于客户区域的x坐标位置，不包括滚动条，就是正文区域。 
+offsetx：设置或者是得到鼠标相对于目标事件的父元素的内边界在x坐标上的位置。 
+screenX:相对于用户屏幕。
+
+
+
+document.documentElement.clientWidth:IE的
+
+-->
+
+<!--
+	图片解析见img
+	说明：
+Chrome/FF/Safari/opera
+对这些浏览器而言，window有个属性innerWidth/innerHeight包含的是整个文档的可视区域尺寸，注意，这个尺寸是包含滚动条大小的。
+如果我们不计滚动条的影响，就可以直接使用这两个属性。
+如果滚动条会影响（比如最大化弹出框），那么应该想另外的办法。
+
+Document对象是每个DOM树的根，但是它并不代表树中的一个HTML元素，document.documentElement属性引用了作为文档根元素的html标记，document.body属性引用了body标记
+我们这里获取常见的三个值（scrollWidth、offsetWidth和clientwidth）来比较一下
+
+document.documentElement.scrollWidth返回整个文档的宽度
+document.documentElement.offsetWidth返回整个文档的可见宽度
+document.documentElement.clientwidth返回整个文档的可见宽度（不包含边框），clientwidth = offsetWidth - borderWidth
+不过一般来说，我们不会给document.documentElement来设置边框，所以这里的clientwidth 与 offsetWidth一致
+
+document.body.scrollWidth返回body的宽度
+注意，这里的scrollWidth有个不一致的地方，基于webkit的浏览器（chrome和safari）返回的是整个文档的宽度，也就是和document.documentElement.scrollWidth一致，
+opera和FF返回的就是标准的body 的scrollWidth，个人觉得opera和FF算是比较合理的。
+document.body.offsetWidth返回body的offsetWidth
+document.body.clientwidth返回body的clientwidth（不包含边框），clientwidth = offsetWidth - borderWidth
+
+我们看上面的例子，会发现body和documentElement的有些值是相等的，这并不是表示他们是等同的。而是因为当我们没有给body设置宽度的时候，document.body默认占满整个窗口宽度，于是就有：
+document.body.scrollWidth = document.documentElement.scrollWidth
+document.body.offsetWidth = document.documentElement.offsetWidth
+document.body.clientwidth = document.documentElement.clientwidth - document.body.borderWidth（body的边框宽度）
+当我们给body设置了一个宽度的时候，区别就出来了。
+
+IE9/IE8
+这两个差不多，唯一的区别是IE9包含windows.innerWidth属性，而IE8不包含windows.innerWidth属性。
+document.documentElement.scrollWidth返回整个文档的宽度，和FF等浏览器一致
+document.documentElement.offsetWidth返回整个文档的可见宽度（包含滚动条，值和innerWidth一致），注意，这里和FF等浏览器又有点区别。
+document.documentElement.clientwidth返回整个文档的可见宽度（不包含边框），和FF等浏览器一致。clientwidth = offsetWidth - 滚动条宽度
+
+document.body.scrollWidth返回body的宽度，注意，这里的scrollWidth和FF等浏览器有点区别，这里并不包括body本身的border宽度。
+因此例子中，相比FF少了10px。
+document.body.offsetWidth返回body的offsetWidth，和FF等浏览器一致
+document.body.clientwidth返回body的clientwidth（不包含边框），和FF等浏览器一致，clientwidth = offsetWidth - borderWidth
+
+IE7
+IE7与IE9/IE8的主要区别是
+第一、document.documentElement.offsetWidth的返回值不一样，
+参见上面说的，IE9/IE8的document.documentElement.offsetWidth包含滚动条，但是，IE7的document.documentElement.offsetWidth不包含滚动条。
+第二、document.documentElement.scrollWidth返回整个文档的宽度，注意，这里和IE9/IE8、FF等浏览器又有不一致，对于IE9/IE8、FF等浏览器，scrollWidth最小不会小于窗口的宽度，但是在IE下没有这个限制，文档有多小，这个就有多小
+其他倒是挺一致的。
+
+最后是IE6了
+IE6的document.documentElement返回值与IE9/IE8没有区别（由此可见，对于document.documentElement，IE7就是个奇葩）。
+话说回来，IE的document.body就是个奇葩，当没有给body设置宽度的时候，body是默认占满整个文档的（注意，其他的浏览器都是占满整个窗口），当然，最小值是整个窗口的大小，就是说body指向了根元素。
+因此，在算上IE6在解析width方面的bug，和其他的浏览器的区别就淋漓尽致了。
+document.body.scrollWidth返回body的宽度，和IE9/IE8/IE7一致
+document.body.offsetWidth返回body的offsetWidth，注意，由于body的不同，这里的offsetWidth = scrollWidth + borderWidth
+document.body.clientwidth返回body的clientwidth（不包含边框）clientwidth = offsetWidth - borderWidth
+另外，有一点和IE7同样，就是document.documentElement.scrollWidth没有最小宽度限制。
+
+-->

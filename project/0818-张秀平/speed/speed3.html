@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        div{width:100px;height:50px;margin:20px 0;position:absolute;top:0;background:yellow;border:1px solid seagreen;}
+    </style>
+    <script type="text/javascript">
+        window.onload=function ()
+        {
+            var oDiv=document.getElementById('div1');
+
+
+            oDiv.onmouseover=function ()
+            {
+                startMove(oDiv, 'width', 300, function (){
+                    startMove(oDiv, 'height', 300, function (){
+                        startMove(oDiv, 'opacity', 100);
+                    });
+                });
+            };
+
+
+            oDiv.onmouseout=function ()
+            {
+                startMove(oDiv, 'opacity', 30, function (){
+                    startMove(oDiv, 'height', 100, function (){
+                        startMove(oDiv, 'width', 100);
+                    });
+                });
+            };  //不错，很好，可是还有更好的办法么，这样每个值都需要回调不是太麻烦了么
+            //同时如果我想同时执行多个值的变化呢，不行了吧
+            // startMove(oDiv, 'width', 100);startMove(oDiv, 'height', 100);这样写也是不行的 第二个会把第一个的定时器改关闭掉
+
+
+        };
+        function getStyle(obj, attr)
+        {
+            if(obj.currentStyle)
+            {
+                return obj.currentStyle[attr];
+            }
+            else
+            {
+                return getComputedStyle(obj, false)[attr];
+            }
+        }
+
+
+        function startMove(obj, attr, iTarget,fn)
+        {
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function (){
+                var iCur=0;
+                if(attr=='opacity')
+                {
+                    iCur=parseInt(parseFloat(getStyle(obj, attr))*100);
+                }
+                else
+                {
+                    iCur=parseInt(getStyle(obj, attr));
+                }
+                var iSpeed=(iTarget-iCur)/8;
+                iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+
+
+                if(iCur==iTarget)
+                {
+                    clearInterval(obj.timer);
+                    if(fn)  //运动停止的时候，如果有传递第四个参数的时候 就运行
+                    {
+                        fn();
+                    }
+
+
+
+
+                }
+                else
+                {
+                    if(attr=="opacity")
+                    {
+                        obj.style.filter='alpha(opacity:'+(iCur+iSpeed)+')';
+                        obj.style.opacity=(iCur+iSpeed)/100;
+                    }
+                    else
+                    {
+                        obj.style[attr]=iCur+iSpeed+'px';
+                    }
+
+
+                }
+            }, 30)
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

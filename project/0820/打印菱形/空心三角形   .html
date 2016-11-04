@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="num" id="num" value="" />
+		<input type="button" id="btn" value="提交" />
+		<script type="text/javascript">
+		//空心三角最后一行i+1
+//*         
+//* *       
+//*   *     
+//*     *   
+//********
+		
+			/*var btn = document.getElementById("btn");
+			var num = document.getElementById("num");
+
+
+			btn.onclick=function(){
+				var numValue = num.value;
+				for(var i=0;i<numValue;i++){
+
+
+					if(i==numValue-1){
+						for(var j=0;j<i+1;j++){//最后一行输出的星号个数
+							document.write("*");
+						}
+					}else{
+
+
+						for(var j=0;j<numValue+1;j++){//每一行循环     numValue 会变
+							if(j==0 || j==i){
+								document.write("*");
+							}else {
+								document.write("&ensp;");
+							}
+						}//for
+
+
+					}
+					document.write("<br>");
+				}
+			}*/
+			
+//*         
+//* *       
+//*   *     
+//*     *   
+//********
+			//空心三角最后一行2*(i-1)     &ensp;
+			var btn = document.getElementById("btn");
+			var num = document.getElementById("num");
+			
+			
+			btn.onclick=function(){
+				var numValue = num.value;
+				for(var i=0;i<numValue;i++){
+					
+					
+					if(i==numValue-1){
+						for(var j=1;j<2*i+1;j++){//最后一行输出的星号个数
+							document.write("*");	
+						}
+					}else{
+						
+						
+						for(var j=1;j<2*numValue+1;j++){//每一行循环     numValue 会变
+							if(j==1 || j==2*(i+1)-1){
+								document.write("*");	
+							}else {
+								document.write("&ensp;");	//&ensp;
+							}
+						}//for
+						
+					
+					}
+					document.write("<br>");
+				}
+			}
+//     *      
+//    * *     
+//   *   *    
+//  *     *   
+// *       *  
+//***********
+
+
+/*var btn = document.getElementById("btn");
+			var num = document.getElementById("num");
+			
+			
+			btn.onclick=function(){
+				var numValue = num.value;
+				var min=numValue;
+				var max=numValue;
+				
+				for(var i=0;i<numValue;i++){
+					if(i==numValue-1){
+						for(var j=0;j<2*i+1;j++){
+							document.write("*");	
+						}
+					}else{
+						for(var j=0;j<=2*numValue-1;j++){
+							if(j==min-1 || j==max-1){
+								document.write("*");	
+							}else {
+								document.write("&ensp;");	
+							}
+						}
+					}
+					
+					min--;
+					max++;
+					document.write("<br>");
+				}
+			}*/
+
+
+
+
+//    *     
+//   * *    
+//  *   *   
+// *     *  
+//* * * * *
+			//空心三角   两边斜的
+		/*	var btn = document.getElementById("btn");
+			var num = document.getElementById("num");
+			
+			
+			btn.onclick=function(){
+				var numValue = num.value;
+				var min=numValue;
+				var max=numValue;
+				
+				for(var i=0;i<numValue;i++){
+					if(i==numValue-1){
+						for(var j=0;j<i+1;j++){
+							document.write("*&ensp;");	
+						}
+					}else{
+						for(var j=0;j<=2*numValue-1;j++){
+							if(j==min-1 || j==max-1){
+								document.write("*");	
+							}else {
+								document.write("&ensp;");	
+							}
+						}
+					}
+					
+					min--;
+					max++;
+					document.write("<br>");
+				}
+			}*/
+
+//0           
+//1 1         
+//2   2       
+//3     3     
+//4       4   
+//5555555555
+
+
+/*var btn = document.getElementById("btn");
+			var num = document.getElementById("num");
+			
+			
+			btn.onclick=function(){
+				var numValue = num.value;
+				for(var i=0;i<numValue;i++){
+					
+					
+					if(i==numValue-1){
+						for(var j=1;j<2*i+1;j++){//最后一行输出的星号个数
+							document.write(i);	
+						}
+					}else{
+						
+						
+						for(var j=1;j<2*numValue+1;j++){//每一行循环     numValue 会变
+							if(j==1 || j==2*(i+1)-1){
+								document.write(i);	
+							}else {
+								document.write("&ensp;");	//&ensp;
+							}
+						}//for
+						
+					
+					}
+					document.write("<br>");
+				}
+			}*/
+			
+			
+			
+			
+//1
+//11
+//121
+//1331
+//11111	
+		/*var btn = document.getElementById("btn");
+			var num = document.getElementById("num");
+			
+			
+			btn.onclick=function(){
+				var numValue = num.value;
+				for(var i=0;i<numValue;i++){
+					
+					
+					if(i==numValue-1){
+						for(var j=1;j<i+2;j++){//最后一行输出的星号个数
+							document.write("1");	
+						}
+					}else{
+						
+						
+						for(var j=0;j<=i;j++){//每一行循环     numValue 会变
+							if(j==0|| j==i){
+								document.write("1");	
+							}else {
+								document.write(i);	//&ensp;
+							}
+						}//for
+						
+					
+					}
+					document.write("<br>");
+				}
+			}*/
+			
+			
+			
+			
+			
+			
+//			var btn = document.getElementById("btn");
+//			var num = document.getElementById("num");
+//			
+			
+//			function go(a){
+//				var min=a;
+//				var max=a;
+////				
+//				for(var i=0;i<a;i++){
+//					if(i==a-1){
+//						for(var j=0;j<i+1;j++){
+//							document.write("*&ensp;");	
+//						}
+//					}else{
+//						for(var j=0;j<=2*a;j++){
+//							if(j==min-1 || j==max-1){
+//								document.write("*");	
+//							}else {
+//								document.write("&ensp;");	
+//							}
+//						}
+//					}
+//					
+//					min--;
+//					max++;
+//					document.write("<br>");
+//				}
+//			}
+//			document.write(go(5));
+//			document.write(go(5));
+//			document.write(go(5));
+           /*var btn = document.getElementById("btn");
+			var num = document.getElementById("num");
+			
+			
+			btn.onclick=function(){
+				var numValue = num.value;
+				var min=numValue;
+				var max=numValue;
+				
+				for(var i=0;i<numValue;i++){
+					if(i==numValue-1){
+						for(var j=0;j<i+1;j++){
+							document.write("*&ensp;");	
+						}
+					}else{
+						for(var j=0;j<=2*numValue-1;j++){
+							if(j==min-1 || j==max-1){
+								document.write("*");	
+							}else {
+								document.write("&ensp;");	
+							}
+						}
+					}
+					
+					min--;
+					max++;
+					document.write("<br>");
+				}
+			}*/
+		
+		</script>
+	</body>
+</html>

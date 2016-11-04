@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		
+	 //冒泡排序
+//    var arr=[12,56,77,22,6,112,26];
+//1 第一种方法
+//    for(var x=0;x<arr.length-1;x++){
+//        for(var y=0;y<arr.length-1-x;y++){  //arr.length-1-x
+//            if(arr[y]>arr[y+1]){
+//                var temp=arr[y];
+//                arr[y]=arr[y+1];
+//                arr[y+1]=temp;
+//            }
+//        }
+//    }
+//    document.write(arr);
+
+//2 第二种方法
+     /* for(var x=arr.length-1;x>0;x--){
+          for(var y=0;y<x;y++){
+              if(arr[y]>arr[y+1]){
+                  var temp=arr[y];
+                  arr[y]=arr[y+1];
+                  arr[y+1]=temp;
+              }
+          }
+      }
+      document.write(arr);*/
+
+//3 选择排序
+     /* for(var x=0;x<arr.length-1;x++){ //外层循环，控制排序轮次
+          for(var y=x+1;y<arr.length;y++){
+              if(arr[x]>arr[y]){
+                  var temp=arr[x];
+                  arr[x]=arr[y];
+                  arr[y]=temp;
+              }
+          }
+      }
+      document.write(arr);*/
+
+     //arr.sort();方法
+ /*function draw(m,n){
+        return m-n;
+      }
+      document.write(arr.sort(draw));
+      //逆序排序
+      var b=arr.sort(draw);
+      document.write("<br />"+b.reverse());*/
+
+
+
+
+
+//4 李满老师的方法
+
+/*var arr=[3,2,6,7,4];
+		for (var j = 0; j < arr.length-1; j++) {// 大循环，arr.length-1是因为最后一个数不用向后比
+			var index=j;
+			var min=arr[index];
+			
+		for (var i = j+1; i < arr.length; i++) {//小循环，i = j+1，第一个数不和自己比
+			if (arr[i]<min) {
+				index=i;
+				min=arr[index];
+			}
+			//交换不可放在此处要一次大循环后才可交换，所以在小循环之外。
+		}
+		
+		var t=arr[j];//!!! 循环之后的交换是必须写的
+		arr[j]=arr[index];
+		arr[index]=t;
+		
+//		document.write(arr);查看循环的过程
+		}
+		document.write(arr);*/
+		
+		
+		
+		/*for(var attr in arr){//attr是一种方法  ；    in是一种方法
+//			document.write(attr);
+			document.write(arr[attr]+"&nbsp;");
+		}*/
+	
+		
+		
+//逆序输出
+//		document.write("<br />"+arr.reverse());   
+	</script>
+</html>

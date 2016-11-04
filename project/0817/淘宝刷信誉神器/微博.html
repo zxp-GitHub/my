@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box{width: 326px;height: 526px;border: 2px solid #666;margin: 20px auto;border-radius: 10px;}
+			#rec{width: 35px;height: 12px;background-color:#666 ;border-radius: 6px;margin: 10px auto;}
+			#content{width: 298px;height: 435px;background-color: #eeeeee;margin: 0 auto;border-radius: 5px;}
+			#inp{line-height: 30px;border-radius: 3px;border: 1px solid #00BFFF;margin: 0 30px 0 15px;}
+			#btn{background: #00a2ee;color: #fff;padding: 5px;}
+			#fn{margin: 10px 5px;}
+			ul li{list-style: none;}
+			ul li img{width: 50px;height: 50px;border-radius: 5px;}
+			ul #left{float: left;width: 290px;height:auto;position: relative;}
+			ul #left img{float: left;}
+			ul #left p{ width: auto;height: auto;background: wheat;border-radius: 5px;font-size: 14px;padding: 3px;position: absolute;left: 60px;top: 15px;}
+			ul #right{float: right;width: 290px;position: relative;}
+			ul #right img{float: right;}
+			ul #right p{width: auto;height: auto;background: green;border-radius: 5px;font-size: 14px;padding: 3px;position: absolute;right: 60px;top: 15px;}
+			.a{background-color: palegreen;width: 20px;border-radius: 3px;display: inline-block;margin-left: 10px;}
+			
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="rec"></div>
+			<div id="content">
+				<ul id="list">
+					<li id="left"><img src="img/baobao`s wife.jpg"/><p>的萨达</p></li>
+					<li id="right"><img src="img/jianfu.jpg"/><p>的萨达</p></li>
+				</ul>
+			</div>
+			<div id="fn">
+			<select>
+				<option>马蓉</option>
+				<option>宋喆</option>
+			</select>
+			<input id="inp" type="text" value="" />
+			<input id="btn" type="submit" value="发送" />
+			</div>
+		</div>
+		<script type="text/javascript">
+		var aPerson=document.getElementsByTagName("option");
+		var oInp=document.getElementById("inp");
+		var oBtn=document.getElementById("btn");
+		var oList=document.getElementById("list");
+		//当点击发送的时候，如果没有消息就提示，有的话就创建li，同时获取li里的元素，将文本的内容放到li中
+		oBtn.onclick=function () {
+			if(oInp.value==""){
+				oInp.value="请输入内容！"
+			}else{
+			var oLi=document.createElement("li");
+			var val=oInp.value;
+			oLi.innerHTML='<img src="img/baobao`s wife.jpg"/><p class="a">'+val+'</p>';
+			oList.appendChild(oLi);
+			}	
+		}
+			
+		</script>
+	</body>
+</html>

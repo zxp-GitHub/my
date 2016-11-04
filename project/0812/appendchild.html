@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>appendChild</title>
+	</head>
+	<body>
+		<ul id="test">
+			<li>HTML</li>
+			<li>JAVASCRIPT</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var otest=document.getElementById("test");
+		var newnode=document.createElement("li");
+		newnode.innerHTML="javascript";
+		otest.appendChild(newnode);
+	</script>
+</html>

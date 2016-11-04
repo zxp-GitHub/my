@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	
+	
+	
+	
+/*1.打印1——100的所有自然数，使用while。
+ 
+2.打印1——100的所有数，除了7的倍数和带7的数。
+3.通过do while，找出1000以内所有的7的倍数。
+
+4.求1+2+3+…+100的和。（5050）
+
+5.求5!
+
+6.求1!+2!+3!+4!+5!
+
+作业：
+1.找出所有的水仙花数，三位数，各位立方和等于该数本身。153 = 1 ^ 3 + 5 ^ 3 + 3 ^ 3
+（***）
+2.分别使用while do while for 求 1 + 。。。 + 100的和。
+（*）
+3.打印出100以下的所有偶数（*）
+4.输入任意两个数，如果第一个数小，从第一个数打印到第二个数，如果第二个数小，从第二个数打印到第一个数。（**）
+5.输入一个数，判断是否是偶数（）
+
+6.输入一个数，判断是否是质数（****）
+//只能被1和本身整除
+
+7.输入两个数，求两个数的最大公约数（*****）
+//能够同时整除两个数的最大数
+9 6   3
+1、先找出两个数中最小的那个数
+
+
+8.输入两个数，求两个数的最小公倍数（****）
+9 6  18
+1、先找出两个数中的最大数
+2、最大数++，找出能被两个数整除的数(退出循环)
+
+10.输入两个数n，a，如果n==3， a == 2；
+输出 2 + 22 + 222 的值。（不用输出式子）（****）
+如果n == 4， a == 3；
+输出 3 + 33 + 333 + 3333的值。
+
+1、n = 3,相加三次,每次相加比前一次相加的数,多一位
+2、每次多的这个位数的值为a
+
+11.五位数中，对称的数称为回文数，找出所有的回文数。
+如12321（***）
+
+
+12.求出1-1/2+1/3-1/4…..1/100的结果
+13.输出20-80之间能被3整除的整数，每5个一行
+14.输出九九乘法表
+15.兔子斐波那契
+16.一个新入职，月工资为2000元的员工，每年涨工资5%，到退休时的月工资是多少？
+	*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//最简单的while死循环
+		/*while (true){
+			
+		}*/
+		//1.打印1——100的所有自然数，使用while。
+		/*var i=1;
+		while (i<101){
+			document.write(i+"&nbsp;");
+			i++;//++i会从2开始，从101结束；
+		}*/
+//2.打印1——100的所有数，除了7的倍数和带7的数。
+		/*
+		var i = 1;
+	    while (i <= 100) {
+	        if (i%7!=0&&Math.floor(i/10 !=7)&&i%10!=7) {
+	     document.write(i+"&nbsp;");
+	        }
+	         i++;
+	    }*/
+
+//3.通过do while，找出1000以内所有的7的倍数。
+
+		/*var i=1;
+			do{
+					if (i%7==0) {
+						document.write("100以内7的倍数有"+i+"<br />")
+					} 
+					i++;
+					
+				}while(i<101);*/
+			
+	
+	
+//4.求1+2+3+…+100的和。（5050）
+	/*var i=1,sum=0;
+	while (i<101){
+		sum+=i;
+		i++
+	}
+	document.write("1+2+3...100为"+sum);*/
+	
+	
+//5.求5!
+	/*for (var i = 1,sum=1; i <6; i++) {
+		sum*=i;
+	}
+	document.write(sum);*/
+	
+//6.求1!+2!+3!+4!+5!	
+			/*for (var j = 1,b=0; j < 4; j++) {
+				for (var i = 1,sum=1; i <=j; i++) {
+					sum*=i;
+				}
+				b=b+sum;
+			    
+			}
+				document.write(b);*/
+				
+				
+				
+//1.找出所有的水仙花数，三位数，各位立方和等于该数本身。153 = 1 ^ 3 + 5 ^ 3 + 3 ^ 3（***）
+	/*var s=100,m,n,k;
+	for (m = 1; m <=9; m++) 
+		for (n = 0; n <=9; n++) 
+			for (k = 0; k <=9; k++) {
+				s=m*100+n*10+k;
+				if(s==m*m*m+n*n*n+k*k*k)
+				document.write(s+"<br />");
+	}*/
+	
+	//2.分别使用while do while for 求 1 + 。。。 + 100的和。（*）
+	
+	/*var i=1,sum=0;
+	while (i<101){
+		sum+=i;
+		i++
+	}
+	document.write("1+2+3...100为"+sum);*/
+	/*var i=1,sum=0;
+	do{
+		sum+=i;
+		i++
+	}while (i<101)
+	document.write("1+2+3...100为"+sum);*/
+	//3.打印出100以下的所有偶数（*）
+	/*var k=1,num=0;
+		while(k<101){
+			if (k%2==0) {
+				document.write("100以内偶数有"+k+"<br />")
+				num++;
+			} 
+			k++;
+		}*/
+		//4.输入任意两个数，如果第一个数小，从第一个数打印到第二个数，如果第二个数小，从第二个数打印到第一个数。（**）
+	/*var a=3,b=5,t;
+	if(a>b){
+		t=a;a=b;b=t;
+	}
+	document.write(a+"&nbsp;"+b);*/
+	
+	//5.输入一个数，判断是否是偶数（）
+	
+			/*var k=8;
+			if (k%2==0) {
+				document.write(k+"是偶数")
+			} */
+			
+	//6.输入一个数，判断是否是质数（****）      只能被1和本身整除
+	//质数（prime number）又称素数，有无限个。除了1和它本身以外不再被其他的除数整除。
+	/*质数和合数_百度知道
+	 答:
+	 质数是除了1和它本身之外，不能被其他数整除的正整数，又称素数。                
+	 质数和合数的区别在于因数的个数，质数只有2个因数，合数有多于2个因数。*/  
+	
+	
+	
+	
+	/*var num=4;
+		for (var i = 2; i <= num; i++) {
+			if (num%i==0&&i!=num) {
+				alert("这不是一个质数");
+				break;
+			}
+			if (i==num) {
+				alert("这是一个质数");
+			}
+		}*/
+		
+		//7.输入两个数，求两个数的最大公约数（*****）//能够同时整除两个数的最大数
+		
+		//此为错误代码
+		/*var m=12,n=9,mm,nn,s;
+		if(m>0&&n<0){
+			mm=m;
+			nn=n;
+			s=mm%nn;
+			while (s!=0){
+				m=n;
+				n=s;
+				s=mm%nn;
+			}
+			document.write("最大公约数为"+nn);
+			document.write("最小公倍数为"+m*n/nn);
+		}*/
+//此为正确代码	
+/*var u=8;
+var v=7;
+var  uu=u,vv=v;
+while (vv!=0)
+{  
+    temp=uu%vv;
+    uu=vv;
+    vv=temp;
+}
+alert("最大公约数"+uu)
+alert("最小公倍数为"+u*v/uu);*/
+
+//10.输入两个数n，a，如果n==3， a == 2；      输出 2 + 22 + 222 的值。（不用输出式子）（****）
+//如果n == 4， a == 3；        输出 3 + 33 + 333 + 3333的值。
+/*var  n=3,a=3,s=0,k,b=0;
+	for( var i=1;i<=n;i++){
+		 k=0;
+		for(var j=0;j<i;j++){
+			k=a*Math.pow(10,j)+k;
+			/*b=b+a;*/
+				
+		/*}
+		s+=k;
+	}
+	document.write(s);*/
+	
+	
+	
+	//11.五位数中，对称的数称为回文数，找出所有的回文数。   如12321（***）
+	/*var num=12321;
+	var a=num%10;
+	var b=parseInt(num%100/10);
+	var c=parseInt(num%10000/1000);
+	var d=parseInt(num/10000);
+	if(a==d&&b==c){
+		document.write(num+"是回文字串");
+	}*/
+   
+			/*   var x="1234321";
+			if ( x == x.split("").reverse().join("") )
+			alert("回文字串")
+			else
+			alert("非...")*/
+
+	
+	//99乘法表
+	
+	//"\t"与"&nbsp;"都行。
+	/*for(var i=1;i<=9;i++)
+		{
+			for(var j=1;j<=9;j++){
+				if(j<=i)
+				{
+					document.write(j+"*"+i+"="+(i*j)+"&nbsp;");
+				}
+			}
+			document.write("<br/>");
+		}
+		 */
+		
+		
+		//for(var j=1;j<=9;j++){
+		//if(j<=i)  的简化版。
+		
+		
+		/*for(var i=1;i<=9;i++)
+		{
+			for(var j=1;j<=i;j++){
+					document.writeln(j+"*"+i+"="+(i*j)+"&nbsp;");
+				}
+			document.write("<br/>");
+			
+		}*/
+		
+		//1-1/2+1/3.。。。-1/100
+			/*var k=-1,s=0;
+			for (var i = 1; i <=100; i++) {
+				k=-k;
+				s=1/i*k+s;
+			}
+			document.write(s);
+			*/
+			
+		/*var n=100,a,sum=0;
+		for(i=1;i<=n;i++){
+			 a=Math.pow(-1,i-1)*(1/i);
+			 sum=sum+a;
+		}
+		document.write(sum);*/
+		
+		//20-80之间的能被3整除的数，而且5个一行
+	/*	var count=0;
+			 	for (var i = 20; i <=80; i++) {
+			 	if(i%3==0){
+			 		count++;
+			 		document.write(i+"是3的倍数&nbsp;")
+			 		if(count%5==0)
+			 		{
+			 			document.write("<br />");
+			 		}
+			 	}
+			 	
+			 	}*/
+		
+	//一个新入职，月工资为2000元的员工，每年涨工资5%，到退休时的月工资是多少？
+//法A：
+	/*var s=2000;
+	for (var i = 1; i <=20; i++) {
+		s=s*(1+0.05);
+	}
+	document.write(s);*/
+//法B：
+	/*var s=2000,ss;;
+	ss=s*Math.pow(1+0.05,20);
+	document.write(ss);*/
+	//math的M要大写。5%的写法不出结果。
+	
+	
+	//
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//兔子斐波那契
+// var month = prompt("几月？：", "");
+//          var f1 = 1, f2 = 1, f3; // 初始时f1=1代表第1个月,f2=1代表第2个月,f3代表第3个月
+//          for (var i = 1; i <parseInt(month); i++) {
+//              f3 = f1 + f2; // 抽象公式为:第n个月=第n-2个月+第n-1个月
+//              f1 = f2;      // f1变成f2
+//              f2 = f3;      // f2变f3
+//          }
+//          window.alert(f3);
+//      }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	/*
+	#include<stdio.h>
+int main()
+{
+int a[5], b;
+for(b=10000;b<100000;b++)
+{a[0]=b%10;a[1]=b/10%10;a[2]=b/100%10;a[3]=b/1000%10;a[4]=b/10000%10;
+if(a[4]==a[0]&&a[1]==a[3])
+printf("%-10d",b);}
+}
+5位回文数以第3位对称：
+第1位=第5位
+第2位=第4位
+因此只需考虑前3位：
+第1位可取1到9共9种,第2位（第4位）可取0到9共10种,第3位可取0到9共10种.
+因此,5位回文数个数 = 9*10*10 = 900 个.
+small球丶駱 2014-11-04
+
+function isPlain(num){
+var first = parseInt(num/10000);
+var last = num%10;
+if(first == last && parseInt((num - first*10000)/1000) == parseInt((num-last)/10)%10){
+return true;
+}else{
+return false;
+}
+}
+
+100*ab+ba+100*ba+ab = 101ab+101ba
+由此可以看出：四位数中所有回文数的和,s=101*（10+11+12+...+99）
+=101*4905=495405
+	
+	*/
+	
+	//剪刀石头布
+	 	/*var num1=2;
+		var num2=3;
+		
+		if ((num1==1&&num2==1)||(num1==2&&num2==2)||(num1==3&&num2==3)) {
+			alert("平局")
+		}else if ((num1==1&&num2==2)||(num1==2&&num2==3)||(num1==3&&num2==1)) {
+			alert("num1赢")
+		}else{
+			alert("num2赢")
+		}*/
+	
+	
+	
+	
+	//输入年，月，日，求出该日期是当前年的第几天
+		/*var year=2016;
+		var month=8;
+		var day=3;
+		var sum=0;*///记录这年的第几天
+		
+		//1 3 5 7 8 10 12    31
+		//2  28-29   其他  30
+		/*switch (month){
+			case 1:
+				sum=0;
+				break;
+			case 2:
+				sum+=31;
+				break;	
+			case 3:
+				sum=sum+31+28;
+				break;	
+			case 4:
+				sum=sum+31+28+31;
+				break;	
+				....
+				
+				
+			default:
+				break;
+		}
+		
+		if (month>2) {
+			if (year%4==0&&year%100!=0||year%400==0) {
+				sum+=1;
+			}
+		}
+		*/
+		
+		/*//个人所得税的计算器
+		var money=14000;
+		var num=0;
+		
+		if (money<3500) {
+			alert("你无须缴纳税收");
+		} else{
+			//计算个人所得税
+			money-=3500;
+			if (money>=0&&money<=500) {
+				num=money*0.05-0;
+			}else if(money>500&&money<=2000){
+				num=money*0.1-25;
+			}else if(money>2000&&money<=5000){
+				num=money*0.15-125;
+			}else if(money>5000&&money<=20000){
+				num=money*0.2-375;
+			}else if(money>20000&&money<=40000){
+				num=money*0.25-1375;
+			}
+			else{
+				num=money*0.35-3375;
+			}
+		
+		//alert("计算个人所得税"+num);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//100以内7的倍数
+		/*var k=1,num=0;
+		while(k<101){
+			if (k%7==0) {
+				document.write("100以内7的倍数有"+k+"<br />")
+				num++;
+			} 
+			k++;
+		}
+		document.write("100以内共有7的倍数"+num+"个");*/
+		
+		
+		//100以内的奇数
+		/*var k=1,num=0;
+		while(k<101){
+			if (k%2!=0) {
+				document.write("100以内奇数有"+k+"<br />")
+				num++;
+			} 
+			k++;
+		}
+		document.write("100以内的奇数"+num+"个");*/
+		
+		
+		
+		
+		//100以内所有偶数和
+		/*var b=1,count2=0;
+			while(b<101){
+		if (b%2==0) {
+				document.write("100以内奇数有"+b+"<br />")
+				count2+=b;
+			} 
+			b++;
+		}
+		document.write("100以内的偶数和"+count2+"<br />");*/
+		
+		
+		
+		/*
+		打印图形
+		**********
+		**********
+		**********
+		***********/
+
+		/*var c=81;
+		while (c<121){
+			document.write("*&nbsp;");
+			if (c%10==0) {
+				document.write("<br />");
+				
+			} 
+			c++;
+		}
+		*/
+		
+		
+		/*
+		打印图形
+		**********
+		**********
+		**********
+		***********/
+		//循环嵌套，外层循环控制行数，内层循环控制列数。
+		/*var e=1;
+		while (e<=4){
+			var d=1;
+		while (d<11){
+			document.write("*&nbsp;");
+			d++;
+			} 
+			e++;
+			document.write("<br />")
+		}*/
+	/*	var i=1;
+		do{
+			document.write("hello world<br />")
+			i++;
+		}while(j<1);
+		document.write("-----------------------------------------");
+		var j=1;
+		while (j<1){
+			document.write("helllllll");
+			j++;
+			
+		}
+		*/
+		//while与do while 区别：当条件不满足的时候 都while 至少要执行一次
+		//for是知道确定的循环顺序是，while与do while是在，不知道确定循环次序的时候。
+		/*var a=1,sum=0;
+		do{
+			sum+=a;
+			a++;
+			
+		}while(a<101);
+		document.write("计算1+2.。。。100之和为"+sum);*/
+		//100以内可以被7  与3 整除
+		/*do{
+			if(b)
+		}
+		*/
+		
+		
+		
+	/*	任给正整数n,计算  1!+2!+3!+ …+n!*/
+	
+/*var m=1,sum=1;
+do{
+	sum*=m;
+	m++;
+}while(m<11);
+document.write("10的阶乘是"+sum+"<br />");*/
+/*
+     * 
+   * * * 
+  * * * * * 
+ * * * * * * * 
+* * * * * * * * * */
+/*for (var i = 1; i <= 5; i++) {
+	for (var j = 1; j<=5-i; j++) 
+		document.write("&nbsp;");
+	
+	for (var k = 1; k <=2*i-1; k++) 
+		document.write("* ");
+	
+	document.write("<br />");
+}*/
+/*
+		for(var i = 1;i <=5;i++){
+			if(i <= 5/2 + 1){
+				for(var j = 1;j < 5/2 + 1-i;j++){
+					document.write("&nbsp;");
+				}
+				for(var k = 1;k <= 2*i-1;k++){
+					document.write("* ");
+				}
+					document.write("<br />")
+			}else{
+				for(var i=5-5/2-1;i>=1;1--)
+				for(var j =1;j <= i;j++){
+					document.write("&nbsp;");
+				}
+				for(var k = 1;k <= 2*i-1;k++){
+					document.write("* ");
+				}
+				document.write("<br />")
+			}	
+		}*/
+		
+
+//int i,j; 
+//for(i=0;i<=3;i++) //找出前三行的规律 
+//{ 
+//for(j=0;j<=3-i;j++) //前三行中空格的规律 
+//printf(" "); 
+//for(j=0;j<=2*i;j++) //前三行中*的规律 
+//printf("*"); 
+//printf("\n"); 
+//} 
+//for(i=1;i<=3;i++) //找出后二行的规律 
+//{ 
+//for(j=0;j<=i;j++) //后二行中空格的规律 
+//printf(" "); 
+//for(j=0;j<=2*(3-i);j++) //后二行中*的规律 
+//printf("*"); 
+//printf("\n"); 
+//} 
+//return 0; 
+//}
+
+
+
+/*out:for (var j = 0; j < 6; j++) {//外层循环控制行  内层循环控制列-行的个数
+			inner:for (var i = 0; i < 4; i++) {
+				
+				document.write("*&nbsp;");
+				break out;
+			}
+			document.write("$<br />");
+		}*/
+
+	</script>
+</html>

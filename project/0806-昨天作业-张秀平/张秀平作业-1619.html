@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+	// 5.flipflop的小游戏
+		/*var a= new Array(100);
+		for (var i = 0; i < a.length; i++) {
+			if((i+1)%3==0&&(i+1)%5==0){
+				a[i]="flipflop";
+			}
+			else if((i+1)%5==0){
+				a[i]="flop";
+			}else if ((i+1)%3==0) {
+				a[i]="flip";
+			}else{
+				a[i]=i+1;
+			}
+			document.write(a[i]+"<br />");
+		}*/
+		
+		
+		// 1.冒泡排序
+		/*var arr=[34,19,11,109,3,56];
+		for (var i = arr.length-1;i>0 ;i--) {
+			for (var j = 0; j <i; j++) {
+				if (arr[j]>arr[i]) {
+					var t=arr[j];
+					arr[j]=arr[i];
+					arr[i]=t;
+				}
+			}
+		}
+		document.write(arr);*/
+		
+		
+       
+// 2.随机给出一个五位以内的数，然后输出该数共有多少位，每位分别是什么
+//A	
+/*
+ for (var i = 0; i < n.length; i++) {
+ s=Math.floor(num/100000);
+ document.write(s+"<br />");
+ num=Math.floor(num%100000)*10;
+ }*/
+
+
+//B
+		
+/* var s,n="1",num=n,j=0;
+ 	switch (n.length){			
+			case 5:
+				for (var i = 0; i < n.length; i++) {
+				 s=Math.floor(num/10000);
+				 document.write(s+"&nbsp");
+				 num=Math.floor(num%10000)*10;
+				 j++;
+				 }
+				break;
+			case 4:
+				for (var i = 0; i < n.length; i++) {
+				 s=Math.floor(num/1000);
+				 document.write(s+"&nbsp");
+				 num=Math.floor(num%1000)*10;
+				j++;}
+				break;
+			case 3:
+				for (var i = 0; i < n.length; i++) {
+				 s=Math.floor(num/100);
+				 document.write(s+"&nbsp");
+				 num=Math.floor(num%100)*10;j++;}
+				break;
+			case 2:
+				for (var i = 0; i < n.length; i++) {
+				 s=Math.floor(num/10);
+				 document.write(s+"&nbsp");
+				 num=Math.floor(num%10)*10;j++;}
+				break;
+			default:
+				document.write(n);
+				j++;
+			break;	
+		}
+  document.write("<br />该数共有位数"+j);*/
+ 
+//C 
+
+
+ 	/*switch (n.length){			
+			case 5:
+				a=10000;
+				break;
+			case 4:
+				a=1000;
+				break;
+			case 3:
+				a=100;
+				break;
+			case 2:
+				a=10;
+				break;
+			default:
+				a=1;
+			break;	
+		}*/
+ 
+ 
+ //D
+		/*var s,n="123456789123456789",num=n,j=0;
+		a=Math.pow(10,n.length-1)
+		for (var i = 0; i < n.length; i++) {
+			s=Math.floor(num/a);
+			document.write(s+"&nbsp");
+			num=Math.floor(num%a)*10;
+			j++;
+			}
+  document.write("<br />该数共有位数"+j);*/
+
+ 	
+ 	
+ 	
+//e   逆序输出
+/*var x=4536,y=0,i=0;
+   while(x!=0)
+  {
+   y=x%10;
+   document.write(y+",");
+   x=Math.floor(x/10);
+   i++;
+  }
+  document.write("<br />该数共有位数"+i);*/
+ 
+ 
+ //f
+    /*var a=parseInt(Math.random()*10000);
+    document.write('随机数为：'+a+'<br />');
+    var b=parseInt(a/1000);
+    var c=parseInt((a%1000)/100);
+    var d=parseInt((a%100)/10);
+    var e=parseInt(a%10);
+    document.write('千位是：'+b+'  '+'百位是：'+c+'  '+'十位是：'+d+'  '+'个位是：'+e+'<br />');
+    var arr=[b,c,d,e];
+    document.write(arr+'<br />');
+    if(b==0){
+        document.write('位数：'+(arr.length-1));
+    }
+    else if(b==0 && c==0){
+        document.write('位数：'+(arr.length-2));
+    }
+    else if(b==0 && c==0 && d==0){
+        document.write('位数：'+(arr.length-3));
+    }
+    else if(a==0){
+        document.write('位数：'+(arr.length-4));
+    }
+    else{
+        document.write('位数：'+arr.length);
+    }
+document.write('<br />');*/
+
+//g
+
+//m=0x12345
+/*var n=123435;
+ var d=n.toString();
+ for (var i = 0; i < d.length; i++) {
+ 	document.write(d[i]+"&nbsp;")
+ }
+	document.write("<br />长"+d.length);	*/
+	
+	
+	
+	
+
+// 3.有一个从小到大排好序的数组。现输入一个数，要求按原来的规律将它插入数组中。(11K)[2,3,4,56,67,98]    //63
+  /* var arr=[1,4,6,56,57,78];
+    arr.unshift(66);
+   	document.write(arr+'<br />');
+    function draw(m,n){
+    return m-n ;
+      }
+      document.write(arr.sort(draw));*/
+     
+     
+     /*document.write(typeof {}+"<br />");
+     document.write(typeof []+"<br />");
+	 document.write(typeof null+"<br />");
+     document.write(typeof 2100+"<br />");
+     document.write(typeof NaN+"<br />");
+     document.write(typeof Infinity+"<br />");
+     document.write(typeof Object+"<br />");
+     document.write(typeof undefined+"<br />");*/
+    
+    
+    
+   /* var arr=[0,1,2,3,4,5,6,7,8,9];
+    for(var i=1;i<13;i++){
+			var j=Math.floor(Math.random()*10);
+			document.write(arr[j]);*/
+			
+			
+			
+//	4.    生成13位条形码(对之前的知识综合练习)
+	//A	
+//  var s=1234567895,b=0,c=0,d ;
+//  var ss=s.toString();
+//  for (var i = 0; i < ss.length; i++) {
+//  	a=s%10;
+//  	s=Math.floor(s/10);
+//  if (a%2!=0) {
+//  	b+=a;
+//  } else{
+//  	c+=a;
+//  }
+//  }
+//////  alert(b);
+//////  alert(c);
+////    d=b+3*c;
+//  if (d%10!=0) {
+//  	document.write("输入："+ss+"&nbsp;输出："+ss+(10-d%10));
+//  } else{
+//  	document.write("输入："+ss+"&nbsp;输出："+ss+"0");
+//  }
+//  
+    
+   //B 
+    /*var s=1234567895,b=0,c=0,d ;
+    var ss=s.toString();
+    for (var i = 0; i < ss.length; i++) {
+    if (ss[i]%2!=0) {
+    	b+=parseInt(ss[i]);
+    } else{
+    	c+=parseInt(ss[i]);
+    }
+    }
+      d=b+3*c;
+    if (d%10!=0) {
+    	document.write("输入："+ss+"&nbsp;输出："+ss+(10-d%10));
+    } else{
+    	document.write("输入："+ss+"&nbsp;输出："+ss+"0");
+    }*/
+    
+    
+    
+    
+
+//老胡的12位码
+  /* var	sum1=0,sum2=0;
+		var arr=[0,1,2,3,4,5,6,7,8,9];
+		for(i=1;i<13;i++){
+			var j=Math.floor(Math.random()*10);
+			document.write(arr[j]);
+			if(i%2!=0){
+				sum1=sum1+arr[j];
+			}else{
+				sum2=sum2+arr[j];
+			}
+		}
+		var sum=sum1+sum2*3;
+		if(sum%100%10!=0){
+			var thirteen=10-sum%100%10;
+		}else{
+			thirteen=0;
+		}
+		document.write(thirteen);*/
+
+	</script>
+</html>

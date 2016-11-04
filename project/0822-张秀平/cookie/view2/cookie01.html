@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>cookie</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<a href="cookie02.html">登录</a>
+<p id="usertit"></p>
+</body>
+<script>
+    // cookie 把js里面的信息保存在本地，下次打开页面可以访问
+    // 在同一个路径下，cookie可以共享
+    // cookie可以设置过期时间和路径
+    // 不同的主机名可以共享cookie
+    // document.cookie    eg: document.cookie="a=5";
+    function getCookie(name){  // 封装函数
+        var str=document.cookie;  // 获取cookie
+        //console.log(str);  // a=5; b=10
+        var arr1=str.split("; ");    // 以分号空格分割
+        for(var i=0;i<arr1.length;i++){
+            var arr2=arr1[i].split('=');
+            if(arr2[0]==name){
+                return arr2[1];//这个arr2[1]就是（name）
+            }
+        }
+    }
+    //console.log(getCookie("a"));
+
+    //设置cookie
+//    function set(name,value) {
+//        document.cookie=name+'='+value;
+//    }
+
+    var userTit=document.getElementById('usertit');
+    var username=getCookie('username');    // 获取cookie
+    userTit.innerHTML=username||"没有登录，请先登录";
+</script>
+</html>

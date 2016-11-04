@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+	<script type="text/javascript">
+//		function superSort(arr){
+//			    var arr = [10,20,8,9,3,2,1,2,2,2,8];
+//
+//
+//		      document.write(arr+'<br />');
+//		      function draw(m,n){
+//		          return m-n;
+//		      }
+//		      document.write(arr.sort(draw));
+//
+//			//arr
+//		}
+
+
+var arr = [10, 20, 8, 9, 3, 2, 1, 2, 2, 2, 8];
+
+		function superSort(arr) {
+//
+			for (var i = 0; i < arr.length; i++) {
+				for (var j = i+1; j <arr.length; j++) {
+					if(a[i]==a[j]){
+					arr.splice(a[j-1],1);
+					}
+				}
+
+				function draw(m, n) {
+					return m-n;
+				}
+				return arr[i];
+
+		}
+
+            document.write(superSort(arr);
+	
+	</script>
+
+</html>

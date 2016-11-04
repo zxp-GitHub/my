@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			li{list-style: none;}
+			ul{width: 300px;height: 300px;border: 1px solid #ccc;}
+			ul li{border-bottom: 1px dashed #ccc;cursor: pointer;}
+		</style>
+	</head>
+	<body>
+		<ul id="list">
+			<li>小弟一号 </li>
+			<li>小弟2号 </li>
+			<li>小弟3号 </li>
+			<li>小弟4号 </li>
+			<li>小弟5号 </li>
+		</ul>
+		<input type="button" name="" id="add-first" value="首部添加" />
+		<input type="button" name="" id="add-last" value="尾部添加" />
+	</body>
+	<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var oFirstBtn=$("add-first");
+		var oLastBtn=$("add-last");
+		var oUl=$("list");
+		var oLii=document.getElementsByTagName("li");
+		
+		
+		oLastBtn.onclick=function () {
+			var oLi=document.createElement("li");
+			oLi.innerHTML="我是小小君，年轻就是好啊~";
+//			oLi.title="我要走了，亲~";
+			oUl.appendChild(oLi);//ul尾部添加一个新的li
+			
+			oLi.onclick=function(){
+				oUl.removeChild(this);
+			}
+		};
+		
+		
+		oFirstBtn.onclick=function () {
+			var oLi=document.createElement("li");
+			oLi.innerHTML="我是老太君，就是牛~";
+//			oLi.title="我要走了，亲~";
+			oUl.insertBefore(oLi,oUl.firstChild)//ul尾部添加一个新的li ==firstChild 里面是不包东西的
+			oLi.onclick=function(){
+				oUl.removeChild(this);
+			}
+		};
+
+
+
+       for (var i = 0; i < oLii.length; i++) {//原来的li要先遍历，，添加的li已经编好号了，可以用this
+		oLii[i].onclick=function(){
+//				oUl.removeChild(oUl.childNodes[2]);
+         this.parentNode.removeChild(this);
+//				var x=otest.removeChild(otest.childNodes[1]);
+		}
+	};
+	</script>
+</html>

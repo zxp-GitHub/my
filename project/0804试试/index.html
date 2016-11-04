@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+    <!-- <input type="text" name="" id="box" value="0" />
+     <button type="button" value="判奇偶性" onclick="btnClick"></button>-->
+	</body>
+	<script type="text/javascript">
+	/*function num (x,y) {
+		return x+y;
+	}
+	document.write(num(1,2));*///num后面是不加；的
+	
+	/*function s(n) {
+		var sum=1;
+		for (var i = 1; i <=n; i++) {
+			sum*=i;
+		}
+		return sum;
+	}
+	document.write(s(3));*/
+	function addSum(n) {
+		if (n==10) {
+			document.write(n);
+			return 10;
+			
+		}
+		document.write(n);
+              return n+addSum(n-1);		
+	}
+	document.write(addSum(12));
+	</script>
+</html>

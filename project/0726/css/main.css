@@ -1,0 +1,20 @@
+*{margin:0;padding:0;font-size: 16px; font-family: "微软雅黑";}
+ul,li,ol{ list-style: none;}
+img{border:none;}
+a{ text-decoration:none;color: #fff;}
+body,html{height:100%;}
+
+#box{width:100%; background: #262d33;}
+#box ul{border-top:2px solid #014da1; width:1200px;line-height: 60px;height:62px;  background: url(../img/border_02.png) no-repeat left top;margin:-2px auto 0px;}
+#box ul img{float: left;}
+#box ul li{float: right;color:#889595;padding-left:29px;}
+#box ul a{color:#889595;padding-left: 3px;}
+#banner{width: 100%; position:relative}
+.banner{ width:100%;}
+.sichou{position:absolute;bottom:-50px;left: 50%;margin-left: -600px;width: 1200px;height:91px; background: url(../img/sichou_10.png) no-repeat;}
+/*1 若是不在ul外使用div，那么border就会被彩色小横条给顶上去*/
+/*使文字在竖直方向居中*/
+/*#box ul li{float: right;  li上下顺序要反着写，    注意：用a写划过，不用li*/
+/*如果父元素没定义高度，子元素又都有浮动， 就会出现高度塌陷，
+ *1 父元素overflow：hidden；
+ *2在浮动元素下方加空div   ，div{clear：both;    height:0;   overflow:hidden;  }*/

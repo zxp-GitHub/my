@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="txt">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+        
+//		document.write(arr);
+        var txt=document.getElementById("txt");
+       var str="今天是周六，是一个美好的。美丽的日子，突然间诗兴大发，人面不知何处去，桃花依旧笑春风。"
+//     var arr=str.split("");
+//      for (var i = 0; i < arr.length; i++) {
+//     document.write(arr.shift());
+//      var b=str.substring(i,i+1);
+var i=0;
+function add () {
+	var s=str.substr(i,i+1);
+       	txt.innerHTML=(s + "_");
+       	i++
+       	if (i > str.length) {
+		i = 0;
+		//return 加入则text显示完后，停止。 
+					}
+      setTimeout("add()", 300);
+}
+       
+//     }
+       
+	</script>
+</html>
+<!--
+	思路：
+	1.有一串字符串
+	2.将字符串切割
+	3.逐个打出-这里要定时-(用for循环  ？好像又不要用)每一秒打一个字   顺序问题
+	
+-->

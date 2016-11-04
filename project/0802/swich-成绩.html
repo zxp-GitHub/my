@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	var score=87;
+	/*switch (score){
+		case (score>80&&score<=100):  document.write("A");  break;
+		case (score>=79&&score<70):document.write("B"); break;
+		case (score>=60&&score<=69):	document.write("C"); break;
+		case score<60:	document.write("D");break;
+		default:document.write("erro"); break;
+	}*/
+	
+	//case是匹配值,true  1, "a"   都行，但是区间不行，只能强转换才可以。
+	
+	var grade='B';		
+		switch (grade){			
+			case 'A':
+				document.write("80-100");
+				break;
+			case 'B':
+				document.write("70-79");	
+				break;
+			case 'C':
+				document.write("60-69");	
+				break;
+			case 'D':
+				document.write("小于60");
+				break;
+			default:
+				document.write("数值不正确");
+			break;	
+											
+		}
+	</script>
+</html>

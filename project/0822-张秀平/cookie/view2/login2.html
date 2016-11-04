@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        li { list-style: none; padding: 10px;}
+    </style>
+</head>
+<body>
+
+<form id="form1">
+
+    <ul>
+        <li>用户名：<input type="text" id="username" name="username" /></li>
+        <li><input type="checkbox"  id="remember"/> 记住用户名</li>
+        <li><input type="submit" /></li>
+        <li><a href="INDEX2.html">返回首页</a></li>
+    </ul>
+</form>
+<!--<script src="cookie2.js"></script>-->
+
+<script>
+    var oForm = document.getElementById("form1");
+    var userName=document.getElementById('username');
+    var oRemember=document.getElementById('remember');
+
+    oForm.onsubmit=function () {    // 表单的提交事件
+//        var oChe=false;
+        var  val = userName.value;
+
+            if (val != "") {    // 如果表单控件内容不为空
+//            document.cookie='username='+user;    // 设置cookie
+//            document.cookie='password='+pass;
+                var oDate = new Date();
+                // 设置cookie过期时间
+                // 若为过去时间，浏览器就会自动删除cookie
+                oDate.setDate(oDate.getDate() + 30);  // 获取当前时间后30天过期删除
+                if (oRemember.checked ==true) {
+                document.cookie = 'username=' + val + ';path=/;expires=' + oDate;    // path设置路径
+
+            }else {}
+//            document.cookie='password='+pass+';path=/;expires='+oDate;
+            } else {
+                // 若为空，验证未通过，阻止浏览器的自动提交
+                return false;    //阻止浏览器默认行为
+
+            }
+
+
+
+
+    };
+
+
+
+
+
+</script>
+</body>
+</html>

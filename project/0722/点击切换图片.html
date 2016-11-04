@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+3		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;font-size:12px; }
+			ul,li,ol{list-style: none;}
+			img{border: none;}
+			a{text-decoration: none;color: #000;}
+			#box{width: 600px;height: 400px;border: 1px solid #F00;overflow:hidden;position: relative;}
+			#images{width: 600px;height: 400px;overflow: hidden;}/*坑：#images  写成了#img：点击 锚点2、锚点3一下就会消失，*/
+			.a{position: absolute;right: 5px;bottom: 10px;width: 100px;height: 20px;}
+			a{display:inline-block;width: 20px;line-height: 20px;color: #fff;font-size: 14px;
+			background-color: #000;text-align:center;opacity: 0.8;/*z-index: 5;*/}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="images">
+				<img id="img1" src="img/child1.jpg"/>
+				<img  id="img2" src="img/child2.jpg"/>
+				<img id="img3" src="img/child3.jpg"/>
+			</div><!--img-->
+			<div class="a">
+				<a href="#img1">1</a>
+				<a href="#img2">2</a>
+				<a href="#img3">3</a>
+			</div><!--a-->
+		</div><!--box-->
+		
+	</body>
+</html>

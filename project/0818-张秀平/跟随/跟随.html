@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		
+			#box{width: 20px;height: 20px;border-radius: 50%;border: 1px solid greenyellow; position: absolute;
+			box-shadow: 0 0 5px rgba(0,255,0,.5),inset 0 0 3px rgba(0,255,0,.5); }
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var obox=document.getElementById("box");
+		document.onmousemove=function (event) {//obox.onmousemove是在div内创建的，document.onmousemove是在整个页面
+			var event=event||window.event;//兼容
+			var mX=event.clientX;//获取鼠标的坐标
+			var mY=event.clientY;
+			//创建圆圈
+			var oDiv=document.createElement("div");
+			oDiv.setAttribute('id','box');//创建属性
+			oDiv.style.top=mY-10+"px";
+			oDiv.style.left=mX-10+"px";
+//			oDiv.style.borderColor='#' + Math.floor(Math.random()*16777215).toString(16);
+//var s='#' + Math.floor(Math.random()*16777215).toString(16);
+//oDiv.style.boxShadow="0 0 3px rgba(255,255,0,.5),inset 0 0 3px rgba(0,255,0,.5)"
+//			console.log("");
+			document.body.appendChild(oDiv);
+			
+			
+			
+			var opacity=100;
+			var iW=20;
+			var timer=setInterval(function () {
+				opacity-=10;
+				iW+=2;
+				
+				oDiv.style.opacity=opacity/100;
+				oDiv.style.height=iW+"px";
+				oDiv.style.width=iW+"px";
+				if (opacity==0) {
+					clearInterval(timer)
+					
+				}
+			},50);
+			
+		}
+		
+	</script>
+</html>

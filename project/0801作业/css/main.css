@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+/*==================全局属性=================*/
+body{ padding:0;
+     margin:0; 
+    font-size:12px;
+    font-family:"宋体"; 
+    color:#333} /*body 清除空隙 字体12px*/
+p,h1,h2,h3,h4,h5,h6,dl,dt,dd,table,tr,td,form,input{ margin:0;
+                                                    padding:0;} /*常用标签清除空隙*/
+ul,li,ol{
+	      padding:0;
+          margin:0;
+          list-style:none} /*清除无序列表和有序列表的空隙 去掉项目符号*/
+img{
+	 border:0;
+	 } /*清除超链接图片边框*/
+a{ 
+  text-decoration:none;
+  color:#333
+  } /*清除超链接下划线 统一超链接字的颜色*/
+img,form,input,select,textarea{ vertical-align:middle}
+/*=====================公共属性=====================*/
+.area{
+	   height:474px;
+	   width:1200px; 
+       margin:0 auto;
+	   background-color:#E6E6E6;
+}
+/*==========属性=================*/
+.dot1{ float:left; 
+     width:100px;
+	 height:100px;
+	 margin-top:213px;
+	 position:relative
+}
+.dd{  
+     width:0;
+	 height:0;
+	 border-bottom:30px solid transparent;
+	 border-top:30px solid transparent;
+	 border-right:30px solid #fff;
+	 border-left:30px solid transparent;
+	 }
+.dt{ 
+     width:0;
+	 height:0;
+	 border-bottom:30px solid transparent;
+	 border-top:30px solid transparent;
+	 border-right:30px solid #E6E6E6;
+	 border-left:30px solid transparent;
+	 position:absolute;
+	 top:0;
+	 right:30px
+	 }
+.col{ float:left;}
+.dot2{ float:right; 
+       width:85px;
+	   height:85px;
+	   margin-right:20px;
+	   margin-top:213px;
+	   position:relative 
+	   }
+ .df{  
+     width:0;
+	 height:0;
+	 border-bottom:30px solid transparent;
+	 border-top:30px solid transparent;
+	 border-right:30px solid transparent;
+	 border-left:30px solid #fff;
+	 }
+.dg{ 
+     width:0;
+	 height:0;
+	 border-bottom:30px solid transparent;
+	 border-top:30px solid transparent;
+	 border-right:30px solid transparent;
+	 border-left:30px solid #E6E6E6;
+	 position:absolute;
+	 top:0;
+	 left:-10px
+	 }

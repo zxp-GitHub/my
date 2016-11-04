@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		
+		<title></title>
+		
+	<style type="text/css">   ul,li{margin:0px;padding:0px}   li{list-style:none} 
+  .banner{width:630px;height:250px;margin:100px auto;overflow:hidden;cursor:pointer} </style
+	</head>
+	<script type="text/javascript" src="jquery.js"></script>   <script type="text/javascript">  $(function(){   var timer=setInterval(function(){    if($(".banner li:last").is(":hidden")){     $(".banner li:visible").addClass("on"); 
+    $(".banner li[class=on]").next().fadeIn("slow");     $(".banner li[class=on]").hide().removeClass("on");    }else{ 
+    $(".banner li:last").hide(); 
+    $(".banner li:first").fadeIn("slow"); 
+   
+} 
+  
+},2000) 
+   $(".banner li").hover(function(){    clearInterval(timer); 
+  },function(){    timer=setInterval(function(){ 
+   if($(".banner li:last").is(":hidden")){     $(".banner li:visible").addClass("on"); 
+    $(".banner li[class=on]").next().fadeIn("slow");     $(".banner li[class=on]").hide().removeClass("on");    }else{ 
+    $(".banner li:last").hide(); 
+    $(".banner li:first").fadeIn("slow"); 
+ 
+ 
+ 
+}
+	<body>
+		  <ul class="banner">
+		  	<li><img src="img/img/indexjingxuan.jpg"/></li>
+		  	<li><img src="img/img/jijin.jpg"/></li>
+		  	<li><img src="img/img/logo.png"/></li>
+		  </ul>
+	</body>
+</html>

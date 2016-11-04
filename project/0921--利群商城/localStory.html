@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<input type="text" name="mes" id="mes" value="" />
+<input type="button" name="" id="btn" value="加入购物车" />
+<input type="button" name="" id="huo" value="获取呢获取购物车信息" />
+<input type="button" name="shan" id="shan" value="删除信息" />
+<script type="text/javascript">
+    $("#btn").on("click",function(){
+        var logo = window.localStorage.getItem("car");
+        var  m,p;
+        var Pname = m;
+        var pprice = p;
+        var pnum = 1;
+        var pro = new Object();
+        pro.name = Pname;
+        pro.price = pprice;
+        mes = mes+"&"+pro;
+        window.localStorage.setItem("car",mes);
+
+    })
+    $("#huo").on("click",function(){
+        var message = window.localStorage.getItem("car");
+        alert(message)
+        var b=0;
+        for (var i = 0; i < localStorage.length; i++) {
+            b++;
+        }
+        alert(b);
+
+    });
+
+    //			localStorage.length
+    $("#shan").on("click",function(){
+        var message = window.localStorage.removeItem("mes");
+        alert(message)
+
+
+    })
+</script>
+</body>
+</html>
+<!--localStorage.removeItem("key");//删除名称为“key”的信息。
+localStorage.clear();​//清空localStorage中所有信息-->

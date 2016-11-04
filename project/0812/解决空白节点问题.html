@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box_index">
+			<p>段落1</p>
+			<p>段落2</p>
+			<p>段落3</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+	document.write(box_index.childNodes.length+"<br />");
+	function filterSpaceBox (box) {
+		for (var i = 0; i < box.childNodes.length; i++) {//nodeType=3&&字符匹配要空白        search
+			if (box.childNodes[i].nodeType==3&&/^\s+$/.test(box.childNodes[i].nodeValue)) {//   /^\s+$/  ^开始      \s字符串      $ 空格
+				box.removeChild(box.childNodes[i]);
+			}
+		}
+		return box;//for外面方法里面返回
+	}
+		var box=document.getElementById("box_index");
+		document.write(filterSpaceBox(box).childNodes.length);
+			
+	</script>
+</html>

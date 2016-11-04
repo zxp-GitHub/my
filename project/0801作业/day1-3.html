@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		华氏度：<input type="text" name="txt1" id="txt1" value="" />  =
+		摄氏度：<input type="text" name="" id="txt2" value="" />
+				<input type="button" name="" id="btn" value="转换" onclick="count()"/>
+	</body>
+	
+	
+	<script type="text/javascript">
+		function count(){
+			var num1 = parseFloat(document.getElementById('txt1').value);
+			var num2 = parseFloat(document.getElementById('txt2').value);
+			console.log(num1);
+			console.log(num2);
+			var sum;
+			sum = sum = 5/9.0*(num1-32);
+			if(isNaN(num1)&&isNaN(num2)){
+				alert("请输入一个有效的温度数值");
+			}
+			else{
+				sum = 5/9.0*(num1-32);
+			}
+			document.getElementById('txt2').value = sum.toFixed(3);
+
+		}
+		
+	
+                 switch (btn){
+                 	case"+":
+                 	sum=num1+num2;
+                 		break;
+                 			case"-":
+                 	sum=num1-num2;
+                 		break;
+                 			case"*":
+                 	sum=num1*num2;
+                 		break;
+                 			case"/":
+                 	sum=num1/num2;
+                 		break;
+                 			case"%":
+                 	sum=num1%num2;
+                 		break;
+                 	default:
+                 		break;
+                 }		
+                 document.getElementById("txt3").value=sum;
+		    }
+		
+	</script>
+</html>
+<!--document.getElementById('txt2').value = sum.toFixed(3);-->

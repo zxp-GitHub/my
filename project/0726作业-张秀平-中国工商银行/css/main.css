@@ -1,0 +1,233 @@
+*{margin:0;padding:0;font-size: 16px; font-family: "微软雅黑";}
+ul,li,ol{ list-style: none;}
+img{border:none;}
+a{ text-decoration:none;color: #fff;}
+body,html{height:100%;}
+.box{
+	width: 100%;
+	background-color: #ccc;
+}
+.nav1{
+	width: 100%;
+	height: 41px;
+	background-color:#c7000a;
+	line-height: 41px;
+}
+.nav1 li{
+	float: right;
+	margin-left: 11px;
+	color: white;
+}
+.nav1 li a{
+	color: white;
+	padding-left: 9px;
+}
+.nav1 .last{
+	padding-right: 22px;
+}
+.nav1 input{
+	text-align: center;
+	float: left;
+	border: none;
+	margin-right: 15px;
+	height: 35px;
+	font: 13px/2"微软雅黑";
+	padding:0px 11px ;
+}
+#input1{
+	background: url(../img/pa_03.png)no-repeat left center;
+    /*margin-right: 12px;*/
+    margin-left: 266px;
+}
+#input2{background: url(../img/pa_05.png) no-repeat left center;}
+#input3{background: url(../img/pa_07.png) no-repeat left center;;}
+.nav2{
+	width: 100%;
+	height: 87px;
+	background-color:#eeeeee;
+}
+.nav2 img{
+	margin-top: 36px;
+}
+.nav2 li{
+	float: right;
+	padding: 0px 22px;
+	margin-top: 55px;
+}
+.nav2 a{
+	color: black;
+}
+#last2{
+	margin-right: 18px;
+}
+
+.img{
+width: 100%;
+height: 316px;
+position: relative;
+}
+.cheche{
+	width: 293px;
+	height: 389px;
+	background-color: #ccc;
+	position: absolute;
+	top: 143px;
+	left:1px ;
+}
+
+#PIC img{
+	width: 100%;
+}
+.picList{
+	margin: 20px 0px;
+	width: 100%;
+	height: 187px;
+	background-color:#ffffff;
+}
+
+#nav11 li{
+	float: left;
+	
+}
+#nav11 a{
+	color: black;
+	margin: 0px 25px;
+}
+#nav11 a:hover{
+	font-weight: bold;
+	border-bottom: 3px red solid;
+}
+.picList #nav22{
+	margin-top: 36px;
+	width: 100%;
+	height: 53px;
+}
+.#nav22 li{
+	width: 10%;
+}
+.picList #nav22 li{
+	float: left;
+	margin-left: 44px;
+	text-align: center;
+	
+}
+.picList #nav22 a{
+	color: black;
+}
+.gonggao1{
+	width: 100%;
+	height: 214px;
+	background-color: #ccc;
+	margin-top: 14px;
+	
+	
+}
+.gonggao1 a{
+	color: black;
+}
+.gonggao1 .left{
+	width: 35%;
+	height: 212px;
+	border-top: red 1px solid;
+	float: left;
+	background-color: #ccc;
+	
+}
+.left p{
+	margin-top: 24px;
+	width: 100%;
+	margin-left: 10%;
+}
+.left b{
+	font: 15px/1 "微软雅黑";
+}
+.left p a{
+	color: black;
+	font: 13px/1 "微软雅黑";
+	margin-left: 99px;
+}
+.ull{
+	margin: 5% 0px 0px 7%; 
+}
+#right .ull{
+	font: 13px/2 "微软雅黑";
+}
+#right{
+	width: 60%;
+	float: right;
+	background-color: #ccc;
+}
+#right #nav11{
+	margin-top: 20px;
+}
+.ull2{
+	margin-top: 20px;
+}
+.ull2 span{
+	float: right;
+}
+.inputA{
+	margin-left: 20px;
+}
+.b{
+	color: red ;
+}
+
+
+#right input{
+	float: left;
+	margin-right: 26px;
+	border: none;
+	background-color: #ccc;
+	margin-top: 10px;
+	padding: 0px 16px;
+}
+#nav11 .lastA{
+	float: right;
+}
+
+
+.jinNian{
+	width: 100%;
+	height: 87px;
+	background-color: #fff;
+	margin: 14px 0px;
+	
+}
+#JNS img{
+	float: left;
+	margin: 0px 7px;
+	height: 87px;
+}
+#JNS .imgA{
+	margin-left: 125px;
+}
+.mian1{
+	width: 100%;
+	height: 271px;
+	background-color: #fff;
+	
+}
+.mian1 #nav11{
+	overflow: hidden;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+}
+.mian1 #nav11 li{
+	margin: 0px 20px;
+}
+.mian1 img{
+	float: left;
+	margin-right:20px ;
+	margin-top: 30px;
+}
+.mian2{
+	width: 100%;
+	height: 266px;
+	background-color: #fff;
+}
+.mian2 #nav11{
+	overflow: hidden;
+	width: 100%;
+	border-bottom: 1px solid #fff;
+}

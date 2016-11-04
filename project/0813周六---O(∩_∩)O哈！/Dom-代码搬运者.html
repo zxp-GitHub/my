@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css"></style>
+	</head>
+	<body>
+		<!--    2.  <input type="button"  value="查看浏览器版本" onclick="show()"/>-->
+	</body>
+	<script type="text/javascript">
+	//bom
+	
+	/* ************系统对话框***************/
+//1.    alert/confirm
+/*alert("Lee");            //直接弹出警告框
+document.write(alert("Lee"));
+if (confirm("请确定或者取消")) {
+	document.write("您按了确定");
+} else{
+	document.write("您按了取消");
+}*/
+
+// 2.prompt
+
+/* var p=document.getElementsByTagName("p");
+       var num=prompt("请输入一个数字",2);
+       if (num==Number) {
+       	document.write(num);
+       } else{
+       	document.write("亲，输入数字(づ￣3￣)づ╭❤～");
+       }*/
+//		document.write(typeof num);
+
+
+
+
+
+
+
+
+
+
+//3.查看浏览器的版本信息navigator
+//		function show () {
+//			var agent=navigator.userAgent;
+//			var name="你使用的不是主流浏览器";
+//			if (agent.indexOf("Firefox")>-1) {
+//				name="Firefox";
+//			}else if(agent.indexOf("Chrome")>-1){
+//				name="Chrome";
+//			}else if(agent.indexOf("Safari")>-1){
+//				name="Safari";
+//			}
+//			document.write("浏览器"+name+"<br />")
+//			document.write("agent="+agent+"<br />")
+//		}
+//4.
+
+//(1) 指定的时间过后执行代码
+//setTimeout("alert(55)",2000);
+//(2)
+/*function test () {
+		alert("今天出来溜溜,Hi~ o(*￣▽￣*)ブ");
+	}
+	setTimeout(test,2000);//直接将函数名传入调用*/
+//(3)延时器也有返回值 ，也是对它的唯一标示
+/*var time=setTimeout(function () {    //直观 方便写  经常用
+	alert("日子久了总要出来装装(*^__^*) 嘻嘻……");
+},2000);*/
+//		clearTimeout(time);
+
+   
+
+//5.//获取诸如?id=5&search=ok这种类型的URL键值对   ?username=aa&password=123456
+/*function valueWithString (str) {
+//			str=str.substring(0);//0或者1都行？
+			//将属性分割开  
+			var strArray=str.split("&");
+			var newArray=[];
+			
+			for (var i = 0; i < strArray.length; i++) {
+				var tempArray=strArray[i].split("=");
+				newArray.push(tempArray[1]);
+			}
+			alert(newArray);
+		}
+	
+		valueWithString("?username=张大仙&password=就是腻害~好崇拜");*/
+
+//没出结果      6.Web开发中?username=aa&password=123456URL键值对
+//http://www.baidu.com?username=aaa&password=123456;
+
+/*		function getArray(){
+		        //创建一个存放键值对的数组
+		         var array = [];
+		         //取出?号
+		         var str = location.search.length > 0 ? Location.search.substring(1) :"";
+		         //按&字符串拆分数组
+		          var items = str.split("&");
+		          //遍历
+		          for(var i = 0;  i < items.length; i++){
+			var itemArray = items[i].split("=");
+			array[i] = itemArray[1];
+			}
+			return array;
+		}
+
+		getArray();*/
+		
+		
+		
+		    //window的属性和方法
+
+		
+		
+//7. /*************location*********************/
+//(1)location对象的属性
+//      location.hash="我胡汉三又回来了";
+//		document.write(location.hash+"<br />");//获取锚点#我胡汉三又回来了，  #符号无论你加不加他都会加且不会重复
+//		document.write(location.port+"<br />");//端口号8080
+//		document.write(location.pathname+"<br />");//路径名/0813%E5%91%A8%E5%85%AD---O(%E2%88%A9_%E2%88%A9)O%E5%93%88%EF%BC%81/%E4%BB%A3%E7%A0%81%E6%90%AC%E8%BF%90%E8%80%85.htm
+//		location.hostname="www.baidu.com";//主机名
+//		document.write("<br />"+location.hostname+"<br />");//主机名           127.0.0.1
+//		location.protocol="ftp://";//协议部分
+//		document.write("<br />"+location.protocol+"<br />");//http:
+//没出来-(2)Location对象的方法     ...加载网页网址，与导航条有关？
+//      location.assign("http://www.baidu.com");//直接跳转到百度
+//		location.reload();//刷新 从缓存加载
+//		location.reload(true);//强制加载,从服务器源头重新加载
+//		location.replace("http://www.baidu.com");   //跳转 
+
+//（3）location对象它提供了与当前窗口中加载的文档有关的信息,还提供了一些导航功能
+//		location获取当前的URL
+//		alert(location);
+//		alert(window.location);
+//		alert(window.document.location);
+//		三种效果一致  说明location、window.location、window.document.location是一样的
+//(4)window.open();//新建一个新窗口
+		/*window.open("作业.html");//第一个参数是一个url,会新建窗口来加载这个页面
+	            【注】不命名会每次打开新窗口，命名的第一次打开新窗口,之后在这个窗口中加载。
+		window.open("作业.html","作业");//第二个参数是对新窗口命名。
+		第三个参数来控制新建窗口的属性
+		open("sup.html","sup","width=400,height=400,top=200,left=200");
+		让子窗口去控制父窗口打印内容*/
+
+//没出来-8 /*****history对象**********/
+//history对象  关于浏览器中历史记录的对象
+//	document.write(history.length) //history对象中的记录数
+//history对象方法：
+//	var num=document.write("那好豆豆");
+//	history.forward()//向前
+//	history.back()//向后
+//	history.go(num) //
+//	history.go(num)//*/
+
+//9    navigator对象包含有关浏览器的信息，检测浏览器与操作系统的版本
+//navigator与系统相关的方法
+//	document.write(navigator.appName+"<br />");//返回的是浏览器的名称 -Netscape
+//	document.write(navigator.appCodeName+"<br />");//浏览器代码名的字符串表示 -  Mozilla
+//	document.write(navigator.appVersion+"<br />");//浏览器的平台和版本信息-5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36
+//	document.write(navigator.platform+"<br />");//返回运行浏览器的操作系统平台 -Win32
+//	document.write(navigator.userAgent+"<br />");//返回user-agent头部的值  -Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36
+
+//10screen对象  用于获取用户的屏幕信息
+/*document.write(screen.width+"<br />");//屏幕的宽度
+document.write(screen.height+"<br />");	//屏幕的高度
+document.write(screen.availWidth+"<br />");//窗口可使用的屏幕宽度
+document.write(screen.availHeight+"<br />");//窗口可使用的屏幕高度*/
+
+
+//相差在任务栏的高度
+	</script>
+</html>

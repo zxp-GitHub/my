@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script src="jquery-1.8.1.js"></script>
+
+    <SCRIPT LANGUAGE="JavaScript">
+
+        $(function(){
+            $('#delRepeat').click(function(){
+
+
+                var str = $('#repeatValue').val();
+                var strArr=str.split("");//把字符串分割成一个数组
+
+                strArr.sort();//排序
+                var result=new Array();//创建出一个结果数组
+                var tempStr="";
+                for(var i in strArr)
+                {
+                    if(strArr[i] != tempStr)
+                    {
+                        result.push(strArr[i]);
+                        tempStr=strArr[i];
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                $('#noRepeat').val(result.join(""))//把数组连成字符串并展示到页面
+            })
+        })
+
+
+    </SCRIPT>
+    <meta charset="UTF-8">
+</head>
+<body>
+原值<input id="repeatValue" type="text" ><input id="delRepeat" type="button" value="去重">
+<input type="text" id="noRepeat">
+</body>
+</html>

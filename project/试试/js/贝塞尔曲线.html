@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="900" height="500"></canvas>	
+	</body>
+	<script type="text/javascript">
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		
+		ctx.fillStyle = "#f66";
+		//贝塞尔曲线
+		/*ctx.bezierCurveTo(0,0,500,500,2000,700);*/
+		//二次绘制曲线,将上一个的终点作为二次绘制的起始点的坐标
+	ctx.moveTo(-100,100);
+		//等价于
+		ctx.bezierCurveTo(50,300,850,300,1000,100);
+		ctx.fill();
+		
+	</script>
+</html>

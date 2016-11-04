@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var str = "";
+    var index=0,index2=0;
+    /*a:6
+    * b:2
+    * c:5
+    * o:8
+    * */
+    var obj = {};
+    for(var i=0;i<str.length;i++){
+        //console.log(str[i]);
+        if(obj[str[i]] == undefined){//当前这个字符第一次出现
+            obj[str[i]] = 1
+        }else {  //不是第一次出现的话，让他累加
+            obj[str[i]]+=1
+        }
+    }
+    console.log(obj);
+//    var max = 0; /*假设最多的次数是0次*/
+//    var maxName = str[0];/*假设出现最多的字符是第一个字符，（可以不设置）*/
+//    for(var attr in obj){
+//          document.write(attr) //属性的名子（string类型）
+//         document.write(obj[attr]+"&ensp;") //属性值
+//        if(obj[attr]>max){
+//            /*如果有一个值比最大值要大*/
+//            max = obj[attr];
+//            maxName = attr
+//            index=max;
+//            index2=maxName;
+//        }
+//    };
+//    for(var a in obj){
+//    	if (obj[a]==index) {
+//    		document.write("最多字母君"+a+"次数君"+obj[a]+"&ensp;")
+//    	}
+//    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

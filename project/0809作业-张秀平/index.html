@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+
+	</body>
+	<script type="text/javascript">
+	
+	
+	//1.将字符串按照单词进行逆序，空格作为划分单词的唯一条件传入:”Welome to Beijing”改为 “Beijing to Welcome”
+//	    var  str =  "Welome to Beijing";
+//		var array=str.split(" ");//字符串转换成数组
+//      array.reverse();
+//      document.write(array.join(" "));
+        
+        
+        
+//      var str2=str.replace(/\,/gi," ");
+//		for(var i=array.length-1; i>=0; i--){
+//		document.write(array[i]+"&nbsp;");
+//		}
+//		2.对称数组传入一个数组，起元素类型与个数皆未知，返回新数组，由原数组的元素正序反序拼接而成传入[“One”, “Two”,”Three”] 
+//		返回[“One”, “Two”, “Three”,”Three”,”Two”, “One”]
+//      var array=str.split(" ");
+//      var  s =  ["one", "Two","Three"] ;
+//      var a=s;
+//      document.write(a);
+//		for(var i=s.length-1; i>=0; i--){
+//		document.write(","+s[i]);
+//		}
+		
+		
+//		3.已知一个字符串对象中,英语单词用各种非字母字符分割，统计单词个数传入:”Yes, she*is%my@love.”;返回5
+//			var s="Yes, she*is%my@love.";
+//			var a=s.split("");
+//			var j=0;
+//			for (var i=0;i<a.length;i++) {
+//				if((a[i]>="a"&&a[i]<="z")||(a[i]>="A"&&a[i]<="Z")||a[i]==" "){
+//			//		continue;
+//				}else{
+//					j++;
+//				}
+//			}
+//document.write(j);
+
+//4.实现函数，查找子串出现的次数，返回字符串str中出现substring的次数传入:”abcabcabc”, “abc”返回:3
+//      var s="abcfabcsdnbcabc";
+//		var a=s.match(/abc/g);
+//		document.write(a.length+"<br />");
+			//5.已知千峰邮箱的用户名只能由数字字母下划线组成，域名为@1000phone.com
+			//,判断一个字符串是否是千锋邮箱，是返回true，不是返回false。
+			//mail@1000phone.com  是 
+			//$mail@1000phone.com  不是
+			//mail@1000phone.comp  不是
+//			var s="mail@1000phone.com";
+           /* if
+            var str="https://www.baidu.com/s?name=avery&age=20&sex=male";
+		var name="name";
+		var age="age";
+		var sex="sex";		
+		var nameIndex=str.indexOf(name);
+		var ageIndex=str.indexOf(age);
+		var sexIndex=str.indexOf(sex);		
+		var nameValue=new String();	//存放值
+		var ageValue=new String();	//存放值
+		var sexValue=new String();	//存放值		
+		var i=nameIndex+name.length+1;//i是name值的首个字母的角标	
+		var j=ageIndex+age.length+1;//i是name值的首个字母的角标	
+		var k=sexIndex+sex.length+1;//i是name值的首个字母的角标	
+		while(true){
+			if ((str[i]>="a"&&str[i]<="z")||(str[i]>="A"&&str[i]<="Z")) {
+				nameValue=nameValue.concat(str[i]);
+				
+				i++;
+			} else{
+				//非字母与数字
+				break;
+			}
+			}
+		document.write(nameValue);*/
+		      
+//		  
+
+
+
+
+
+
+//if(s=="[a-z]|[A-Z]|\_|[0-9]@1000phone.com"){
+//	document.write("T");
+//}else{
+//	document.write("F");}
+var c=document.getElementById('myCanvas');
+var ctx=c.getContext("2d");
+
+var grd=ctx.createLinearGradient(0,0,170,0);
+grd.addColorStop(0,"black");
+grd.addColorStop(1,"white");
+
+ctx.fillStyle=grd;
+ctx.fillRect(20,20,150,100);      
+	</script>
+</html>

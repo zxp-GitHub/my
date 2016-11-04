@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="txt" value="" />
+		<input type="button" name="btn" id="btn" value="提交" />
+	</body>
+	<script type="text/javascript">
+	
+	var oa=document.getElementById("txt");
+	var obtn=document.getElementById("btn");
+	obtn.onclick=function () {
+		
+	
+	var a=oa.value;
+	var b=a/2
+	if (a%2==0) {
+		for (var i = 0; i < a/2; i++) {//   a/2四舍五入
+	for (var j = a/2; j>i; j--) {
+				document.write("&ensp;");
+			}
+	for (var k = 0; k <=i; k++) {
+				document.write("* ");
+			     }
+       document.write("<br	 />");
+}
+			
+for (var i = 0; i<=a-a/2; i++) {  //i=4   5
+	for (var j =0; j<=i; j++) {// j=4 5
+				document.write("&ensp;");
+			}
+	for (var k = a-a/2; k >i; k--) {//k=  
+				document.write("* ");
+			     }
+       document.write("<br />");
+}
+	} else{
+		for (var i = 0; i < b; i++) {//   a/2四舍五入
+	for (var j = b; j>i; j--) {
+				document.write("&ensp;");
+			}
+	for (var k = 0; k <=i*2; k++) {//不减1？
+				document.write("*");
+			     }
+       document.write("<br	 />");
+}
+			
+for (var i = b-1; i>0; i--) {  //i=4   5
+	for (var j =i; j<=b; j++) {// j=4 5
+				document.write("&ensp;");
+			}
+	for (var k = 0; k <i*2; k++) {//k=  
+				document.write("*");
+			     }
+       document.write("<br />");
+}
+	}
+	
+	
+}			
+			
+			
+	</script>
+</html>

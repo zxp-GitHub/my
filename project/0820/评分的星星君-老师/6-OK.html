@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#ul {
+				margin: 20px auto;
+				width: 150px;
+				overflow: hidden;
+			}
+			li {
+				list-style: none;
+				float: left;
+				background: url(img/star.gif) no-repeat /*0 0*/;
+				/*不写 0 0 也行*/
+				width: 27px;
+				height: 28px;
+			}
+			/*如果不设置宽高星星不会出来，因为星星是背景图*/
+			.active {
+				background-position: 0 -29px;
+			}
+			/*让图移动，剩下的就是想要的，图一开始位于框的左上角*/
+		</style>
+	</head>
+
+	<body>
+		<ul id="ul">
+			<li class=""></li><!--若是加上active加载页面后或刷新后第一个星星就会亮-->
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var oUl = document.getElementById("ul");
+		var oLi = document.getElementsByTagName("li");
+		//让划过的星星颜色为亮
+for (var i = 0; i < oLi.length; i++) {
+oLi[i].index = i;           //让每一个星星的下标为i，oLi[0].index = 0;oLi[0].[0] = 0;oLi[1].[0] = 0;
+var index=-1;    //若是为零，没点击划出去时或者第一个星星就会亮，所以设为比0小的数          刚刷新时不会亮，是另一个影响因素
+
+//划过时控制之前的亮，之后的不亮
+oLi[i].onmouseover = function() {
+				for (var j = 0; j < oLi.length; j++) {
+					if (j <= this.index) {                //j是下标-数字，oLi[j]是星星这个东西
+						oLi[j].className = "active";      //oLi[i]加下标，划过哪个，‘哪个’就亮
+					} else {
+						oLi[j].className = "";
+					}
+				}
+		}
+//点击时记录点的星星的下标
+
+oLi[i].onclick = function click() {
+				for (var j = 0; j < oLi.length; j++) {
+					index=this.index;
+				}
+		}
+//离开后，亮的星星与点击的星星相同
+oLi[i].onmouseleave= function() {
+				for (var j = 0; j < oLi.length; j++) {
+					if (j <= index) {
+						oLi[j].className = "active";
+					} else {
+						oLi[j].className = "";
+					}
+				}
+		}
+
+}//for循环的
+	</script>
+
+	<!--
+		重点
+		1.index
+		2.onmouseover方法
+		3.no-repeat 0 0
+		4 方法  顺序，选择if，  循环
+		5.二维数组oLi[i].index = i;   是独特的一列
+		oLi[0].index = 0;  oLi[1].index = 1;。。。oLi[0].[0] = 0;oLi[1].[0] = 0;
+		
+array[0][0]=1	array[0][1]=2	array[0][2]=3	array[0][3]=4	array[0][4]=5
+array[1][0]=6	array[1][1]=7	array[1][2]=8	array[1][3]=9	array[1][4]=10
+array[2][0]=11	array[2][1]=12	array[2][2]=13	array[2][3]=14	array[2][4]=15
+		
+		
+	-->
+	<!--
+		思路
+		1.划过会亮，并且停留在呢里onmouseover方法
+		2.再划过时清除原来的划过，然后再重新调用onmouseover方法if else
+		
+		
+	-->
+	<!--
+		问题
+		1.刷新时第一个星星会亮
+		2.没点击划出时第一个星星会亮
+	-->
+
+</html>

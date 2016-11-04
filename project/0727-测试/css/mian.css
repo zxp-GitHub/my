@@ -1,0 +1,258 @@
+.top{
+	width: 100%;
+	background-color: #700005;
+	height: auto;
+}
+.top ul{
+	width: 1200px;/**/
+	margin: 0 auto;
+	height: 34px;
+}
+.top ul li{
+	float: left;
+	font: 17px/2 "微软雅黑";
+}
+.top ul a{
+	color: white;
+	margin-right: 18px;
+}
+.top ul img{
+	margin-top: 4px;
+}
+.top .li8{
+	margin-left: 366px;
+}
+.imga{
+	height: 105px;
+	overflow: hidden;
+	width: 100%;
+}
+.img1{
+	float: left;
+	height: 105px;
+	width: 100%;
+}
+.nav{
+	width: 100%;
+	height: auto;
+}
+.nav ul{
+	margin: 0 auto;
+	width: 1120px;
+	height: 43px;
+	text-align: center;
+}
+.nav ul li{
+	float: left;
+	
+	
+	
+}
+.nav ul a{
+	font: 20px/2 "微软雅黑";
+	margin-right:90px;
+	
+}
+.nav ul a:hover{
+	border-bottom: 5px solid #700005;
+	padding-bottom: 7px;
+}
+.nav #lasta{
+	margin-right: 0px;
+}
+.imgb{
+	width: 100%;
+	height: 455px;
+	overflow: hidden;
+}
+.img2{
+	width: 100%;
+	height: 455px;
+	
+
+}
+.mian1{
+	width: 100%;
+	height: 850px;
+	padding-top: 1px;
+}
+.main2{
+	width: 1001px;
+	height:850px;
+	margin: 41px auto 31px;
+} 
+h3{
+	font: 18px/1.5 "微软雅黑";
+}
+.up{
+	border-top: 3px solid #8c0000;
+	width: 1001px;
+	height:293px;
+	padding-top: 13px;
+	margin-bottom:55px;
+}
+.left{
+	width: 309px;
+	height: 274px;
+	float: left;
+	margin-right: 41px;
+}
+.left h4{
+	font:600/*px*/ 15px/1.2 "微软雅黑";
+}
+.left p{
+	font: 13px/1.5 "微软雅黑";
+}
+.up ul{
+	width: 313px;
+	height: 254px;
+	float: left;
+}
+.up ul li{
+	border-bottom: 1px solid #ccc;
+	font: 17px/1.4 "微软雅黑";
+	padding: 7px 0px;
+}
+.ul1{
+	margin-right: 12px;
+}
+.ul2 a{
+	color:#700005;
+	font: 14px/3 "微软雅黑";
+	margin-top: 15px;
+}
+
+.ul2 a span{
+	color: #000000;
+}
+.a1{
+	margin-right: 78px;
+}
+.mid{
+	width: 1001px;
+	height: 382px;
+}
+.midLeft{
+	width: 568px;
+	height: 122px;
+	border-top: 3px solid #8c0000;
+	padding-top: 12px;
+	margin-bottom: 33px;
+}
+.midLeft img{
+	float: left;
+	margin-right: 46px;
+}
+.midLeft strong{
+	display: block;
+	padding-bottom: 22px;
+}
+.midL{
+	width: 568px;
+	height: 104px;
+	border-top: 1.5px solid #8c0000;
+	padding-top: 8px;
+}
+.midL input{
+	
+	color: red;
+	border: none;
+	background-color: #ccc;
+	width: 120px;
+	height: 42px;
+	
+}
+.input1{
+	margin-top: 18px;
+}
+.mid img{
+	float: right;
+}
+.down_{
+	width: 100%;
+	height: 427px;
+	background: url(../img/d_02.png) repeat;
+}
+.down{
+	width: 1007px;
+	height: 309px;
+	margin: auto;
+}
+.down img{
+	margin-right: 50px;
+	margin-top: 42px;
+}
+.down .img4{
+	margin-right: 0px;
+}
+.footer1_{
+	width: 100%;
+	height: 214px;
+	background: url(../img/e_02.png) repeat;
+	padding-top: 1px;/*用伸缩盒时，margin-top子元素会赋给父元素*/
+}
+.footer1{
+	width: 1006px;
+	height: 176px;
+	margin:16px auto;
+}
+.footer1 img{
+	float: left;
+}
+.img11{
+	margin:49px 86px ;
+}
+.img22{
+	margin: 40px 43px;
+}
+
+
+.footer1 ul{
+	font: 13px/1 "微软雅黑";
+	width: 318px;
+	height: 173px;
+	float: left;
+}
+.footer1 ul li{
+	padding-top: 20px;
+}
+.footer1 ul a{
+	color: white;
+	display: inline-block;
+	/*padding-top: 26px;a是行内样式*/
+	margin-left: 60px;
+}
+.footer1 table{
+	border-collapse:collapse;
+}
+.footer1 table td{
+	border:1px red solid;
+	border-top: none;
+	border-bottom: none;
+	
+	
+
+}
+.footer{
+	margin-top: -20px;
+	width: 100%;
+	height: 43px;
+	background-color: black;
+	text-align: center;
+}
+.footer pre{
+	color: white;
+	font: 15px/2 "微软雅黑";
+}
+
+
+
+
+/*.footer1 table{
+	border-collapse:collapse;
+}*/
+
+/*background: url(../img/e_02.png) repeat;
+ * repeat的左边必须有空，哪里有错想一想在哪多试试。*/
+/*padding-top: 26px;a是行内样式*/
+/*用伸缩盒时，margin-top子元素会赋给父元素*/

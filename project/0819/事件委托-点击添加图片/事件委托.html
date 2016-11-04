@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		#btn{position: absolute;}
+		/*加了绝对定位以后按钮不懂，而且不对新添加的事件有影响，下文
+		document.body.appendChild(oDiv);*/
+			img{margin: 10px;border: 1px solid #ccc;float: left;
+			/*background: url(../拖拽/img/a.gif);*/width: 200px;height: 200px;}
+		</style>
+	</head>
+	<body>
+		<button id="btn">添加</button>
+	</body>
+	<script type="text/javascript">
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function () {
+			var oDiv=document.createElement("img")
+//			oDiv.innerHTML="click me remove";
+//          oDiv.style.background="url(../拖拽/img/a.gif)";
+            oDiv.src="../拖拽/img/a.gif";//
+			oDiv.className="can-remove"
+			document.body.appendChild(oDiv);//添加对象不加引号
+		}
+		//把can-remove的div事件委托给document
+		document.onclick=function (event) {
+		//当document被点击的时候，看看target是不是div
+		//如果是div，说明点击的就是div,删除div
+//		console.log(event.target);//event是对象，在小括号内不加引号   target是html   event是clintY/X
+//		if (event.target.className=="can-remove") {
+			document/*.body*/.removeChild(/*oDiv*/event.target);
+//		}
+		}
+		
+	</script>
+</html>
+<!--
+	1.target为什么要设置ID或者class
+	
+	
+	
+	
+	
+-->

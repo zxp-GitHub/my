@@ -1,0 +1,167 @@
+.containter{width: auto;height: auto;}
+.box1{width:1200px;height:auto;margin: 0 auto;}
+/*head*/
+.head1{width: 1200px;height:30px ;color: #777777;}
+.head1-p{float: left;line-height: 30px;}
+.head1-p a{margin-left: 16px;}
+.head1-ul1{	 float: right;height: 30px; line-height: 30px;}
+.head1-ul1-li{float: left;}
+.head1-ul1-li:nth-child(2){background: url(../img/member_center.jpg)no-repeat left center;}
+.head1-ul1-li:nth-child(5){background: url(../img/liqun_mobile.jpg)no-repeat left center;}
+.head1-ul1-li a{color: #777777; display: inline-block; text-align: center;width: 98px;}
+.head1-a{height: 30px; line-height: 30px;float: left;margin-right: 25px;}
+.head1-a span{float: left;}
+.head1-a a{display: inline-block;margin-top: 7px;}
+.head1-ul-userHelp{width: 88px;height: 30px; position: relative;z-index: 999;}
+.head1-ul-userHelp img{margin-top: 5px;}
+.head1-ul1-ul2 {position: absolute;top: 8px;z-index:-1 ;left: 11px;border: 1px solid #ccc;width: 70px;background-color: #fff;}
+.hide {display: none;}
+.head1-ul-userHelp:hover .head1-ul1-ul2{display: block;}
+.head1-ul1-ul2-li1{margin-top: 20px;}
+.head1-ul1-ul2 a{text-align: left;}
+.head1-a-2weima{position: relative;}
+.head1-a-2weima-hide{position: absolute;display: none;left: -60px; top: 10px;}
+.head1-a-em{position: relative;}
+/*.head1-a-2weima-hide:hover{display: block;}*/
+.head1-a-em:hover .head1-a-2weima-hide{display: block;}
+.head2{width: px;height:88px;margin-top: 20px;}
+.head2 img{float: left;}
+.head2-a2{display: inline-block; margin: 0px 10px;float: left;}
+.head2-input{ margin-top: 10px; float: left; border: 3px solid #fc595a;width:540px;height: 40px;}
+.head2-input img{margin-top: 3px;}
+.head2-input input{width:423px;height: 38px;font-size: 18px;line-height: 36px;float: left;}
+.head2-input a{display: inline-block; width: 87px;height: 40px;line-height: 40px; text-align: center;background-color: #fc595a}
+.head2-img{margin: 15px 10px;}
+.head2-sousuo{}
+.head2-sousuo ul{}
+.head2-sousuo ul li,.head2-sousuo p{float: left;margin-right: 10px;}
+.head2-sousuo ul a{color: #777777;}
+.head2-sousuo ul a img{float: left;}
+
+
+
+/*main1*/
+.list-item{padding-left: 25px;width: 165px;height: 50.5px; background-color: #c81622;}
+.list-item p{font:14px/25px "微软雅黑"; padding-left: 25px;width: 130px margin-bottom: 3px;
+background: url(../img/mian1-memu_bg.jpg) 0 0 no-repeat; }
+.list-item:hover{background-color: #b1191b;}
+.list-item:hover p{ background-image: url(../img/main1-memu_bg_cur.jpg);}
+.list .p1{background-position: 0px -405px;}/*必须要写.list*/
+.list .p2{background-position:0px -5px;}
+.list .p3{background-position: 0px -55px;}
+.list .p4{background-position:0px -105px;}
+.list .p5{background-position: 0px -155px;}
+.list .p6{background-position:0px -205px;}
+.list .p7{background-position:  0px -255px;}
+.list .p8{background-position: 0px -305px;}
+.list .p9{background-position:0px -355px;}
+
+.inner-sort1{border: 1px solid #FF0000;  z-index: 999;min-height: 455px; color: #000000; position: absolute; top: 0; left: 100%; width: 750px;background-color: #fff; display: none}
+.list-item:hover .inner-sort1{display: block; }
+.list-item:hover .inner-sort1 a{color: #000;}
+.inner-one-one{width: 235px;height: auto;margin:5px 5px;float: left;}
+.inner-one-one a{white-space: nowrap;}
+.inner-top{width: 235px;height: 35px;border-bottom: 1px solid #000;}
+.inner-top h5{float: left; width:100px; height: 34px;line-height: 35px;    background:url(../img/icon_beer.jpg) no-repeat left center ;padding-left: 45px;}
+.inner-sort1 .inner-one-one .inner-top a{line-height: 35px; color: red;float: right;}
+.inner-second {color: #ccc;}
+.inner-second a,.inner-third a{color:  #000000;margin:0px 3px;;font: 12px/20px "微软雅黑";}
+.inner-third{border-top:1px dotted #ccc;color: #ccc;}
+.inner-third h5{margin: 5px 0px; color: #000000;}
+/*.inner-third a{color:  #000000;margin:0px 3px; font: 12px/20px "微软雅黑";}*/
+
+
+/*main2-banner*/
+.main2-img{float: left;height: 135px;}
+.main2-banner{overflow: hidden;  width: 1003px;height: 138px;float: left; position: relative;}
+.main2-banner ul{width: 3067px;height: 138px;position: absolute;}
+.main2-banner li {float: left;border: 1px solid#ccc;border-left: none;}
+.main2-btn{position: absolute;top: 50%;margin-top: -25px;background-color: #333}
+.main2-left{left: 0;}
+.main2-right{right: 0;}
+
+
+/*main3-banner*/
+.main2-img{float: left;height: 135px;}
+.main3-banner{overflow: hidden; width: 800px;height: 500px;float: left; position: relative;}
+.main3-banner-ul {position: absolute;width: 2812px;height: 500px;}
+.main3-banner-ul li{width: 804px;height: 496px;float: left;}
+.main3-banner-ul img{width: 199px;height: 248px;float:left;border: 1px solid#ccc;border-left: none;}
+.main3-btn{position: absolute;top: 50%;margin-top: -25px;background-color: #333}
+.main3-left{left: 0;}
+.main3-right{right: 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*F1*/
+.floor_info{width: 195px;height: 425px;position: relative;}
+.f1-left-ul1 li{width: 80px;text-align: center;margin-right: 10px;float: left;}
+.f1-left-ul1 a{font:bold 12px/30px "微软雅黑";}
+.slideBox{width: 194px;height: 148px;}
+.slideBox .hd{position: absolute; bottom:2px;left: 4px;z-index: 3;}
+.slideBox .hd li{float: left;font: 70px/70px "微软雅黑";margin: 0px 4px;color: #ccc;}
+.slideBox .bd img{ position: absolute;left: 0;bottom: 0;}
+.slideBox .hd .active{color: #FFFFFF;}
+
+.foor_ad{float: left;width: 286px;height: 420px;position: absolute;top: 0;left: 190px;}
+.foor_ad .hd{position: absolute; bottom:23px;left: 23px;z-index: 3;}
+.foor_ad .hd li{float: left;width: 70px;height: 8px; margin: 0px 4px;background-color: #ccc;}
+.foor_ad .bd img{ position: absolute;}
+.foor_ad .hd .active{background-color: #FFFFFF;}
+
+
+
+.floor_center{left: 477px; position:absolute; width: 720px;height: 425px;overflow: hidden; float: left;top:0px;}
+.floor_title{width: 720px;height: 35px; clear: both;border-bottom: 3px solid #D0D0D0;}
+.floor_title ul {width: 560px;height: 35px;}
+.floor_title ul li{float: left;height: 35px;line-height: 35px;text-align: center;
+font-size: 14px; font-weight: bolder; width: 112px;color: #555;}
+.floor_title ul li:hover{color: #e4393c;background: url(../img/F1-floor_pdt_tab.jpg) no-repeat center bottom;}
+.floor_center_allPic{width: 720px;height: 385px;}
+.floor_center_allPic_banner{ width: 595px; height: 385px;float: left;position: relative;}
+.floor_center_allPic_banner li{position: absolute; width: 595px; height: 385px;}
+.floor_center_banner_img{    width: 197px; height: 191px;float: left;border-right: 1px solid #F4F4F4; border-bottom: 1px solid #F4F4F4;} 
+.floor_center_allPic_right{width: 120px;height: 385px;float: left;}
+.floor_center_allPic_right li{ border-bottom: 1px solid #F2F2F2; height: 55px;width: 120px;}
+.floor_center_allPic_right img{width: 119px;height: 54px;float: left;}
+
+.F5_ad{width: 417px;height: 422px;}
+#F5_floor_center{width: 588px;height: 425px;position: absolute;left: 608px;}   
+#F5_floor_center .floor_title{width: 588px}
+
+
+/*footer*/
+.footer1{width: 1200px;height: 190px;margin-bottom: 25px;clear: both;}
+.footer1 ul{float: left;width: 140px;margin: 15px;color: #777;}
+.footer1 ul li{   font:12px/1.7 "微软雅黑"; padding-left: 10px; margin-left: 10px;background: url(../img/foot_icon.jpg) no-repeat left center;}
+.footer1 ul li a{color: #777;}
+.footer1 ul .footer1_li_top{ background-image:none; 
+margin-left: 0px; font:bolder 14px/30px "宋体";
+padding:5px;border-bottom: 1px solid #E3E3E3;text-align: left;}
+.footer1 ul .footer1_li_top a{color: #BEBEBE;}
+.footer1 img{margin-top: 5px;}
+.footer1_a{display: block;margin-top: 10px;color: #929292;}
+.footer2{width: 1200px; height: 117px;margin-bottom: 20px;background-color: lawngreen}
+.footer3{ margin-bottom: 50px;width: 1200px;height: 129px;text-align: center;float: left;}
+.footer3 .no_wrap{width: 600px;height: 20px;  white-space: nowrap;margin:5px auto;}
+.footer3 .no_wrap li{float: left;}
+.footer3 .no_wrap li a{padding:0px 6px;}
+.footer3 .footer3_li{ margin: 0 auto; width:520px; height: 24px; line-height: 24px; color: #BDBDBD;
+background: url(../img/footer3.gif) no-repeat right center;}
+.footer_last{width: 530px;height: 43px;margin: 0 auto;}
+.footer_last img{float: left;padding: 0px 10px;}

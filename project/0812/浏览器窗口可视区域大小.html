@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	//浏览器窗口可视区域大小   IE9+  谷歌   火狐
+//		window.innerHeight   //浏览器窗口的内部高度
+//		window.innerWidth    //浏览器窗口的内部高度
+		//IE  5678   
+//	    document.documentElement.clientHeight
+//	    document.documentElement.clientWidth
+
+//      document对象的body属性对应HTML文档的body标签
+//      document.body.clientHeight
+//      document.body.clientWidth
+      
+	   //开发时候要兼容的话要实现完全兼容
+//	   var w=document.documentElement.clientWidth||document.body.clientWidth
+//	   var h=document.documentElement.clientHeight||document.body.clientHeight
+	    //获取浏览器当前窗口大小
+	    var w=document.documentElement.clientWidth||document.body.clientWidth
+		var h=document.documentElement.clientHeight||document.body.clientHeight 
+	    document.write(w+"*"+h+"<br />");
+	    
+		var h=window.innerWidth    //浏览器窗口的内部高度
+	    var w=window.innerHeight   //浏览器窗口的内部高度
+		document.write(w+"*"+h+"<br />");
+		
+        var h=document.body.clientWidth
+		var w=document.body.clientHeight
+        document.write(w+"*"+h+"<br />");
+        
+        var w=document.documentElement.clientWidth
+        var h=document.documentElement.clientHeight
+        document.write(w+"*"+h+"<br />");
+        //IE都不支持
+	</script>
+</html>

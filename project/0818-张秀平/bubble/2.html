@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#plan{
+				width: 200px;
+				height: 200px;
+				background-color: paleturquoise;
+			}
+			#box{position: absolute;margin-left: 70px;background: url(img/bullet1.png) no-repeat;
+			top: 200px;}
+			
+		</style>
+	</head>
+	<body>
+		<div id="plan">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oplan=document.getElementById("plan");
+		//创建一个子弹
+		function createBubble(event) {
+			//考虑IE君的兼容性
+			var event=event||window.event;
+			//创建一个小小的子弹君
+			var bubble=document.createElement("div");
+			bubble.setAttribute("id","box");
+			bubble.style.width=10+"px";
+			bubble.style.height=15+"px";
+//			bubble.style.backgroundColor="palegreen";
+			oplan.appendChild(bubble);//不加引号
+			
+			
+//			var otop=bubble.offsetTop
+			var timer=setInterval(function() {
+			var otop=bubble.offsetTop;/*+10*///只能在里面
+			if (otop<=600) {
+			bubble.style.top=otop+10+"px";
+				} else{
+					bubble.style.display="none";
+				}
+				},50)
+			}
+		var timer=setInterval(function  () {
+			createBubble(event);
+		},400)
+		
+		
+	
+	</script>
+</html>

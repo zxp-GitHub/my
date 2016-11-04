@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#plan{
+				width: 200px;
+				height: 200px;
+				background-color: paleturquoise;
+			}
+			#box{position: absolute;margin-bottom: 60px;margin-left: 70px;}
+			
+		</style>
+	</head>
+	<body>
+		<div id="plan">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oplan=document.getElementById("plan");
+		//创建一个子弹
+		function createBubble(event) {
+			//考虑IE君的兼容性
+			var event=event||window.event;
+			//创建一个小小的子弹君
+			var bubble=document.createElement("div");
+			bubble.setAttribute("id","box");
+			bubble.style.width=50+"px";
+			bubble.style.height=50+"px";
+			bubble.style.backgroundColor="palegreen";
+			oplan.appendChild(bubble);//不加引号
+			
+			//获取子弹的在窗口的位置
+//			var otop=bubble.offsetTop;
+//			var oleft=bubble.offsetLeft;
+//			bubble.style.left=oleft+"px";
+//			bubble.style.top=otop+"px";
+			
+			
+//			if (otop<=800) {
+			var timer=setInterval(function() {
+//			var a=10;
+//			var oleft=bubble.offsetLeft;
+			var otop=bubble.offsetTop+10;
+//			bubble.style.left=oleft+"px";
+//			bubble.style.top=otop+"px";
+			
+			bubble.style.top=otop+"px";
+		},50)
+			
+		}
+//			} else{
+//				bubble.style.display="none";
+//			}
+			
+		
+		var timer=setInterval(function  () {
+			createBubble(event);
+		},400)
+//		
+			
+			
+			
+		
+		
+	
+	</script>
+</html>

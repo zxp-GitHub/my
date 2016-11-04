@@ -1,0 +1,197 @@
+*{padding: 0;margin: 0;}
+.container{
+height: 1380px;
+width: 100%;
+background-color: white;
+}
+.top{
+	height: 40px;
+	background-color: #D0D0D0;
+}
+/*===================================nav*/
+.nav{
+	
+	width: 1040px;
+	height: 90px;
+	margin: 0 auto;
+	background-color: white;
+	font-size: 24px;
+	word-spacing: 10px;
+}
+.nav img{
+	height: 90px;
+}
+h1{
+	display: inline-block;
+	position: relative;
+	top: -30px;
+}
+a{ position: relative;
+     top: -35px;
+     left : 50px;
+	display: inline-block;
+	list-style-type: none;
+	text-decoration: none;
+	display:inline;
+	color: black;
+}
+input{
+	position: absolute;
+	top: 75px;
+	right: 30px;
+	height: 26px;
+	background: url(../img/f_03.png) no-repeat  top right;
+	border:1px solid #D0D0D0;
+	
+}
+a:hover{
+	color: red;
+}
+
+/*=====================================icon*/
+.icon{
+	height: 60px;
+	width: 1040px;
+	background-color: white;
+	margin: 0 auto;
+}
+/*=================================banner*/
+.banner{
+	width: 1040px;
+	height: 360px;
+	background-color: goldenrod;
+	margin: 0 auto;
+	border:1px solid #D0D0D0;
+}
+.banner img{/*no  .main img*/
+	
+	width: 1040px;
+	height: 360px;
+}
+/*=====================================main*/
+.main{
+	position: relative;
+    left: 173px;
+	width: 1040px;
+	height: 480px;
+	background-color: white;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+
+span{
+	position: relative;
+	font-size: 30px;
+	left: 20px;
+	top: 20px;
+}
+.main span:nth-child(2){
+	margin-left: 70px;
+	font-size: 20px;
+	font-size: 30px;
+}
+
+.main span img{
+	position: relative;
+	right: 70px;/*把字和图片设置距离*/
+	width: 16px;
+	height: 16px;
+}
+.main img{
+	height:130px;
+	width: 320px;
+	margin-top: 10px;
+	}
+.main p{
+	margin-top: 40px;
+}
+
+
+
+
+
+.main li{
+	
+	list-style-image:url(../img/dian.png)
+}
+.main_left{
+	border:1px solid #D0D0D0;
+	height: 480px;
+	width: 320px;
+	background-color: white;
+	float: left;
+	margin-right: 35px;
+}
+
+.main_center{
+	border:1px solid #D0D0D0;
+	height: 480px;
+	width: 320px;
+	background-color: white;
+	float: left;
+	margin-right: 35px;
+}
+.main_right{
+	height: 480px;
+	width: 320px;
+	background-color: white;
+	float: left;
+	
+	border:1px solid #D0D0D0;
+}
+
+ul{
+	font-family: "微软雅黑";
+	position: relative;
+	left: 30px;
+	font-size: 16px;
+	line-height: 30px;
+	
+}
+
+ 
+.low{
+	height: 220px;
+	background-color:rgb(93,93,88);
+}
+.low ul{
+	display:inline-block ;
+	position: relative;
+	left: 140px;
+	margin-left: 40px;
+	 color: white;
+	list-style: none;
+	top: 10px;
+	vertical-align: top;/*是第一行对齐*/
+	                    
+}
+.low ul li:nth-child(1){ /*li后与冒号无空格*/
+	font-size:30px;
+}
+/*=========================footer*/
+.footer{
+	height: 50px;
+	background-color:rgb(77,76,73);
+}
+.footer p{
+	font: normal normal 20px/30px "agency fb";
+	line-height: 30px;
+	margin-left: 180px;
+	word-spacing: 30px;
+}
+
+/*line-height: 30px;此句不可以保证第一行对齐*/
+/*li后与冒号无空格*/
+/*把字和图片设置距离*/
+/*在text里加一个放大镜*/
+/*将一行里设置图和字，不换行:    无论使用什么标签
+ * 不换行  ===1.定位，2设置行高/字体大小，3 左浮动  （行内元素 、 display）
+ * 有距离：设置right：20px； 
+ * 
+ * 
+ * ========浮动解决所有换行======================*/
+/*距离可为负值在设置图与字一行时*/
+
+/*<!--使第一行对齐-->*/
+

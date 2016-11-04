@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>正则表达式</title>
+</head>
+<body>
+<script>
+    //正则表达式，描述字符模式的对象
+    //Appstore用户名规则：首字母必须是字母且大写；必须有数字字母组成；必须大于等于6位，小于等于18位
+
+    //1：new 运算符创建 使用RegExp表示正则表达式
+    //RegExp(string,pattern);  pattern 三种值：i：不区分大小写  g：全局匹配  m：多行匹配
+    var reg=new RegExp('sb');
+    document.write(reg.test('sb shi ni,ni shi sb')+'<br>');//字符串中是否出现 sb
+    //2.普通方式(字面量方式)  var reg=/.../igm;
+    var reg=/\dhehe\d/;
+    document.write(reg.exec('helo7hehe9,world')+'<br>');    //7hehe9
+
+    //test 函数，只要匹配上返回true,否则false     exec 函数，匹配上返回数组对象，匹配不上返回null
+    //\d:一位数字0-9  \D：等价于[^0-9]不是数字  \w:[a-zA-Z0-9]  \W:[^a-zA-Z0-9]  \b单词分隔符
+    //{x}表示前面的字符重复x次    {x，y}表示前面的字符重复x到y次    {x,}表示前面的字符重复x次以上
+    var rs=/^\d{8,}$/;//重复8次以上
+    document.write(rs.exec('1234567890')+'<br>');
+    // [] 表示取其中任意一个字符  [^]：限定某一位上不能取的值
+    //（）表示分组
+    //  |  ：分枝条件，从左到右测试每个分枝，如果有一个分枝满足，就不会再管其他分枝
+    rs=/^([a-c]|[5-8]){6}$/.exec('565657');// ^ 表示以a-c或5-8开头，行首匹配
+    document.write(rs+'<br>');
+    // $ 表示行尾匹配，必须以所定义的结尾
+
+    //手机号码
+    rs=/^1[358]\d{9}$/;//第二位为3/5/8，其余9位随意，
+    document.write(rs.exec('13890809099')+'<br>');
+    //将手机号的中间四位显示为****
+    var reg=/(\d{3})(\d{4})(\d{4})/;
+    var str="13890809099";
+    alert(str.replace(reg,'$1****$3'));
+
+    //错误Error对象
+    try {
+        haha();
+    }   catch(e){
+        document.write(e.name+'<br>');//错误名字
+        document.write(e.message+'<br>');//错误信息
+    }
+
+    //字符串操作
+    var str='qin ai de';
+    document.write(str.length+'<br>');//字符串长度，下标从0开始
+    //反向打印
+    for (var i=str.length-1;i>=0;i--){
+        document.write(str[i]);
+    }
+    //字符串连接
+    document.write('<br>'+str.concat(',wo ai ni')+'<br>');
+    //返回替换后的字符串
+    document.write(str.replace(/i/g,'k')+'<br>');
+    //转为大写字母  toUpperCase()     转为小写字母  toLowerCase()
+    //计算字符串中所有数字之和
+    var a='hell35,qor67d9ok';
+    var sum=0;
+    for (var i=0;i<a.length;i++){
+        var ch=a.charCodeAt(i);
+        if (ch>=48&&ch<=57){
+            sum+=ch-48;
+        }
+    }
+    document.write(sum);
+document.write('<br>');
+    //  .  代表任意字符，换行除外
+    var reg=/b..k/;
+    document.write(reg.test('book')+'<br>');
+
+    // ? 出现0次或一次  * 出现0次或多次  + 出现1次或多次
+    //var reg=/bo*k/;  // true
+   // var reg=/bo?k/;  // true
+    var reg=/bo+k/;  // false
+    var str="bk";
+    alert(reg.test(str));
+
+    //  \s 匹配空白字符、空格、制表符、换行符
+    //贪婪：+ * ？ {m,n} {m} {m,} 取最大匹配的字符串   惰性：+？ *？  ?? {m,n}? {m}? {m,}? 取最小匹配的字符串
+
+    var reg=/(.*)\s(.*)/;
+    var str="hello world";
+    //交换hello和world  $1 $2 表示第一个组，第二个组
+    document.write(str.replace(reg,'$2 $1')+'<br>');
+
+    //捕获性分组，非捕获性分组
+    //var reg=/([a-z]+)\s(\d{4})/;
+    //var str="hello 2016";
+    //alert(reg.exec(str)); // hello 2016,hello,2016  捕获性分组
+    var reg=/([a-z]+)\s(?:\d{4})/; // ?: 表示非捕获性分组
+    var str="hello 2016";
+    alert(reg.exec(str)); //hello 2016,hello
+
+    //前瞻捕获
+    var reg=/goo(?=gle)/;// ?=表示前瞻捕获
+    var str="google";
+    alert(reg.exec(str));// 返回所强调的字符串的前面的字符串 goo
+
+    //验证QQ号码是否合法
+    var qq="14456404444";
+    if (qq.length>=5 && qq.length<=15){
+            if (qq.charCodeAt(0)!=48){
+                if (!isNaN(qq)){
+                    document.write("QQ格式正确!");
+                }
+                else
+                    document.write("QQ格式错误！");
+            }
+        else
+            document.write("QQ格式错误！");
+    }
+    else
+        document.write("QQ格式错误!");
+    //正则表达式法
+    var reg=/[1-9][0-9]{4,14}/;
+    alert(reg.test(qq));
+</script>
+</body>
+</html>

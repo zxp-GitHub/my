@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--心情好~-->
+	</body>
+	<script type="text/javascript">
+//		do/*cument.onclick=function() {
+//			opener.document.write("good~");
+//		}*/
+
+			function maxCharToString (str) {
+			var strArray=str.split("");
+			//创建一个跟strArray长度相同的数组 备用 存放每个字符出现的次数
+			var numArray=new Array(str.length);
+			//赋初值
+			for(var i in numArray){
+				numArray[i]=0;
+			}
+			
+			//数数
+			for (var i = 0; i < str.length; i++) {
+				//计数器
+				var temp=0;
+				for (var j = 0; j < str.length; j++) {
+					if (strArray[i]==strArray[j]) {
+						temp++;
+					}
+				}
+				numArray[i]=temp;
+			}
+			document.write(numArray);
+			//找出次数出现最多的字符
+			var  max=numArray[0];
+			var i;
+			for(var i in numArray){
+				if (max<numArray[i]) {
+					max=numArray[i];
+					index=i;
+				}
+			}
+			
+			//返回出现次数最多的字符与它出现次数的拼接结果
+			return  strArray[i].concat(numArray[i]);
+			
+		}
+				
+		document.write(maxCharToString("WelcomeeeToQianfengWelcomeeeToQianfengWelcomeeeToQianfeng")) ;
+		
+	</script>
+</html>

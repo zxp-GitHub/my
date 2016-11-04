@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>removeChild()移除节点</title>
+	</head>
+	<body>
+		<div id="content">
+			<h1>迎风摇曳的豆芽菜</h1>
+			<h1>漂移</h1>
+			<h1>com on baby~</h1>
+			<h1>早起来</h1>
+			<h1>一起去爆炸吧</h1>
+			<h1>每天都很fighting</h1>
+			<h1>我盟吗</h1>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//返回被删除的节点，失败   null  
+		
+		var otest=document.getElementById("content");
+		var x=otest.removeChild(otest.childNodes[1]);
+		document.write("删除节点的内容"+x.innerHTML);
+	</script>
+</html>
+<!--漂移
+
+com on baby~
+
+早起来
+
+一起去爆炸吧
+
+每天都很fighting
+
+我盟吗
+
+删除节点的内容迎风摇曳的豆芽菜
+
+因为有空格-->

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//日期时间对象  Date  GMT+08  东8区  格林尼治时间   子午线
+//		var date=new Date();//创建一个日期时间对象date  显示系统当前时间
+//		document.write(date);
+		
+//		var date=new Date("2016/8/8");//创建一个日期时间对象date  显示传入的时间
+//		document.write(date);
+		
+//		var date=new Date(56521211021);//创建一个日期时间对象date  相比格林尼治开始时间 单位ms
+//		document.write(date);
+		
+		
+		var d=new Date("2016/8/8");
+		document.write(d.toDateString()+"<br />");
+		document.write(d.toTimeString()+"<br />");
+		document.write(d.toLocaleDateString()+"<br />");//
+		document.write(d.toLocaleTimeString()+"<br />");//
+		document.write(d.toUTCString()+"qqq<br /><br /><br />");
+		
+		//返回距离1970年1月1日0时的毫秒数
+		document.write(Date.parse("2016/8/8")+"<br />");
+		document.write(d.getTime()+"<br />");
+		document.write(d.setTime(1460585600000)+"<br />");
+		document.write(d+"ssssaaaa<br />");//输出的是设置的时间
+		
+		//根据日期时间对象 返回  *年*月*日 *小时*分钟*秒
+		var d1=new Date();
+		var year=d1.getFullYear();
+		var month=d1.getMonth()+1;
+		var day=d1.getDate();
+		var hour=d1.getHours();
+		var sec=d1.getMinutes();
+		var min=d1.getSeconds();
+		
+		document.write(year+"年"+month+"月"+day+"日:"+hour+"小时"+sec+"分钟"+min+"秒"+"<br />");
+		//返回本地时间与格林威治标准时间(GMT)的分钟差
+		document.write(d1.getTimezoneOffset()+"<br />");
+		document.write(typeof d1+"<br />");
+		document.write(d1.valueOf()+"<br />");
+		
+		
+		
+		
+	</script>
+</html>

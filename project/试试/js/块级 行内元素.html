@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				background-color: red;margin: 10px;padding: 10px;line-height: 50px;/*float: left;*/
+			}
+			span{
+				background-color: greenyellow;margin: 10px;padding: 10px; width:100px;height: 100px;line-height: 50px;
+			}
+			p{
+				background-color: cornflowerblue;display: inline-block;
+			}
+			b{
+				background-color: cyan;
+			}
+		</style>
+	</head>
+	<body>
+		<div>块级元素</div>
+		<div>块级元素</div>	
+		<span>行内元素</span>
+		<span>行内元素</span>
+		<br />		<br />
+
+		<p>aaaaa</p>
+		<p>aaaaa</p>
+		<b>vvvvv</b>
+		<b>vvvvv</b>
+	</body>
+</html>
+<!--1行内元素不能定义 宽 ，高度，行高（会不正常,变成类似margin的作用)，padding，margin。      
+    2块级元素，行内元素能不定义宽高就不要定义。
+	3行内元素不要内嵌块级元素，会换行/    块级可以内嵌行内元素。
+	4块级元素定义浮动后原来的100%的宽度，会变成行内元素的宽度（也就是字的宽度）
+-->

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>createElement()创建一个元素节点</title>
+		
+	</head>
+	<body>
+		
+	</body>
+	
+	<script type="text/javascript">
+		//createElement()创建一个元素节点返回一个element对象
+		var body=document.body;
+		var input=document.createElement("input");
+		input.type="text";
+		input.value="创建一个小按钮";
+//		input.placeholder="let's啦go   ~\(≧▽≦)/~啦啦啦"
+		body.appendChild(input);
+	    //当main=document.body时，       把body.appendChild(a); 改为main.appendChild(a);就可以运行了
+	    
+	</script>
+</html>

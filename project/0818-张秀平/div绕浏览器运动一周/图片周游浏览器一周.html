@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#move{
+				width: 400px;
+				height: 300px;
+				background-color: palegreen;
+				position: absolute;
+			}
+			#move img{
+				width: 400px;
+				height: 300px;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="飞起来~图片君" />
+		<div id="move">
+			
+			<img src="img/1a.jpg"/>
+		</div>
+	</body>
+	
+	
+	<script src="运动框架.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var box=document.getElementById("move");
+		var btn = document.getElementById("btn");
+			
+			var screenWidth= document.documentElement.clientWidth||document.body.clientWidth;
+        	var screenHight = document.documentElement.clientHeight||document.body.clientHeight;
+			
+			var target={
+				left:screenWidth-400,
+				top: 0
+			}
+			
+			btn.onclick=moveBox;
+			function moveBox(){
+				startMove(box,target,function(){
+					startMove(box,{left:screenWidth-400,top:screenHight-300},function(){
+						startMove(box,{left:0,top:screenHight-300},function(){
+							startMove(box,{top:0,left:0},function(){
+								moveBox();
+							})
+						})
+					})
+				})
+				
+			}
+	</script>
+</html>

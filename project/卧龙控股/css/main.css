@@ -1,0 +1,157 @@
+*{padding: 0;margin: 0;}
+ul,li,ol{list-style: none;}                    /*设置全局继承属性*/
+a{text-decoration: none;}
+.box{
+	height: 1500px;
+	width: 1000px;
+	background-color: saddlebrown;
+	margin: 0 auto;
+	border: 1px solid rgb(241,241,241);
+}
+/*=====================================================top*/
+.top{
+	height: 100px;
+	width: 1000px;
+	background-color: white;
+}
+canvas{
+	width: 80px;
+	height: 60px;
+	float: left;
+	margin-top: 12px;
+}
+.top span{
+	float: left;
+	font: bold 45px/1 "微软雅黑";
+	position: relative;
+	top: 30px;
+}
+.top p{
+	font: bold 10px/86px "微软雅黑";
+	letter-spacing: 10px;
+}
+.top pre{
+	font: lighter 4px/0 "agency fb";
+	position: relative;
+	left: 250px;
+	top: -19px;
+	height: 1px;
+}
+#txt{
+	/*border: none;*/
+	border:none;
+	height: 40px;
+	width: 140px;
+	float: left;
+	background-color: rgb(241,241,241);
+	
+	}
+			#btn{
+				border:none;
+				height: 40px;
+				width: 40px;
+				float: left;
+				background: url(../img/biger_03.png) no-repeat ;
+				background-size: 40px 40px;      /*背景图大小可变，且可以同时设置宽高*/
+			}
+			#box1{
+				height: 40px;
+				width: 180px;
+				border: 2px solid rgb(243,243,243);
+				margin: -70px 750px;
+			}
+/*==============================================================================NAV*/
+.nav{
+	height: 55px;
+	width: 1000px;
+	background-color: lawngreen;
+}
+.nav ul li{
+	font: 10px/3 "微软雅黑";
+	/*vertical-align: middle;*/
+	float: left;
+	width:125px ;              /*指的是一个li的宽度*/
+	height: 55px;
+	background-color: black;
+	text-align: center;
+}
+.nav li:hover{
+	background-color: lightgray;
+}
+.nav a{
+	color: white;
+}
+.nav a:hover{
+	color: red;
+}
+/*=====================================================================banner*/
+.banner{
+	height: 470px;
+	width: 1000px;
+	background-color: blue;
+}
+.banner img{
+	height: 470px;
+	width: 1000px;
+}
+/*===================================================main*/
+.main1{
+	height: 240px;
+	width: 1000px;
+	background-color: white;
+}
+.main1 h1, .main1 h5,.main1 p,.main1 li{
+	margin-left:8%;
+	margin-top: 2%;
+}
+.left{
+	float: left;
+	height: 240px;
+	width: 50%;
+}
+.left pre{
+		background:url(../img/point_03.png) no-repeat left;
+        margin-left: 4%;
+        padding-left: 3%;          /*使背景点出现，而且div不会下移：当div设置为%时*/
+        
+}
+.mid{
+	float: left;
+	width:25% ;
+	height:240px ;
+	background-color: lightgray;
+	/*padding-left: 24px;*/
+}
+
+/*.mid p{
+	margin-left: 4%;
+}*/
+.right{                       /*d  *这个继承了left的背景色？为什么*/
+	height:100% ;
+	float: left;
+	width: 25%;
+	background-color: rgb(251,251,251)
+}
+.right img{
+	width: 30%; 
+	height: 30%;
+	margin:30% 60%;          /*margin 两个值可控制上 左间距，在设置宽高可调图片大小*/  
+}
+
+
+/*========================================================*/
+.mian2{
+	height: 300px;
+	width: 1000px;
+	background-color: darkcyan;
+}
+.main3{
+	height: 250px;
+	width: 1000px;
+	background-color: violet;
+}
+.footer{
+	
+}
+
+

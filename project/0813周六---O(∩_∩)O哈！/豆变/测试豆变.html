@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="common.css"/>
+		<style type="text/css">
+		.box{
+				width: 1000px;
+				/*height: 800px;*/
+				background-color: pink;
+				margin: 0 auto;
+				padding-top:1px ;
+			}
+			ul{
+				margin: 20px 0px 20px;
+			}
+			ul li{
+				float: left;
+			}
+			ul a{
+				float: left;margin-left: 20px;
+				
+			}
+			#b{
+				width:610px;
+				background-color:yellow;
+			}
+			#b div{margin:10px 0px 10px 0px;border-radius: 3px;background: palegreen url(img/img2.png)  no-repeat left center;padding:10px 0px 10px 50px;height: 20px;}
+             textarea{width: 600px;height:70px;}
+            .del{display:inline-block; float:right;cursor: pointer;}
+            #b img{display: block;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul class="tab">
+        	<li><a href="#" class="bg">聊一聊</a></li>
+            <li><a href="#">晒一晒</a></li>
+        </ul><br />
+		<div id="a">
+			<textarea name="" cols="" rows="" id="txt"></textarea><br />
+			<input type="button" name="btn" id="btn" value="点击" />
+		</div>
+		<div id="b">
+			
+			<img src="img/img.png"/>
+		</div>
+		</div><!--box-->
+	</body>
+	<script src="move.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	window.onload=function(){
+		
+		
+		var b=document.getElementById("b");
+		var txt=document.getElementById("txt");
+		var btn=document.getElementById("btn");
+		
+		btn.onclick=function () {
+			
+			
+			
+			if(txt.value==''){
+			alert('输入内容为空')
+			}else{
+		var mes = txt.value;
+		var mesBox =document.createElement("div");
+		    mesBox.innerHTML=mes;
+		
+//		setTimeout(function(){
+		if(b.childNodes.length==0){
+		b.appendChild(mesBox);
+		}else{
+		b.insertBefore(mesBox,b.childNodes[0])}
+		
+		
+		
+		var oDel=document.createElement('a');
+	    oDel.innerHTML='删除';
+//	     oDel.setAttribute("class",'del');
+		oDel.className='del';
+		oDel.onclick=function(){
+		this.parentNode.parentNode.removeChild(this.parentNode);
+		}
+		mesBox.appendChild(oDel);
+		
+		
+		
+//		var txts = document.createElement("p");
+//		mesBox.appendChild(txts);
+//		},500);
+		txt.value='';
+		
+		
+		
+		
+		
+		var iHeight=b.children[0].offsetHeight;
+		b.children[0].style.height=0
+		b.children[0].style.filter='alpha(opacity:0)'
+		b.children[0].style.opacity='0'
+		/*startMove(oCon.children[0],{height:iHeight},function(){
+			startMove(oCon.children[0],{opacity:'100'})
+			})*/
+			startMove(b.children[0],{height:iHeight,opacity:'100'})
+			
+		}
+		
+		
+		}
+		
+		
+		}
+		
+//	var iSpeed = (iTarget - oThis.oUl.offsetTop) / 5;
+//			iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+//			oThis.oUl.offsetTop == iTarget ? clearInterval(oThis.timer) : (oThis.oUl.style.top = oThis.oUl.offsetTop + iSpeed + "px")
+	
+	
+	
+	
+	</script>
+</html>

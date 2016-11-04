@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var arr=[3,2,6,7,4];
+		for (var j = 0; j < arr.length-1; j++) {// 大循环，arr.length-1是因为最后一个数不用向后比
+			var index=j;
+			var min=arr[index];
+			
+		
+
+		for (var i = j+1; i < arr.length; i++) {//小循环，i = j+1，第一个数不和自己比
+			if (arr[i]<min) {
+				index=i;
+				min=arr[index];
+			}
+			//交换不可放在此处要一次大循环后才可交换，所以在小循环之外。
+		}
+		
+		var t=arr[j];//!!! 循环之后的交换是必须写的
+		arr[j]=arr[index];
+		arr[index]=t;
+		
+//		document.write(arr);查看循环的过程
+		}
+		document.write(arr);
+
+	</script>
+</html>

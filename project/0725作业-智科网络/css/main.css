@@ -1,0 +1,128 @@
+        *{padding: 0;margin: 0;}
+		li,ul,ol{list-style: none;}
+		a{text-decoration: none;}
+		img{border: none;}
+		.box{width:1583px;
+		height: 2436px;
+		margin: 0 auto;}	
+		.nav{width: 1210px;height: 92px;
+		margin: 0 auto;}
+		.nav img{margin-top: 10px;}
+		.nav ul{float: right;font: 20px/2 "微软雅黑";
+		margin-top: 28px;}
+		.nav ul li{float: left;}
+		.nav a{color:black;padding: 0px 15px;}
+		.nav a:hover{background-color:deepskyblue;
+		color: white;
+		}
+		.img{
+		width: 1583px;
+		height:492px;
+		overflow: hidden;
+		margin-bottom: 30px;
+		}
+		.up{width: 1220px;height:664px;
+		margin: 0 auto;
+		text-align: center;
+		position: relative;
+		}
+		.h3{font: 36px/1.2 "微软雅黑";}	
+		.pp{font: 13px/1.3 "微软雅黑";}
+		.qiu{width: 383px;height: 198px;
+		float: left;
+		margin-right: 20px;
+		border: 1px solid lightgray;
+		margin-top: 80px;
+		font: 16px/1.6 "微软雅黑";
+		}
+		.qiu p{
+			margin-top: -60px;
+			font: 30px/1 "微软雅黑";
+		}
+		.qiu img{
+		position: relative;
+		top:-57px;
+		margin: 0 auto;
+		}
+	/*	#d,#e,#f{margin-top: 80px;}*/
+		.mid{width: 1583px;height: 404px;
+		background-color:#ccc;
+		margin:48px 0px 40px 0px;
+		text-align: center;
+		}
+		.container{
+			width: 1220px;
+			height: 228px;
+			margin: 80px auto 10px;
+		}
+		.left{
+			float: left;
+		text-align: left;
+		width: 777px;
+		height: 230px;
+		}
+		.left h2{font: 30px/2 "微软雅黑";}
+		.left img{
+			float: left;
+			margin-top: 50px;
+			margin-right: 15px;
+			}
+			.right{
+				float: right;
+				width: 410px;
+			 height: 226px;
+			 text-align: left;
+			}
+			.right ul{
+				font: 16px/2 "微软雅黑";
+			}
+			.right a{
+				color: black;
+			}
+			.right span{float: right;}
+		.down{width: 1220px;
+		height:420px;
+		margin: 0 auto;
+		text-align: center;
+		
+		}
+		.down img{
+			float: left;
+			margin-left: 7px;
+			margin-top: 10px;
+			}	
+		.footer{width:1583px;height:220px;
+		background-color:black;
+		margin-top: 20px;
+		position: relative;
+		}
+		.footer ul{
+			float: left;
+			margin-right: 94px;
+			margin-top: 10px;
+			}
+			#ul1{
+			margin-left: 204px;	
+			float: left;
+			-margin-left: 104px;/*_-给属性加，，星号给元素加。*/
+			}
+			.footer ul a{
+				color:white;
+				font: 13px/2 "微软雅黑";
+			}
+			#first{
+				font: 18px/2 "微软雅黑";
+			}
+			.footer img{
+				margin: 20px 86px 0px 0px;
+			}
+			
+			.footer p{
+				white-space: nowrap;
+				position: absolute;
+				bottom: 20px;
+				margin-left: 552px;
+				color: white;
+			}
+		/*	.footer p{margin: 0 auto;}*/
+		/*id不要用数字*/

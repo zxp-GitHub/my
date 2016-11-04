@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>计算器</title>
+	</head>
+	<body>
+		<input type="text" name="txt1" id="txt1" value="" />
+		<select name="" id="select">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input type="text" name="" id="txt2" value="" />
+		<input type="button" name="btn" id="btn" value="计算" onclick="count();" />
+		<input type="text" name="txt3" id="txt3" value="" />
+	</body>
+	<script type="text/javascript">
+		//函数count()
+		function count(){
+			//Dom  获取id 为txt1的input标签的值
+			var num1=parseFloat(document.getElementById("txt1").value);
+			var num2=parseFloat(document.getElementById("txt2").value);
+			console.log(num1);
+			console.log(num2);
+
+			var btn=document.getElementById("select").value;
+			var sum;
+		    if (isNaN(num1)||isNaN(num2)) {
+		    	alert("请输入合法数值");
+		    } else{
+                 switch (btn){
+                 	case"+":
+                 	sum=num1+num2;
+                 		break;
+                 			case"-":
+                 	sum=num1-num2;
+                 		break;
+                 			case"*":
+                 	sum=num1*num2;
+                 		break;
+                 			case"/":
+                 	sum=num1/num2;
+                 		break;
+                 			case"%":
+                 	sum=num1%num2;
+                 		break;
+                 	default:
+                 		break;
+                 }		
+                 document.getElementById("txt3").value=sum;
+		    }
+		}
+	</script>
+</html>

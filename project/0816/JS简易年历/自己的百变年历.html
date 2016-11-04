@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//h2D XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/h2D/xhtml1-transitional.h2d">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript简易日历</title>
+<style type="text/css">
+* { padding: 0; margin: 0; }
+li { list-style: none; }
+body { background: #f6f9fc; font-family: arial; }
+
+.calendar { width: 210px; margin: 0 auto; padding: 10px 10px 20px 20px; background:yellow; }
+.calendar ul { width: 210px; overflow: hidden; padding-bottom: 10px; }
+.calendar li { float: left; width: 58px; height: 54px; margin: 10px 10px 0 0; border: 1px solid #fff; /*background: #424242;*/ color: #fff; text-align: center; cursor: pointer; }
+.calendar li h2 { font-size: 20px; padding-top: 5px; }
+.calendar li p { font-size: 14px; }
+
+.calendar .active { border: 1px solid #424242; /*background: #fff;*/ color: #e84a7e; }
+/*.calendar .active p { font-weight: bold; }*/
+
+.calendar .text { width: 178px; padding: 0 10px 10px; border: 1px solid #fff; padding-top: 10px; /*background: #f1f1f1;*/ color: #555; }
+.calendar .text h2 {font-size: 14px; margin-bottom: 10px; }
+.calendar .text p { font-size: 12px; line-height: 18px; }
+
+</style>
+<script type="text/javascript">
+
+/*function changeColor(){
+	var color='';
+	for(var i=0;i<6;i++){
+		color+=(Math.floor(Math.random()*16)).toString(16);
+		document.write(color);
+	}
+		var str="#"+color;
+		return str;
+}*/
+function changeColor(){
+return '#' + Math.floor(Math.random()*16777215).toString(16);	
+//var str="#" + Math.random().toString(16).slice(2, 8);
+//var str='#'+ ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6) 
+//return str;
+// return '#'+('00000'+(Math.random()*0x1000000<<0).toString(16)).slice(-6);  
+//return "hsb(" + Math.random()  + ", 1, 1)";     错
+}
+
+//function randomColor( ) { 
+//var rand = Math.floor(Math.random( ) * 0xFFFFFF).toString(16); 
+//if(rand.length == 6){ 
+//return rand; 
+//}else{ 
+//return randomColor(); 
+//}
+//}
+
+
+arr=['快过年了，大家大家出去嗨\(^o^)/~','奥特曼','大脸猫~~~','美少女战士222444222~~~','小樱魔法卡222222~~~','冰河世纪~走起666222222~~~','魔法篮子227772222~~~','犬夜叉28888822222~~~','航海王~路飞im comming~99999222222~~~','鸣人10000000吧222222~~~','葫芦娃~每天都很happy~~~','喜洋洋与灰太狼~~~'];
+
+window.onload=function(){
+	var tab=document.getElementById("tab");
+	var oUl=document.getElementById('ul');
+	var aLi=oUl.getElementsByTagName('li');
+	var oTxt=document.getElementById('txt');
+	for(i=0;i<aLi.length;i++){
+		aLi[i].index=i
+		aLi[i].onclick=function(){
+			for(i=0;i<aLi.length;i++){
+				aLi[i].className=''
+				}
+			   this.className='active'
+			 oTxt.innerHTML= ' <h2>'+(this.index+1)+'月活动</h2> <p>'+arr[this.index]+'</p>'
+			 //alert(oTxt.innerHTML)
+			   
+			tab.style.background=/*"red"*/changeColor();
+			}
+		
+		}
+	
+	
+	}
+</script>
+</head>
+
+<body>
+
+<div id="tab" class="calendar">
+
+    <ul id="ul">
+        <li class="active"><h2>1</h2><p>JAN</p></li>
+        <li><h2>2</h2><p>FER</p></li>
+        <li><h2>3</h2><p>MAR</p></li>
+        <li><h2>4</h2><p>APR</p></li>
+        <li><h2>5</h2><p>MAY</p></li>
+        <li><h2>6</h2><p>JUN</p></li>
+        <li><h2>7</h2><p>JUL</p></li>
+        <li><h2>8</h2><p>AUG</p></li>
+        <li><h2>9</h2><p>SEP</p></li>
+        <li><h2>10</h2><p>OCT</p></li>
+        <li><h2>11</h2><p>NOV</p></li>
+        <li><h2>12</h2><p>DEC</p></li>
+    </ul>
+    
+    <div class="text" id="txt">
+        <h2>1月活动</h2>
+        <p>快过年了，大家出去嗨\(^o^)/~</p>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+<!--如果是32位机器的话，在内存里面的存储形式就是这样的！
+其中0x表示16进制，f在16进制中就表示十进制数15，这样0xffffff就表示一个16进制的数fffffff，
+例如：
+      0xf就表示16进制的f，也就是10进制的15.
+      0xff就表示16进制的ff，也就是10进制的（15*16+15）。
+此外，0xffffff和0x00ffffff 也是一样的！-->
+	
+	
+	
+	<!--
+	随机颜色问题：
+
+　　　var b = Math.random() * 16777215 |0 ;
+
+　　　var color = "#" + b.toString(16);
+
+　　　var div = document.getElementById("div");
+
+　　　div.style.backgroundColor = color;
+
+		解释：
+		
+		16777215，首先这个数字是颜色白色的十进制表示，它等于2的24次幂减1。
+		为什么是16777215呢？由于颜色计数跟内存一样，是由0开始的。
+		我们平时使用的#000000这种是十六进制表示法，它由三组颜色构成，各占两位十六进制数。
+		也就是（255,255,255），将它转换为二进制的话就是3个八位二进制（即24位）。
+		所以#000000（白色）的十进制值就等于2的24次方减一。
+		
+		找到了对应的十进制数后，通过与随机方法相乘以及跟0进行按位或操作进行取整。
+		之后在通过number数据类型的方法toString()把参数设为16，即将该数据转换回十六进制，
+		然后拼接“#”字符就能得到了一组随机的16进制颜色值。
+-->
+	
+	
+	
+	<!--var i=parsint(math.random()*arr.length)
+	dw a[i]-->

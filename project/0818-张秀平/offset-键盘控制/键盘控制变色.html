@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#move{
+				width: 300px;
+				height: 300px;
+				background-color: palegreen;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="move">
+			
+			<!--<img src="img/1a.jpg"/>-->
+		</div>
+	</body>
+	<script type="text/javascript">
+		var omove=document.getElementById("move");
+//		function changeColor(){
+//				return '#' + Math.floor(Math.random()*16777215).toString(16);
+////				var color='';
+////				for(var i=0;i<6;i++){
+////					color+=(Math.floor(Math.random()*16)).toString(16);
+////				}
+////					var str="#"+color;
+////					return str;
+//			}
+		window.onkeydown=function (event) {
+			if (event.keyCode==40&&event.ctrlKey) {
+//				console.log(event.keyCode);
+				omove.style.backgroundColor='#' + Math.floor(Math.random()*16777215).toString(16);
+				
+			}
+
+
+//switch (event.keyCode){
+//	    case 37:   omove.style.left=omove.offsetLeft-5+"px";
+//		break;
+//		case 40:   omove.style.top=omove.offsetTop+5+"px";
+//		break;
+//		case 38:   omove.style.top=omove.offsetTop+-5+"px";//-5//+-5
+//		break;
+//		case 39:   omove.style.left=omove.offsetLeft+5+"px";
+//		break;
+//	default:
+//		break;
+//}
+			
+		}
+	</script>
+</html>
+<!--如果是32位机器的话，在内存里面的存储形式就是这样的！
+其中0x表示16进制，f在16进制中就表示十进制数15，这样0xffffff就表示一个16进制的数fffffff，
+例如：
+      0xf就表示16进制的f，也就是10进制的15.
+      0xff就表示16进制的ff，也就是10进制的（15*16+15）。
+此外，0xffffff和0x00ffffff 也是一样的！-->
+	
+	
+	
+	<!--
+	随机颜色问题：
+
+　　　var b = Math.random() * 16777215 |0 ;
+
+　　　var color = "#" + b.toString(16);
+
+　　　var div = document.getElementById("div");
+
+　　　div.style.backgroundColor = color;
+
+		解释：
+		
+		16777215，首先这个数字是颜色白色的十进制表示，它等于2的24次幂减1。
+		为什么是16777215呢？由于颜色计数跟内存一样，是由0开始的。
+		我们平时使用的#000000这种是十六进制表示法，它由三组颜色构成，各占两位十六进制数。
+		也就是（255,255,255），将它转换为二进制的话就是3个八位二进制（即24位）。
+		所以#000000（白色）的十进制值就等于2的24次方减一。
+		
+		找到了对应的十进制数后，通过与随机方法相乘以及跟0进行按位或操作进行取整。
+		之后在通过number数据类型的方法toString()把参数设为16，即将该数据转换回十六进制，
+		然后拼接“#”字符就能得到了一组随机的16进制颜色值。
+-->
+	
+	
+	
+	<!--var i=parsint(math.random()*arr.length)
+	dw a[i]-->

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="tit"></p>
+<a href="login2.html">登录</a>
+
+<!--<script src="cookie2.js"></script>-->
+<script>
+    function getCookie(name){  // 封装函数
+        var str=document.cookie;  // 获取cookie
+        //console.log(str);  // a=5; b=10
+        var arr1=str.split("; ");    // 以分号空格分割
+        for(var i=0;i<arr1.length;i++){
+            var arr2=arr1[i].split('=');
+            if(arr2[0]==name){
+                return arr2[1];//这个arr2[1]就是（name）
+            }
+        }
+    }
+    var oTit = document.getElementById("tit");
+    var username=getCookie('username');
+    oTit.innerHTML = username|| "没有登录，请先登录";
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#p{width: 30px;height: 30px;background-color: palegoldenrod;}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="t" id="t" value=""/>
+		<p id="p">a</p>
+	</body>
+	<script type="text/javascript">
+		var t=document.getElementById("t");
+		var p=document.getElementById("p");
+//		var d=document.createElement("p");
+//		
+//		d.style.width="300px";
+//		d.style.height="300px";
+//		d.style.backgroundColor="red";
+//		document.body.appendChild(d);//document.body.appendChild(d);
+		/*d.onclick=*/
+		p.onclick=function() {//请空input内容应在input里面加onclick事件
+			t.value="";
+		}
+	</script>
+</html>

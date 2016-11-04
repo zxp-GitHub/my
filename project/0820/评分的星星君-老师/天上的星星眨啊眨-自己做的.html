@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#ul {
+				margin: 20px auto;
+				width: 150px;
+				overflow: hidden;
+			}
+			
+			li {
+				list-style: none;
+				float: left;
+				background: url(img/star.gif) no-repeat 0 0;
+				/*不写 0 0 第一个星星会亮*/
+				width: 27px;
+				height: 28px;
+			}
+			/*如果不设置宽高星星不会出来，因为星星是背景图*/
+			
+			.active {
+				background-position: 0 -29px;
+			}
+			/*让图移动，剩下的就是想要的，图一开始位于框的左上角*/
+		</style>
+	</head>
+
+	<body>
+		<ul id="ul">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var oUl = document.getElementById("ul");
+		var oLi = document.getElementsByTagName("li");
+
+		for (var i = 0; i < oLi.length; i++) {
+			oLi[i].index = i;
+		} //重点
+		//让划过的星星颜色为亮
+		for (var i = 0; i < oLi.length; i++) {
+			oLi[i].className = "";
+			
+//			oLi[i].onmouseover = function() { //oLi[i]加下标，划过哪个，‘哪个’就亮
+oLi[i].onmouseover = function() {
+				for (var j = 0; j < oLi.length; j++) {
+					if (j <= this.index) {
+						oLi[j].className = "active";
+					} else {
+						oLi[j].className = "";
+					}
+				}
+		}
+
+oLi[i].onmouseleave = function() {
+				for (var j = 0; j < oLi.length; j++) {
+					if (j <= this.index) {
+						oLi[j].className = "active";
+					} else {
+						oLi[j].className = "";
+					}
+				}
+		}
+oLi[i].onclick = function() {
+				for (var j = 0; j < oLi.length; j++) {
+					if (j <= this.index) {
+						oLi[j].className = "active";
+					} else {
+						oLi[j].className = "";
+					}
+				}
+		}
+}
+	</script>
+
+	<!--
+		重点
+		1.index
+		2.onmouseover方法
+		3.no-repeat 0 0
+		4 方法  顺序，选择if，  循环
+		
+		
+	-->
+	<!--
+		思路
+		1.划过会亮，并且停留在呢里onmouseover方法
+		2.再划过时清除原来的划过，然后再重新调用onmouseover方法if else
+		
+		
+	-->
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var now = new Date();
+		var date = now.getDay();
+		switch (date)
+		{
+			default: alert("今天是星期日"); 
+			case 1:  alert("今天是星期一");    /*break;*/
+			case 2 : alert("今天是星期二");    /*break;*/
+			case 3:  alert("今天是星期三");    /*break;*/    /*会输出2 3 4  ，因为是周二开始的， 若是不从数据库调用日期，则会输出日，1,2,3,4*/
+			case 4:  alert("今天是星期四");    break;
+			case 5:  alert("今天是星期五");    break;
+			case 6:  alert("今天是星期六");    break;
+			
+				
+		}
+	</script>
+</html>

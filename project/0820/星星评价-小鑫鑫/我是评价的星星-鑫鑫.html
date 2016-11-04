@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		/* 灰色背景星星5个平铺 */
+		
+		.star_bg {
+			width: 135px;
+			height: 27px;
+			background: url(img/star.gif) repeat-x;
+			position: relative;
+			overflow: hidden;
+		}
+		/* 这是5个小星星们的默认状态的定位 */
+		
+		.star {
+			height: 100%;
+			width: 27px;
+			line-height: 6em;
+			position: absolute;
+			/*?*/
+			z-index: 3;
+		}
+		
+		.star:hover {
+			background: url(img/star.gif) repeat-x 0 -30px!important;
+			left: 0;
+			z-index: 2;
+		}
+		
+		.star_1 {
+			left: 0;
+		}
+		
+		.star_2 {
+			left: 27px;
+		}
+		
+		.star_3 {
+			left: 54px;
+		}
+		
+		.star_4 {
+			left: 81px;
+		}
+		
+		.star_5 {
+			left: 108px;
+		}
+		/* 鼠标hover效果实现，分别显示背景与定宽 */
+		
+		.star_1:hover {
+			width: 27px;
+		}
+		
+		.star_2:hover {
+			width: 54px;
+		}
+		
+		.star_3:hover {
+			width: 81px;
+		}
+		
+		.star_4:hover {
+			width: 108px;
+		}
+		
+		.star_5:hover {
+			width: 135px;
+		}
+		
+		label {
+			display: block;
+			_display: inline;
+			height: 100%;
+			width: 100%;
+			cursor: pointer;
+		}
+		/* 幕后的英雄，单选按钮 */
+		
+		.score {
+			position: absolute;
+			clip: rect(0 0 0 0);
+		}
+		
+		.score:checked + .star {
+			background: url(img/star.gif) repeat-x 0 -30px;
+			left: 0;
+			z-index: 1;
+		}
+		
+		.score_1:checked ~ .star_1 {
+			width: 27px;
+		}
+		
+		.score_2:checked ~ .star_2 {
+			width: 54px;
+		}
+		
+		.score_3:checked ~ .star_3 {
+			width: 81px;
+		}
+		
+		.score_4:checked ~ .star_4 {
+			width: 108px;
+		}
+		
+		.score_5:checked ~ .star_5 {
+			width: 135px;
+		}
+		
+		.star_bg:hover .star {
+			background-image: none;
+		}
+		/* for IE6-IE8 JS 交互 */
+		
+		.star_checked {
+			background: url(img/star.gif) repeat-x 0 -20px;
+			left: 0;
+			z-index: 1;
+		}
+	</style>
+
+	<body>
+		<div id="starBg" class="star_bg">
+			<input type="radio" id="starScore1" class="score score_1" value="1" name="score">
+			<a href="#starScore1" class="star star_1" title="差"><label for="starScore1">差</label></a>
+			<input type="radio" id="starScore2" class="score score_2" value="2" name="score">
+			<a href="#starScore2" class="star star_2" title="较差"><label for="starScore2">较差</label></a>
+			<input type="radio" id="starScore3" class="score score_3" value="3" name="score">
+			<a href="#starScore3" class="star star_3" title="普通"><label for="starScore3">普通</label></a>
+			<input type="radio" id="starScore4" class="score score_4" value="4" name="score">
+			<a href="#starScore4" class="star star_4" title="较好"><label for="starScore4">较好</label></a>
+			<input type="radio" id="starScore5" class="score score_5" value="5" name="score">
+			<a href="#5" class="star star_5" title="好"><label for="starScore5">好</label></a>
+		</div>
+	</body>
+
+</html>

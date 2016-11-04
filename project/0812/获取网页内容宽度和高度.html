@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">获取网页内容宽度和高度 scrollHeight scrollWidth
+1: IE opera
+scrollHeight 是网页内容的实际高度 可以小于clientHeight
+2: NS FF
+scrollHeight 是网页内容的高度 不过最小值是clientHeight
+//浏览器兼容：
+//获取网页内容实际宽度和高度
+var w = document.documentElement.scrollWidth || document.body.scrollWidth
+var h = document.documentElement.scrollHeight || document.body.scrollHeight
+document.write(w + "*" + h + "<br />");
+
+//网页内容宽度和高度（包括滚动条   边框）
+offsetHeight = clientHeight + 滚动条 + 边框
+浏览器兼容:
+	var w = document.documentElement.offsetWidth || document.body.offsetWidth
+var h = document.documentElement.scrollHeight || document.body.scrollHeight
+document.write(w + "*" + h + "<br />");
+//网页卷去的距离与偏移量
+scrollLeft scrollTop offsetLeft offsetTop</script>
+</html>

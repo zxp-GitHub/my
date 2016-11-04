@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="text" name="txt" id="txt" value="" />
+		<input type="button" name="btn" id="btn" value="点击" />
+	</body>
+	<script type="text/javascript">
+		var num = document.getElementById("txt");
+		var btn = document.getElementById("btn");
+
+		btn.onclick = function() {
+				var numValue = num.value;
+				//		alert(numValue);
+				var max = numValue;
+				var min = numValue;
+				for (var i = 0; i < numValue; i++) {
+					if (i == numValue - 1) {
+						for (var j = 0; j < numValue; j++) {
+							document.write("*&ensp;")
+						}
+					}else{
+						
+						for (var j = 0; j < 2*numValue+1; j++) {
+							if (j==min-1||j==max-1) {
+								document.write("*");
+							} else{
+								document.write("&ensp;");
+							}
+						}
+						max++;
+						min--;
+                      document.write("<br />");
+					}
+					
+					
+					
+				}
+				}
+		
+		
+
+
+	</script>
+
+</html>

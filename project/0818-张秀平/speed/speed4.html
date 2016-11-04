@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body{background:darkgray;}
+        span{position: fixed;top:300px;width:100%;height:0;border-bottom:1px solid red;}
+        div{width:100px;height:50px;margin:20px 0;position:absolute;top:0;background:yellow;border:1px solid seagreen;opacity:0.3;filter:alpha(opacity:30);}
+    </style>
+    <script type="text/javascript">
+        window.onload=function ()
+        {
+            var oDiv=document.getElementById('div1');
+
+
+            oDiv.onclick=function ()
+            {
+                startMove(oDiv,{width:102,height:300,opacity:100})//第一个到底目标的时候 就会清楚定时器，其他的值也会停止
+            };
+
+
+        };
+        function getStyle(obj, attr)
+        {
+            if(obj.currentStyle)
+            {
+                return obj.currentStyle[attr];
+            }
+            else
+            {
+                return getComputedStyle(obj, false)[attr];
+            }
+        }
+
+
+        function startMove(obj,json,fn)
+        {
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function (){
+              for(var attr in json)
+              {
+
+
+
+
+                var iCur=0;
+                if(attr=='opacity')
+                {
+                    iCur=parseInt(parseFloat(getStyle(obj, attr))*100);
+                }
+                else
+                {
+                    iCur=parseInt(getStyle(obj, attr));
+                }
+                var iSpeed=(json[attr]-iCur)/8;
+                iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+
+
+                if(iCur==json[attr])
+                {
+                    clearInterval(obj.timer);
+                    if(fn)  //运动停止的时候，如果有传递第四个参数的时候 就运行
+                    {
+                        fn();
+                    }
+
+
+
+
+                }
+                else
+                {
+                    if(attr=="opacity")
+                    {
+                        obj.style.filter='alpha(opacity:'+(iCur+iSpeed)+')';
+                        obj.style.opacity=(iCur+iSpeed)/100;
+                    }
+                    else
+                    {
+                        obj.style[attr]=iCur+iSpeed+'px';
+                    }
+
+
+                }
+              }
+            }, 30)
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<span></span>
+</body>
+</html>

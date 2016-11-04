@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<span id="hour">00</span>时<span id="min">00</span>分<span id="sec">00</span>秒
+		<button type="button" onclick="btnClick();">开始计时</button>
+		<button type="button" onclick="clear();">结束计时</button>-->
+	<!--<span id="hour">00</span>时
+	<span id="min">00</span>分
+	<span id="sec">00</span>秒
+	<button type="button" onclick="count();">计时开始</button>
+	<button type="button" onclick="stop();">jieshu开始</button>-->
+	</body>
+	<script type="text/javascript">
+	//1.显示当前时间（*年*月*日  星期*  *：*：*）
+//	   var d1=new Date();
+//		var year=d1.getFullYear();
+//		var month=d1.getMonth()+1;
+//		var day=d1.getDate();
+//		var zhou=d1.getDay();
+//		var hour=d1.getHours();
+//		var sec=d1.getMinutes();
+//		var min=d1.getSeconds();
+//		if (zhou==0) {
+//			document.write(year+"年"+month+"月"+day+"日"+"星期天"+"&nbsp;"+hour+":"+sec+":"+min+"<br />");
+//		}else{
+//		document.write(year+"年"+month+"月"+day+"日"+"星期"+zhou+"&nbsp;"+hour+":"+sec+":"+min+"<br />");
+//		}
+
+		//秒表
+//	   var str;
+//		function count(){
+//			var hour=document.getElementById('hour');
+//			var min=document.getElementById('min');
+//			var sec=document.getElementById('sec');
+//			var i=0;
+//			str=setInterval(function () {
+//				i++;
+//				sec.innerHTML=showTime(i%60);
+//				min.innerHTML=showTime(parseInt(i/60)%60);
+//				hour.innerHTML=showTime(parseInt(i/3600));
+//			},1000);
+//			function showTime(num){
+//				if(num<10){
+//					num='0'+num;
+//				}
+//				return num;
+//			}
+//		}
+//		function stop(){
+//			clearInterval(str);
+//		}
+
+
+	//实现计时，记录时间
+	 // var str;
+//		function count(){
+//			var hour=document.getElementById('hour');
+//			var min=document.getElementById('min');
+//			var sec=document.getElementById('sec');
+//			var i=0;
+//			str=setInterval(function () {
+//				i++;
+//				sec.innerHTML=showTime(i%60);
+//				min.innerHTML=showTime(parseInt(i/60)%60);
+//				hour.innerHTML=showTime(parseInt(i/3600));
+//			},1000);
+//			function showTime(num){
+//				if(num<10){
+//					num='0'+num;
+//				}
+//				return num;
+//			}
+//		}
+		
+//		var n=55;
+//		function setTime (n,date) {//date对象的传递
+//			//获取当前时间的年月日
+//			var year=date.getFullYear();
+//			var month=date.getMonth()+1;
+//			var day=date.getDate();		
+//		
+//		
+//		while (n){
+//			//判断当前月有多少天
+//			if(month==1||month==3||month==5||month==7||month==8||month==10||month==12){//31天
+//				//按31天
+//				tool(31);
+//				
+//			}else if(month==2){
+//				if(year%4==0&&(year%100!=0||year%400==0)){
+//					tool(29);
+//				}else{
+//					tool(28);
+//				}
+//				
+//			}else{
+//				//按30天
+//				tool(30);
+//			}
+//			//13
+//			if(month!=12){
+//				year+=parseInt(month/12);
+//				month=month%12;
+//				
+//			}
+//			
+//		}
+//		
+//		function tool (temp) {
+//			if (day+n<=temp) {
+//				day=day+n;
+//				n=0;
+//			} else{
+//				month++;
+//				n-=temp-day;//n=n-(temp-day);
+//				day=0;				
+//			}
+//			
+//		}
+//		
+//		document.write(year+"年"+month+"月"+day+"日");
+//		
+//		return;
+//		
+//	}
+		
+		
+		
+		
+		
+		
+		
+	//封装一个函数，可以根据输入的数值n(天数)显示n天后的时间
+//		var date=new Date("2015/10/18");
+//		setTime(100,date);//封装好的函数	
+
+
+
+
+
+
+
+
+
+	//1.	判断某年份是否为闰年
+	            /*var d1=new Date();
+               var year=d1.getFullYear();
+                if(year%4==0&&(year%100!=0||year%400==0)){
+					document.write("是闰年");
+				}else{
+					document.write("no闰年");
+				}*/
+				
+				
+				
+				
+				
+// 2.将日期格式化输出 “2015-08-24”
+			
+//			var d1=new Date();
+//			var year=d1.getFullYear();
+//			var month=d1.getMonth()+1;
+//			var day=d1.getDate();
+////			var year=2016;
+////			var month=12;
+////			var day=18;
+//			if (day<10&&month<10) {
+//				document.write(year+"-0"+month+"-0"+day);
+//			} else if(month<10){
+//				document.write(year+"-0"+month+"-"+day);
+//			}else if(day<10){
+//				document.write(year+"-"+month+"-0"+day);
+//			 
+//			} else{document.write(year+"-"+month+"-"+day);}
+
+
+
+
+
+
+
+
+
+//			var d1=new Date();
+//			var year=d1.getFullYear();
+//			var month=d1.getMonth()+1;
+//			var day=d1.getDate();
+//			var arr = [year,month,day];
+//			var dstr = arr.join("-");
+//			alert(dstr);
+
+
+
+
+
+
+
+
+//两天之差	
+//var date1=new Date("2016/01/03");
+//var date2=new Date("2016/01/04");
+//var a=date1.getTime();
+//var b=date2.getTime();
+//var c=b-a;
+//var day=c/(3600000*24);
+//document.write(day);
+			
+	
+	
+		
+			
+
+
+	</script>
+</html>
+
+		
+	</script>
+</html>

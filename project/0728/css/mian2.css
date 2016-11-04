@@ -1,0 +1,110 @@
+.logo{
+	width: 100%;
+	height: 93px;
+	background-color:white;
+}
+.logo ul{
+	width: 580px;
+	height: 92px;
+	float: right;
+	font: 18px/5 "微软雅黑";
+}
+.logo ul li{
+	float: left;
+	margin-right: 36px;
+}
+.logo ul a{
+	color: black;
+}
+.img1{
+	float: left;
+	margin-left:33px ;
+	margin-top: 13px;
+}
+.img2{
+	float: right;
+	margin-right:54px;
+}
+
+
+.main_{
+	width: 100%;
+	height: 736px;
+	background-color:#CCCCCC;
+}
+.main{
+	width: 1191px;
+	height: 593px;
+	margin: 70px auto;
+}
+.main_ img{
+	float: right;
+}
+
+.main select{
+	width: 220px;
+	height: 74px;
+	background-color: white;
+	color: greenyellow;
+	float: left;
+}
+.main select option{
+	width: 190px;
+	height: 49px;
+	background-color: white;
+	color: black;
+}
+.main select option:hover{
+	background-color:#ccc;
+}
+
+
+
+
+
+.footer1_{
+	width: 100%;
+	height: 289px;
+	background-color: #f6f6f6;
+	padding-top: 1px;
+}
+.footer1{
+	width: 1095px;
+	height: 268px;
+	margin: 40px auto;
+}
+.footer1 dl{
+	width: 830px;
+	height: 260px;
+	text-align: center;
+	float: left;
+}
+.footer1 dl dt{
+	float: left;	
+    padding: 0px 45px;
+    
+	border-right: dotted 1px #C9D2D5;
+}
+.footer1 dl dt p{
+	display: block;
+	font:500 17px/1 "微软雅黑";
+	margin-bottom: 32px;
+	color:skyblue;
+}
+.footer1 dl ul a{
+	font: 15px/2 "微软雅黑";
+}
+.footer1 img{
+	float: left;
+	margin: 50px;
+}
+.footer{
+	width: 100%;
+	height: 43px;
+	background-color: black;
+	text-align: center;
+}
+.footer pre{
+	color: white;
+	font: 15px/2 "微软雅黑";
+}

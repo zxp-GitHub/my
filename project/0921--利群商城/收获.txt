@@ -1,0 +1,72 @@
+9-13 周2
+1.取余的方式可以讓兩張圖片輪播，INow%1。
+2.子元素設置浮動，父元素別忘了清除浮動，否則會塌陷，導致輪播圖不會出現。
+3.圖片水平對齊，給水平方向加一個div。
+0914 周3
+1.轮播的wrap不可以写错，否则轮播不会给你面子，动起来的。
+2.懒加载，紧挨着jQuery放，放在下面，不写SRC，banner图不需要懒加载，，需要懒加载的加class，把SRC放在属性里面
+懒加载fade。in，增加用户体验
+
+把懒加载放在外面，ajax是异步的，所以懒加载要放在ajax的里面。
+3.放大镜，
+4.分页及页面跳转
+5.获取pid，通过插件basefn
+6.注意：公共的css中用到的，尽量不能加ID，一个里面ID不可以重复，不能复制。
+7.首页的问题：
+1)头划过的时候的特效
+2)main2点击图片bug
+3)F5的right轮播
+8  minus：减      plus：加
+9.js的小数计算是有问题的 比如0.1+0.2
+
+
+
+
+0918  周天
+1.划过边框会动： 给没划过是加一个白色的边框
+2.clear:left
+
+3.分页：
+4.通过检查可以查看到，哪个文件，在哪一行。
+5.console  一下很重要，当js时，慢慢的打，首先要有思路
+6.a加padding，轻松搞定按钮君。
+7.javascript:;这句话是为了防止点击a时产生跳转
+8.padding: 5px 10px;简单改变，更加美观
+9.json最后一个不加逗号，命名规范price，Pro（product）  proname,防止产生冲突一般不会直接起name，
+
+0919 周一
+1.nextPage.onclick = function () { //////
+时，别忘了调用方法，ajaxProducts(pageIndex)//别忘了调用
+
+
+2 /^[1]{1}[3|5|7|8]{1}\d{9}$/;//[1]{1},,[3|5|7|8]{1},,\d{9}数字中的随便九位
+3.//html()    val() --可能是因为用了$
+4. $('.item_input1').css( 'box-shadow',' 0 0 0 1px deepskyblue');
+input直接加点击时border，一开始没有border，就会动，可以用阴影box-shadow来实现
+5.cookie
+ajax  path用'/'来表示，表示全局？
+1.document.cookie = 'username='+userName+';path=/;expires='+oDate;
+//每个用分号分开，最后的分号可以不用引起来
+2.$('#form1').on('submit',function(){//不一定用form  可以用onclick事件
+3.var oDate = new Date();//
+oDate.setDate(oDate.getDate()+30);
+
+
+0920  周二
+
+1.有HTML的错可以换个编辑器试试
+2.U盘里的东西删除要慎之又慎，千万别直接把优盘里的代码拖拽到编辑器里，一旦删除很难恢复 
+不过Hbuild右键点击已删文件的标记，然后选择从本地历史记录复原，可以恢复大部分代码，
+还有就是 安易恢复不错，不过要花钱，也不知道好不好用。
+3.把收尾的css都写到公共css里，一般公共的css或js都放在
+最上面，js使用时也别忘了jQuery要放在所有需要用到jQuery的js的上面
+4.Hbuild不可访问页面的问题：
+1）浏览器的箭头  设置浏览器，  浏览器，  内置服务器
+2）可能是cookie被删了，或者是cookie里面写入了汉字或者是乱码
+
+5.你的async : false,表示同步,同步会等待执行完
+
+
+
+0921 周四
+1.banner的ul写长点不会在最后出现空白。

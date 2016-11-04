@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#fang{width: 200px;height: 300px;background-color: palegreen;}
+		</style>
+	</head>
+	<body>
+		<div id="fang">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var ofang=document.getElementById("fang");
+		ofang.ondblclick=function(){
+			console.log("我是双击君~");
+		}
+		ofang.onmousedown=function(){
+			console.log("我是onmousedown君~");
+		}
+		ofang.onmouseup=function(){
+			console.log("我是onmouseup君~");
+		}
+		ofang.onmousemove=function(){
+			console.log("我是onmousemove君~");
+		}
+		ofang.onmouseleave=function(){
+			console.log("我是onmousemove君~");
+		}
+	</script>
+</html>

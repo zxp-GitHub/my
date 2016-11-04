@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+	<script type="text/javascript">
+		var str = "在最美的时光，最美的地方，留下心动的剪影--游志"
+		var arr = str.split("");
+
+		var i = 0;
+		var timer = setInterval(function() {
+			var index = arr[i];
+			document.write(index + " ");
+			if (i == arr.length - 1) {
+				clearInterval(timer); //打印一遍就停止
+			// i=-1;//不断打印
+			// document.write("<br />")
+			}
+			i++;
+		}, 100)
+	</script>
+
+</html>
+<!--
+	思路：
+	1.有一串字符串
+	2.将字符串切割
+	3.逐个打出-这里要定时-(用for循环  ？好像又不要用)每一秒打一个字   顺序问题
+	
+-->
+	<!--
+		timer是用clearInterval(timer);停止
+		function是用return false;停止
+		
+	-->

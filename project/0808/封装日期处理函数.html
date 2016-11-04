@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			1、传入一个年份参数，判断某年是否为闰年
+			2、传入一个日期参数，传入一个相连符号，进行日期格式化
+			3、传入一个月份参数，获得今年某月的天数
+			4、传入一个日期字符串参数，传入一个分隔符参数，将字符串转为日期
+			5、传入一个天数参数N（都可以），获得N天以后或者N天以前的日期
+			6、传入一个起始日期参数，传入一个结束日期参数，计算两个日期差（天、时、分、刚刚）
+		-->
+		<script type="text/javascript">
+		
+		/*---1、传入一个年份参数，判断某年是否为闰年----------------*/
+			function isRunNian(year){
+				if((year%4==0 &&　year%100!=0)  || year % 400 == 0){
+					return "是闰年！";
+				}else{
+					return "不是闰年！！";
+				}
+			}
+			/*document.write(isRunNian(2008));*/
+			
+			
+		/*---2、传入一个日期参数，传入一个相连符号，进行日期格式化-------*/
+			function dateJoin(dates,str){
+				var m=dates.toString();
+				var year = m.slice(0,4);
+				var month = m.slice(4,6);
+				var day = m.slice(6);
+				var n=[];
+				n.push(year);
+				n.push(month);
+				n.push(day);
+				return n.join(str);
+			}
+			document.write(dateJoin(20080501,'-'));
+		/*-----3、传入一个月份参数，获得今年某月的天数---------------------*/
+			function getDaysByMonth(yue){
+				if(yue == 1 || yue == 3|| yue == 5|| yue == 7|| yue == 8|| yue == 10|| yue == 12){
+					return "31天";
+				}else if (yue==2){
+					var d = new Date()
+					var year = d.getFullYear();
+					if((year%4==0 &&　year%100!=0)  || year % 400 == 0){
+						return "29天！";
+					}else{
+						return "28天！";
+					}
+				}
+			}
+//			document.write(getDaysByMonth(2));
+			
+			
+		/*----	5、传入一个天数参数N（都可以），获得N天以后或者N天以前的日期-------------------*/
+	
+			function  getDateByN(n){
+				var d = new Date()
+				var dateNow = d.getDate();
+				d.setDate(dateNow+n);
+				return d;
+			}
+			/*document.write(getDateByN(38));*/
+			
+			
+		/*-----6、传入一个起始日期参数，传入一个结束日期参数，计算两个日期差（天、时、分、刚刚）---------------*/	
+			function subDate(str1,str2){
+				var d1 = new Date(str1);
+				var d2 = new Date(str2);
+				var n1 = d1.getTime(str1);
+				var n2 = d2.getTime(str2);
+				var s=n1-n2;
+				var day=parseInt(s/(24*60*60*1000)) ;  
+				var hour=parseInt((s-day*86400000)/3600000);
+				var minutes=parseInt((s-day*86400000-hour*3600000)/60000);
+				var seconds = parseInt((s-day*86400000-hour*3600000-minutes*60000)/1000);
+				return str1+"和"+str2+"的日期差是："+day+"天"+hour+"小时"+minutes+"分钟"+seconds+"秒";
+			}
+//			document.write(subDate('2016-07-07T08:04:31','2016-07-06T09:03:30'));
+		</script>
+	</body>
+</html>

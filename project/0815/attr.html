@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var str1="aaaaacvjnvovnwovcnoncocn";
+		var obj={};
+		for (var i = 0; i < str1.length; i++) {
+		 	if (obj[str1[i]]==undefined) {
+				obj[str1[i]]=1;
+			} else{
+				obj[str1[i]]++;
+			}
+		}
+		var j=0,k=0,m=0;
+		var s=obj[0];
+		for(var attr in obj){//attr是一种方法  ；    in是一种方法        attr可以换成任何字母
+			var b=obj[attr];
+			var s;
+			document.write(attr);//字母
+			s=document.write(b+"&nbsp;");//数字
+			
+			if (j<b) {
+				j=b;
+				k=attr;
+			}
+			
+			
+
+		}
+			
+			
+		for(var attr2 in obj){
+			var g=obj[attr];
+			if (j=g) {
+			document.write("最大"+j);
+			}
+
+			}
+			
+		
+		
+		
+		
+	</script>
+</html>
